@@ -30,16 +30,17 @@ namespace QuanLyQuanAn.GUI
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTableManger));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cbb_Ban = new System.Windows.Forms.ComboBox();
+            this.btn_ChuyenBan = new System.Windows.Forms.Button();
+            this.cbb_ThanhToan = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button3 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cbb_SoLuong = new System.Windows.Forms.NumericUpDown();
+            this.btn_ThemMon = new System.Windows.Forms.Button();
+            this.cbb_MonAn = new System.Windows.Forms.ComboBox();
+            this.ccb_LoaiMon = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -49,38 +50,39 @@ namespace QuanLyQuanAn.GUI
             this.kháchHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_SoLuong)).BeginInit();
+            this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // cbb_Ban
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(713, 745);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(162, 30);
-            this.comboBox1.TabIndex = 11;
+            this.cbb_Ban.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_Ban.FormattingEnabled = true;
+            this.cbb_Ban.Location = new System.Drawing.Point(713, 745);
+            this.cbb_Ban.Name = "cbb_Ban";
+            this.cbb_Ban.Size = new System.Drawing.Size(162, 30);
+            this.cbb_Ban.TabIndex = 6;
             // 
-            // button2
+            // btn_ChuyenBan
             // 
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(713, 700);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(162, 39);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Chuyển bàn";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_ChuyenBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ChuyenBan.Location = new System.Drawing.Point(713, 700);
+            this.btn_ChuyenBan.Name = "btn_ChuyenBan";
+            this.btn_ChuyenBan.Size = new System.Drawing.Size(162, 39);
+            this.btn_ChuyenBan.TabIndex = 7;
+            this.btn_ChuyenBan.Text = "Chuyển bàn";
+            this.btn_ChuyenBan.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // cbb_ThanhToan
             // 
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(979, 704);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(156, 71);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "THANH TOÁN";
-            this.button1.UseVisualStyleBackColor = true;
+            this.cbb_ThanhToan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_ThanhToan.Location = new System.Drawing.Point(979, 704);
+            this.cbb_ThanhToan.Name = "cbb_ThanhToan";
+            this.cbb_ThanhToan.Size = new System.Drawing.Size(156, 71);
+            this.cbb_ThanhToan.TabIndex = 5;
+            this.cbb_ThanhToan.Text = "THANH TOÁN";
+            this.cbb_ThanhToan.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -91,57 +93,65 @@ namespace QuanLyQuanAn.GUI
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.numericUpDown1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.comboBox3);
-            this.panel2.Controls.Add(this.comboBox2);
+            this.panel2.Controls.Add(this.cbb_SoLuong);
+            this.panel2.Controls.Add(this.btn_ThemMon);
+            this.panel2.Controls.Add(this.cbb_MonAn);
+            this.panel2.Controls.Add(this.ccb_LoaiMon);
             this.panel2.Location = new System.Drawing.Point(713, 33);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(431, 112);
             this.panel2.TabIndex = 7;
             // 
-            // numericUpDown1
+            // cbb_SoLuong
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown1.Location = new System.Drawing.Point(4, 76);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(263, 30);
-            this.numericUpDown1.TabIndex = 5;
+            this.cbb_SoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_SoLuong.Location = new System.Drawing.Point(4, 76);
+            this.cbb_SoLuong.Name = "cbb_SoLuong";
+            this.cbb_SoLuong.Size = new System.Drawing.Size(263, 30);
+            this.cbb_SoLuong.TabIndex = 3;
             // 
-            // button3
+            // btn_ThemMon
             // 
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(273, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(148, 100);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Thêm món";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_ThemMon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThemMon.Location = new System.Drawing.Point(273, 4);
+            this.btn_ThemMon.Name = "btn_ThemMon";
+            this.btn_ThemMon.Size = new System.Drawing.Size(148, 100);
+            this.btn_ThemMon.TabIndex = 4;
+            this.btn_ThemMon.Text = "Thêm món";
+            this.btn_ThemMon.UseVisualStyleBackColor = true;
             // 
-            // comboBox3
+            // cbb_MonAn
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(4, 40);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(262, 30);
-            this.comboBox3.TabIndex = 1;
+            this.cbb_MonAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_MonAn.FormattingEnabled = true;
+            this.cbb_MonAn.Location = new System.Drawing.Point(4, 40);
+            this.cbb_MonAn.Name = "cbb_MonAn";
+            this.cbb_MonAn.Size = new System.Drawing.Size(262, 30);
+            this.cbb_MonAn.TabIndex = 2;
             // 
-            // comboBox2
+            // ccb_LoaiMon
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(262, 30);
-            this.comboBox2.TabIndex = 0;
+            this.ccb_LoaiMon.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ccb_LoaiMon.FormattingEnabled = true;
+            this.ccb_LoaiMon.Location = new System.Drawing.Point(4, 4);
+            this.ccb_LoaiMon.Name = "ccb_LoaiMon";
+            this.ccb_LoaiMon.Size = new System.Drawing.Size(262, 30);
+            this.ccb_LoaiMon.TabIndex = 1;
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.flpTable);
             this.panel1.Location = new System.Drawing.Point(12, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(694, 742);
             this.panel1.TabIndex = 6;
+            // 
+            // flpTable
+            // 
+            this.flpTable.Location = new System.Drawing.Point(4, 4);
+            this.flpTable.Name = "flpTable";
+            this.flpTable.Size = new System.Drawing.Size(687, 735);
+            this.flpTable.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -162,6 +172,7 @@ namespace QuanLyQuanAn.GUI
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
             this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinCáNhânToolStripMenuItem
             // 
@@ -176,41 +187,46 @@ namespace QuanLyQuanAn.GUI
             // thôngTinCáNhânToolStripMenuItem1
             // 
             this.thôngTinCáNhânToolStripMenuItem1.Name = "thôngTinCáNhânToolStripMenuItem1";
-            this.thôngTinCáNhânToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.thôngTinCáNhânToolStripMenuItem1.Size = new System.Drawing.Size(210, 26);
             this.thôngTinCáNhânToolStripMenuItem1.Text = "Thông tin cá nhân";
+            this.thôngTinCáNhânToolStripMenuItem1.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem1_Click);
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(210, 26);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // frmTableManger
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 787);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbb_Ban);
+            this.Controls.Add(this.btn_ChuyenBan);
+            this.Controls.Add(this.cbb_ThanhToan);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -220,7 +236,8 @@ namespace QuanLyQuanAn.GUI
             this.Name = "frmTableManger";
             this.Text = "Phần mềm quản lý quán cafe An Nhiên";
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbb_SoLuong)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -230,15 +247,15 @@ namespace QuanLyQuanAn.GUI
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbb_Ban;
+        private System.Windows.Forms.Button btn_ChuyenBan;
+        private System.Windows.Forms.Button cbb_ThanhToan;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.NumericUpDown cbb_SoLuong;
+        private System.Windows.Forms.Button btn_ThemMon;
+        private System.Windows.Forms.ComboBox cbb_MonAn;
+        private System.Windows.Forms.ComboBox ccb_LoaiMon;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
@@ -248,5 +265,6 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kháchHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.FlowLayoutPanel flpTable;
     }
 }

@@ -15,6 +15,12 @@ namespace QuanLyQuanAn.GUI
         public frmDoiMatKhau()
         {
             InitializeComponent();
+            this.CenterToScreen();
+        }
+
+        private void frmDoiMatKhau_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

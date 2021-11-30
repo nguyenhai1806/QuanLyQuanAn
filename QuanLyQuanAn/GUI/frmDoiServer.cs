@@ -15,6 +15,7 @@ namespace QuanLyQuanAn
         public frmDoiServer()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void frmDoiServer_Load(object sender, EventArgs e)

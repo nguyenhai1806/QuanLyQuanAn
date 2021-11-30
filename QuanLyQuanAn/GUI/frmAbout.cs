@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanAn.GUI
 {
-    public partial class frmKhachHang : Form
+    public partial class frmAbout : Form
     {
-        public frmKhachHang()
+        public frmAbout()
         {
             InitializeComponent();
             this.CenterToScreen();

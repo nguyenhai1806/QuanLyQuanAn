@@ -32,21 +32,21 @@ namespace QuanLyQuanAn.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmThongTinCaNhan));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txt_MaNV = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_TenNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_NgaySinh = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_DiaChi = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_SDT = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.txt_NhomNV = new System.Windows.Forms.TextBox();
+            this.rdb_Nu = new System.Windows.Forms.RadioButton();
+            this.rdb_Nam = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // label1
@@ -70,14 +70,14 @@ namespace QuanLyQuanAn.GUI
             this.label2.TabIndex = 5;
             this.label2.Text = "Mã nhân viên";
             // 
-            // txtUsername
+            // txt_MaNV
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(170, 97);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.ReadOnly = true;
-            this.txtUsername.Size = new System.Drawing.Size(328, 30);
-            this.txtUsername.TabIndex = 6;
+            this.txt_MaNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_MaNV.Location = new System.Drawing.Point(170, 97);
+            this.txt_MaNV.Name = "txt_MaNV";
+            this.txt_MaNV.ReadOnly = true;
+            this.txt_MaNV.Size = new System.Drawing.Size(328, 30);
+            this.txt_MaNV.TabIndex = 1;
             // 
             // label3
             // 
@@ -89,14 +89,14 @@ namespace QuanLyQuanAn.GUI
             this.label3.TabIndex = 7;
             this.label3.Text = "Tên nhân viên";
             // 
-            // textBox1
+            // txt_TenNV
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(170, 152);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(328, 30);
-            this.textBox1.TabIndex = 8;
+            this.txt_TenNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_TenNV.Location = new System.Drawing.Point(170, 152);
+            this.txt_TenNV.Name = "txt_TenNV";
+            this.txt_TenNV.ReadOnly = true;
+            this.txt_TenNV.Size = new System.Drawing.Size(328, 30);
+            this.txt_TenNV.TabIndex = 2;
             // 
             // label4
             // 
@@ -118,13 +118,13 @@ namespace QuanLyQuanAn.GUI
             this.label5.TabIndex = 11;
             this.label5.Text = "Ngày Sinh";
             // 
-            // textBox3
+            // txt_NgaySinh
             // 
-            this.textBox3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(170, 254);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(328, 30);
-            this.textBox3.TabIndex = 12;
+            this.txt_NgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NgaySinh.Location = new System.Drawing.Point(170, 254);
+            this.txt_NgaySinh.Name = "txt_NgaySinh";
+            this.txt_NgaySinh.Size = new System.Drawing.Size(328, 30);
+            this.txt_NgaySinh.TabIndex = 5;
             // 
             // label6
             // 
@@ -136,13 +136,13 @@ namespace QuanLyQuanAn.GUI
             this.label6.TabIndex = 13;
             this.label6.Text = "Địa chỉ";
             // 
-            // textBox4
+            // txt_DiaChi
             // 
-            this.textBox4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(170, 304);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(328, 30);
-            this.textBox4.TabIndex = 14;
+            this.txt_DiaChi.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_DiaChi.Location = new System.Drawing.Point(170, 304);
+            this.txt_DiaChi.Name = "txt_DiaChi";
+            this.txt_DiaChi.Size = new System.Drawing.Size(328, 30);
+            this.txt_DiaChi.TabIndex = 6;
             // 
             // label7
             // 
@@ -154,13 +154,13 @@ namespace QuanLyQuanAn.GUI
             this.label7.TabIndex = 15;
             this.label7.Text = "Số điện thoại";
             // 
-            // textBox5
+            // txt_SDT
             // 
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(170, 354);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(328, 30);
-            this.textBox5.TabIndex = 16;
+            this.txt_SDT.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_SDT.Location = new System.Drawing.Point(170, 354);
+            this.txt_SDT.Name = "txt_SDT";
+            this.txt_SDT.Size = new System.Drawing.Size(328, 30);
+            this.txt_SDT.TabIndex = 7;
             // 
             // label8
             // 
@@ -178,64 +178,66 @@ namespace QuanLyQuanAn.GUI
             this.btnDangNhap.Location = new System.Drawing.Point(170, 469);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(328, 48);
-            this.btnDangNhap.TabIndex = 19;
+            this.btnDangNhap.TabIndex = 9;
             this.btnDangNhap.Text = "Lưu thông tin";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // txt_NhomNV
             // 
-            this.textBox6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(170, 404);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(328, 30);
-            this.textBox6.TabIndex = 20;
+            this.txt_NhomNV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NhomNV.Location = new System.Drawing.Point(170, 404);
+            this.txt_NhomNV.Name = "txt_NhomNV";
+            this.txt_NhomNV.ReadOnly = true;
+            this.txt_NhomNV.Size = new System.Drawing.Size(328, 30);
+            this.txt_NhomNV.TabIndex = 8;
             // 
-            // radioButton1
+            // rdb_Nu
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(364, 210);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 21);
-            this.radioButton1.TabIndex = 22;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Nữ";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rdb_Nu.AutoSize = true;
+            this.rdb_Nu.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.rdb_Nu.Location = new System.Drawing.Point(364, 210);
+            this.rdb_Nu.Name = "rdb_Nu";
+            this.rdb_Nu.Size = new System.Drawing.Size(56, 26);
+            this.rdb_Nu.TabIndex = 4;
+            this.rdb_Nu.TabStop = true;
+            this.rdb_Nu.Text = "Nữ";
+            this.rdb_Nu.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rdb_Nam
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(203, 210);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(58, 21);
-            this.radioButton2.TabIndex = 21;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Nam";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rdb_Nam.AutoSize = true;
+            this.rdb_Nam.Checked = true;
+            this.rdb_Nam.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdb_Nam.Location = new System.Drawing.Point(203, 210);
+            this.rdb_Nam.Name = "rdb_Nam";
+            this.rdb_Nam.Size = new System.Drawing.Size(68, 26);
+            this.rdb_Nam.TabIndex = 3;
+            this.rdb_Nam.TabStop = true;
+            this.rdb_Nam.Text = "Nam";
+            this.rdb_Nam.UseVisualStyleBackColor = true;
             // 
             // frmThongTinCaNhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 529);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.rdb_Nu);
+            this.Controls.Add(this.rdb_Nam);
+            this.Controls.Add(this.txt_NhomNV);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txt_SDT);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txt_DiaChi);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txt_NgaySinh);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_TenNV);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.txt_MaNV);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmThongTinCaNhan";
             this.Text = "frmThongTinCaNhan";
@@ -248,20 +250,20 @@ namespace QuanLyQuanAn.GUI
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txt_MaNV;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_TenNV;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_NgaySinh;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_DiaChi;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_SDT;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.TextBox txt_NhomNV;
+        private System.Windows.Forms.RadioButton rdb_Nu;
+        private System.Windows.Forms.RadioButton rdb_Nam;
     }
 }

@@ -15,6 +15,7 @@ namespace QuanLyQuanAn.GUI
         public frmThongTinCaNhan()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
     }
 }

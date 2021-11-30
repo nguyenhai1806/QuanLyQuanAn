@@ -42,7 +42,7 @@ namespace QuanLyQuanAn
             this.btnTestConnect = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.chkQuyenWindows = new System.Windows.Forms.CheckBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_Invisible = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -165,22 +165,23 @@ namespace QuanLyQuanAn
             this.chkQuyenWindows.UseVisualStyleBackColor = true;
             this.chkQuyenWindows.CheckedChanged += new System.EventHandler(this.chkQuyenWindows_CheckedChanged);
             // 
-            // label6
+            // lbl_Invisible
             // 
-            this.label6.AutoSize = true;
-            this.label6.Image = ((System.Drawing.Image)(resources.GetObject("label6.Image")));
-            this.label6.Location = new System.Drawing.Point(511, 249);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(20, 17);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "   ";
+            this.lbl_Invisible.AutoSize = true;
+            this.lbl_Invisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Invisible.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Invisible.Image")));
+            this.lbl_Invisible.Location = new System.Drawing.Point(516, 246);
+            this.lbl_Invisible.Name = "lbl_Invisible";
+            this.lbl_Invisible.Size = new System.Drawing.Size(24, 20);
+            this.lbl_Invisible.TabIndex = 17;
+            this.lbl_Invisible.Text = "   ";
             // 
             // frmDoiServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 416);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_Invisible);
             this.Controls.Add(this.chkQuyenWindows);
             this.Controls.Add(this.btnLuu);
             this.Controls.Add(this.btnTestConnect);
@@ -216,6 +217,6 @@ namespace QuanLyQuanAn
         private System.Windows.Forms.Button btnTestConnect;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.CheckBox chkQuyenWindows;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_Invisible;
     }
 }

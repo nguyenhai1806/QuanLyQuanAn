@@ -15,6 +15,7 @@ namespace QuanLyQuanAn.GUI
         public frmAdmin()
         {
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         private void button4_Click(object sender, EventArgs e)
