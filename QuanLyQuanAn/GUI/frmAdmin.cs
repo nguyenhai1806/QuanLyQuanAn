@@ -22,5 +22,12 @@ namespace QuanLyQuanAn.GUI
         {
 
         }
+
+        private void btn_NNV_Reset_Click(object sender, EventArgs e)
+        {
+            txt_NNV_Ten.Text = null;
+            rdb_NNV_HienThi.Checked = true;
+            txt_NNV_Ten.Focus();
+        }
     }
 }
