@@ -49,21 +49,25 @@ namespace QuanLyQuanAn.GUI
         {
             Control ctr = (Control)sender;
             e.Handled = (e.KeyChar == (char)Keys.Space);
-            this.errorProvider1.SetError(ctr, "Mật khẩu không được phép nhập khoảng trắng !");
         }
 
         private void txt_NewPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             Control ctr = (Control)sender;
             e.Handled = (e.KeyChar == (char)Keys.Space);
-            this.errorProvider1.SetError(ctr, "Mật khẩu không được phép nhập khoảng trắng !");
         }
 
         private void txt_RepeatPass_KeyPress(object sender, KeyPressEventArgs e)
         {
             Control ctr = (Control)sender;
             e.Handled = (e.KeyChar == (char)Keys.Space);
-            this.errorProvider1.SetError(ctr, "Mật khẩu không được phép nhập khoảng trắng !");
+        }
+
+        private void txt_RepeatPass_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (!txt_NewPass.Text.Equals(txt_RepeatPass.Text))
+                errorProvider1.SetError(ctr, "Mật khẩu mới không khớp");
         }
     }
 }

@@ -150,6 +150,7 @@
     <Folder Include="images\monan\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Database\QLTiecQuanAn.sql" />
     <Content Include="images\icon\add_25px.png" />
     <Content Include="images\icon\an nhiên.png" />
     <Content Include="images\icon\an-nhiên.ico" />

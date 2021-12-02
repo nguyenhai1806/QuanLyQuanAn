@@ -62,7 +62,6 @@ namespace QuanLyQuanAn.GUI
         {
             Control ctr = (Control)sender;
             e.Handled = (e.KeyChar == (char)Keys.Space);
-            this.errorProvider1.SetError(ctr, "Mật khẩu không được phép nhập khoảng trắng !");
         }
     }
 }
