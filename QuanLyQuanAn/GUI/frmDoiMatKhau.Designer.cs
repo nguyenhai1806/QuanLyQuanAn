@@ -29,6 +29,7 @@ namespace QuanLyQuanAn.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDoiMatKhau));
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Invisible = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lbl_Hide = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -49,9 +53,10 @@ namespace QuanLyQuanAn.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(140, 42);
+            this.label1.Location = new System.Drawing.Point(105, 34);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(196, 26);
+            this.label1.Size = new System.Drawing.Size(154, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "ĐỔI MẬT KHẨU";
             // 
@@ -59,65 +64,75 @@ namespace QuanLyQuanAn.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 149);
+            this.label3.Location = new System.Drawing.Point(14, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 26);
+            this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 6;
             this.label3.Text = "Mật khẩu";
             // 
             // txt_Pass
             // 
             this.txt_Pass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Pass.Location = new System.Drawing.Point(186, 145);
+            this.txt_Pass.Location = new System.Drawing.Point(140, 118);
+            this.txt_Pass.Margin = new System.Windows.Forms.Padding(2);
             this.txt_Pass.Name = "txt_Pass";
-            this.txt_Pass.Size = new System.Drawing.Size(256, 30);
+            this.txt_Pass.Size = new System.Drawing.Size(193, 26);
             this.txt_Pass.TabIndex = 7;
             this.txt_Pass.UseSystemPasswordChar = true;
+            this.txt_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pass_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 199);
+            this.label2.Location = new System.Drawing.Point(14, 162);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(157, 26);
+            this.label2.Size = new System.Drawing.Size(126, 22);
             this.label2.TabIndex = 8;
             this.label2.Text = "Mật khẩu mới";
             // 
             // txt_NewPass
             // 
             this.txt_NewPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NewPass.Location = new System.Drawing.Point(186, 195);
+            this.txt_NewPass.Location = new System.Drawing.Point(140, 158);
+            this.txt_NewPass.Margin = new System.Windows.Forms.Padding(2);
             this.txt_NewPass.Name = "txt_NewPass";
-            this.txt_NewPass.Size = new System.Drawing.Size(256, 30);
+            this.txt_NewPass.Size = new System.Drawing.Size(193, 26);
             this.txt_NewPass.TabIndex = 9;
             this.txt_NewPass.UseSystemPasswordChar = true;
+            this.txt_NewPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NewPass_KeyPress);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 251);
+            this.label4.Location = new System.Drawing.Point(14, 204);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(157, 26);
+            this.label4.Size = new System.Drawing.Size(126, 22);
             this.label4.TabIndex = 10;
             this.label4.Text = "Mật khẩu mới";
             // 
             // txt_RepeatPass
             // 
             this.txt_RepeatPass.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_RepeatPass.Location = new System.Drawing.Point(186, 251);
+            this.txt_RepeatPass.Location = new System.Drawing.Point(140, 204);
+            this.txt_RepeatPass.Margin = new System.Windows.Forms.Padding(2);
             this.txt_RepeatPass.Name = "txt_RepeatPass";
-            this.txt_RepeatPass.Size = new System.Drawing.Size(256, 30);
+            this.txt_RepeatPass.Size = new System.Drawing.Size(193, 26);
             this.txt_RepeatPass.TabIndex = 11;
             this.txt_RepeatPass.UseSystemPasswordChar = true;
+            this.txt_RepeatPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepeatPass_KeyPress);
             // 
             // btn_DangNhap
             // 
             this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DangNhap.Location = new System.Drawing.Point(240, 300);
+            this.btn_DangNhap.Location = new System.Drawing.Point(180, 244);
+            this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btn_DangNhap.Name = "btn_DangNhap";
-            this.btn_DangNhap.Size = new System.Drawing.Size(202, 48);
+            this.btn_DangNhap.Size = new System.Drawing.Size(152, 39);
             this.btn_DangNhap.TabIndex = 12;
             this.btn_DangNhap.Text = "Đổi mật khẩu";
             this.btn_DangNhap.UseVisualStyleBackColor = true;
@@ -126,9 +141,10 @@ namespace QuanLyQuanAn.GUI
             // 
             this.label5.AutoSize = true;
             this.label5.Image = ((System.Drawing.Image)(resources.GetObject("label5.Image")));
-            this.label5.Location = new System.Drawing.Point(442, 113);
+            this.label5.Location = new System.Drawing.Point(332, 92);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 17);
+            this.label5.Size = new System.Drawing.Size(0, 13);
             this.label5.TabIndex = 13;
             // 
             // lbl_Invisible
@@ -136,35 +152,57 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Invisible.AutoSize = true;
             this.lbl_Invisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Invisible.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Invisible.Image")));
-            this.lbl_Invisible.Location = new System.Drawing.Point(455, 149);
+            this.lbl_Invisible.Location = new System.Drawing.Point(341, 121);
+            this.lbl_Invisible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Invisible.Name = "lbl_Invisible";
-            this.lbl_Invisible.Size = new System.Drawing.Size(24, 20);
+            this.lbl_Invisible.Size = new System.Drawing.Size(20, 17);
             this.lbl_Invisible.TabIndex = 14;
             this.lbl_Invisible.Text = "   ";
+            this.lbl_Invisible.Click += new System.EventHandler(this.lbl_Invisible_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 104);
+            this.label6.Location = new System.Drawing.Point(14, 84);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(115, 26);
+            this.label6.Size = new System.Drawing.Size(92, 22);
             this.label6.TabIndex = 15;
             this.label6.Text = "Username";
             // 
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(186, 100);
+            this.textBox1.Location = new System.Drawing.Point(140, 81);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 30);
+            this.textBox1.Size = new System.Drawing.Size(193, 26);
             this.textBox1.TabIndex = 16;
+            // 
+            // lbl_Hide
+            // 
+            this.lbl_Hide.AutoSize = true;
+            this.lbl_Hide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Hide.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Hide.Image")));
+            this.lbl_Hide.Location = new System.Drawing.Point(341, 122);
+            this.lbl_Hide.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Hide.Name = "lbl_Hide";
+            this.lbl_Hide.Size = new System.Drawing.Size(20, 17);
+            this.lbl_Hide.TabIndex = 17;
+            this.lbl_Hide.Text = "   ";
+            this.lbl_Hide.Click += new System.EventHandler(this.lbl_Hide_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmDoiMatKhau
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 403);
+            this.ClientSize = new System.Drawing.Size(364, 327);
+            this.Controls.Add(this.lbl_Hide);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lbl_Invisible);
@@ -178,9 +216,11 @@ namespace QuanLyQuanAn.GUI
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDoiMatKhau";
             this.Text = "frmDoiMatKhau";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +240,7 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Label lbl_Invisible;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lbl_Hide;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

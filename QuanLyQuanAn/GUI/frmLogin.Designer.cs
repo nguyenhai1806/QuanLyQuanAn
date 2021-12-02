@@ -29,10 +29,12 @@ namespace QuanLyQuanAn.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbl_Hide = new System.Windows.Forms.Label();
             this.lbl_Invisible = new System.Windows.Forms.Label();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,16 +43,18 @@ namespace QuanLyQuanAn.GUI
             this.label3 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Location = new System.Drawing.Point(5, 10);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(270, 295);
             this.panel2.TabIndex = 10;
@@ -61,7 +65,7 @@ namespace QuanLyQuanAn.GUI
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(260, 290);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -70,6 +74,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbl_Hide);
             this.panel1.Controls.Add(this.lbl_Invisible);
             this.panel1.Controls.Add(this.btnDangNhap);
             this.panel1.Controls.Add(this.label1);
@@ -79,10 +84,23 @@ namespace QuanLyQuanAn.GUI
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
             this.panel1.Location = new System.Drawing.Point(280, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 295);
             this.panel1.TabIndex = 9;
+            // 
+            // lbl_Hide
+            // 
+            this.lbl_Hide.AutoSize = true;
+            this.lbl_Hide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Hide.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Hide.Image")));
+            this.lbl_Hide.Location = new System.Drawing.Point(365, 157);
+            this.lbl_Hide.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Hide.Name = "lbl_Hide";
+            this.lbl_Hide.Size = new System.Drawing.Size(20, 17);
+            this.lbl_Hide.TabIndex = 8;
+            this.lbl_Hide.Text = "   ";
+            this.lbl_Hide.Click += new System.EventHandler(this.lbl_Hide_Click);
             // 
             // lbl_Invisible
             // 
@@ -92,15 +110,16 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Invisible.Location = new System.Drawing.Point(364, 155);
             this.lbl_Invisible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbl_Invisible.Name = "lbl_Invisible";
-            this.lbl_Invisible.Size = new System.Drawing.Size(21, 20);
+            this.lbl_Invisible.Size = new System.Drawing.Size(20, 17);
             this.lbl_Invisible.TabIndex = 7;
             this.lbl_Invisible.Text = "   ";
+            this.lbl_Invisible.Click += new System.EventHandler(this.lbl_Invisible_Click);
             // 
             // btnDangNhap
             // 
             this.btnDangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.Location = new System.Drawing.Point(243, 198);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(118, 39);
             this.btnDangNhap.TabIndex = 4;
@@ -116,7 +135,7 @@ namespace QuanLyQuanAn.GUI
             this.label1.Location = new System.Drawing.Point(142, 39);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 25);
+            this.label1.Size = new System.Drawing.Size(124, 22);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG NHẬP";
             // 
@@ -127,7 +146,7 @@ namespace QuanLyQuanAn.GUI
             this.label2.Location = new System.Drawing.Point(8, 100);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 25);
+            this.label2.Size = new System.Drawing.Size(87, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usernane";
             // 
@@ -135,7 +154,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.btnDoiServer.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDoiServer.Location = new System.Drawing.Point(114, 198);
-            this.btnDoiServer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDoiServer.Margin = new System.Windows.Forms.Padding(2);
             this.btnDoiServer.Name = "btnDoiServer";
             this.btnDoiServer.Size = new System.Drawing.Size(117, 39);
             this.btnDoiServer.TabIndex = 3;
@@ -150,7 +169,7 @@ namespace QuanLyQuanAn.GUI
             this.label3.Location = new System.Drawing.Point(8, 152);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(103, 25);
+            this.label3.Size = new System.Drawing.Size(90, 22);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
@@ -158,20 +177,26 @@ namespace QuanLyQuanAn.GUI
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(114, 150);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(247, 29);
+            this.txtPassword.Size = new System.Drawing.Size(247, 26);
             this.txtPassword.TabIndex = 2;
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsername.Location = new System.Drawing.Point(114, 103);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(247, 29);
+            this.txtUsername.Size = new System.Drawing.Size(247, 26);
             this.txtUsername.TabIndex = 1;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.RightToLeft = true;
             // 
             // frmLogin
             // 
@@ -182,7 +207,7 @@ namespace QuanLyQuanAn.GUI
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLogin";
             this.Text = "Phần mềm quản lý cafe An Nhiên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
@@ -190,6 +215,7 @@ namespace QuanLyQuanAn.GUI
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -207,5 +233,7 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.Label lbl_Hide;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -17,5 +17,22 @@ namespace QuanLyQuanAn.GUI
             InitializeComponent();
             this.CenterToScreen();
         }
+
+        private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Control ctr = (Control)sender;
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+        (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+                this.errorProvider1.SetError(ctr, "Ô này chỉ được phép nhập số !");
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                this.errorProvider1.Clear();
+            }
+        }
     }
 }

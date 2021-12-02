@@ -36,5 +36,30 @@ namespace QuanLyQuanAn
                 txtPassword.Enabled = true;
             }
         }
+
+        private void lbl_Hide_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.UseSystemPasswordChar == true)
+            {
+                lbl_Invisible.BringToFront();
+                txtPassword.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void lbl_Invisible_Click(object sender, EventArgs e)
+        {
+            if (txtPassword.UseSystemPasswordChar == false)
+            {
+                lbl_Hide.BringToFront();
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Control ctr = (Control)sender;
+            e.Handled = (e.KeyChar == (char)Keys.Space);
+            this.errorProvider1.SetError(ctr, "Mật khẩu không được phép nhập khoảng trắng !");
+        }
     }
 }
