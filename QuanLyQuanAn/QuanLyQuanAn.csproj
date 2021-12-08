@@ -47,6 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\DataProvider.cs" />
+    <Compile Include="DAL\KhachHangDAO.cs" />
     <Compile Include="GUI\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,12 +147,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DAL\" />
     <Folder Include="DTO\" />
     <Folder Include="images\monan\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Database\QLTiecQuanAn.sql" />
+    <Content Include="Database\SQL_Hai.sql" />
+    <Content Include="Database\SQL_Thao.sql" />
+    <Content Include="Database\SQL_Thu.sql" />
     <Content Include="images\icon\add_25px.png" />
     <Content Include="images\icon\an nhiên.png" />
     <Content Include="images\icon\an-nhiên.ico" />
