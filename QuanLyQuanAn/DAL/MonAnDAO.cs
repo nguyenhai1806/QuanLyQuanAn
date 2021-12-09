@@ -24,6 +24,7 @@ namespace QuanLyQuanAn.DAL
         }
         #endregion
 
+        //Hàm lấy danh sách món ăn
         public List<MonAn> LayDSMonAn()
         {
             List<MonAn> list = new List<MonAn>();
@@ -37,6 +38,24 @@ namespace QuanLyQuanAn.DAL
             }
 
             return list;
+        }
+
+        //Hàm thêm món ăn
+        public bool ThemMonAn(string tenMon, string giaBan, int maLoai, bool trangThai)
+        {
+            string query = string.Format("exec insert_MonAn N'{0}', {1}, {2}, {3}", tenMon, giaBan, maLoai, trangThai);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        //Hàm sửa món ăn
+        public bool SuaMonAn(int maMon, string tenMon, string giaBan, int maLoai, bool trangThai)
+        {
+            string query = string.Format("exec update_MonAn {0}, N'{1}', {2}, {3}, {4}", maMon, tenMon, giaBan, maLoai, trangThai);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+            
+            return result > 0;
         }
     }
 }

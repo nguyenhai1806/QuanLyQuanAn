@@ -24,6 +24,7 @@ namespace QuanLyQuanAn.DAL
         }
         #endregion
 
+        //Hàm lấy danh sách loại món
         public List<LoaiMon> LayDSLoaiMon()
         {
             List<LoaiMon> list = new List<LoaiMon>();
@@ -39,11 +40,12 @@ namespace QuanLyQuanAn.DAL
             return list;
         }
 
+        //Hàm lấy loại món theo Mã Loại Món
         public LoaiMon LayLoaiMonTheoID(int id)
         {
             LoaiMon loai = null;
 
-            string query = "select * from MonAn where id = " +id;
+            string query = "select * from LoaiMonAn where MaLoai = " + id;
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)
@@ -53,6 +55,24 @@ namespace QuanLyQuanAn.DAL
             }
 
             return loai;
+        }
+
+        //Hàm thêm Loại Món
+        public bool ThemLoaiMon(string tenLoai, bool trangThai)
+        {
+            string query = string.Format("exec insert_LoaiMon N'{0}', {1}", tenLoai, trangThai);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        //Hàm sửa Loại Món
+        public bool SuaLoaiMon(int maLoai, string tenLoai, bool trangThai)
+        {
+            string query = string.Format("exec update_LoaiMon {0}, N'{1}', {2}",maLoai, tenLoai, trangThai);
+            int result = DataProvider.Instance.ExcuteNonQuery(query);
+
+            return result > 0;
         }
     }
 }
