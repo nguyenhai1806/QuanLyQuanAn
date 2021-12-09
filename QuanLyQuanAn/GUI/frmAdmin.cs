@@ -123,7 +123,10 @@ namespace QuanLyQuanAn.GUI
         {
             txt_MonAn_Ten.DataBindings.Add(new Binding("Text", dgv_MonAn.DataSource, "TenMon"));
             txt_MonAn_GiaBan.DataBindings.Add(new Binding("Text", dgv_MonAn.DataSource, "GiaBan"));
-            if (dgv_MonAn.SelectedCells.Count > 0)
+            DataBindings.Add(new Binding("Text", dgv_MonAn.DataSource, "MaLoai"));
+
+            
+            if (dgv_MonAn.SelectedRows != null)
             {
                 int id = (int)dgv_MonAn.SelectedCells[0].OwningRow.Cells["MaLoai"].Value;
 
@@ -145,6 +148,11 @@ namespace QuanLyQuanAn.GUI
 
                 //cbb_MonAn_LoaiMon.SelectedIndex = index;
             }
+        }
+
+        private void panel47_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
