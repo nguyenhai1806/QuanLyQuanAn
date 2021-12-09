@@ -3,6 +3,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Configuration;
+using QuanLyQuanAn.Lib;
 
 namespace QuanLyQuanAn.DAO
 {
@@ -16,13 +17,39 @@ namespace QuanLyQuanAn.DAO
             get { if (instance == null) instance = new DataProvider(); return instance; }
             private set { instance = value; }
         }
-
+        #endregion
+        private static string connectionStr = "";
         private DataProvider()
         {
-        }
-        #endregion
+            try
+            {
+                string address = @"..//..//DAL\\connectionString.ini";
+                string temp = DocGhiFile.DocFile(address)[0];
 
-        public String connectionStr = "Data Source=localhost;Initial Catalog=QLTiecQuanAn;Integrated Security=True";
+                string key = "PYcFGNKuMEQzxpyC";
+                connectionStr = MaHoa.RSADecrypt(temp, key);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static bool IsServerConnected(string connectionStr)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionStr))
+            {
+                try
+                {
+                    connection.Open();
+                    return true;
+                }
+                catch (SqlException)
+                {
+                    return false;
+                }
+            }
+        }
 
         public DataTable ExcuteQuery(String query, object[] parameters = null)
         {
@@ -70,7 +97,6 @@ namespace QuanLyQuanAn.DAO
                             i++;
                         }
                 }
-
                 data = command.ExecuteNonQuery();
             }
             return data;

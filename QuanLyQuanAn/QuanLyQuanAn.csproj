@@ -51,9 +51,12 @@
     <Compile Include="DAL\KhachHangDAO.cs" />
     <Compile Include="DAL\LoaiMonDAO.cs" />
     <Compile Include="DAL\MonAnDAO.cs" />
-    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DAL\NhanVienDAO.cs" />
+    <Compile Include="DTO\BienToanCuc.cs" />
+    <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
     <Compile Include="DTO\MonAn.cs" />
+    <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="GUI\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +105,10 @@
     <Compile Include="GUI\frmThongTinCaNhan.Designer.cs">
       <DependentUpon>frmThongTinCaNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lib\DocGhiFile.cs" />
+    <Compile Include="Lib\MaHoa.cs" />
+    <Compile Include="Lib\Date.cs" />
+    <Compile Include="Lib\Makeup.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\frmAbout.resx">
@@ -133,6 +140,7 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DAL\connectionString.ini" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

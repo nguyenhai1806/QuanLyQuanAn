@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyQuanAn.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace QuanLyQuanAn.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
+            thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
         }
 
         private void thôngTinCáNhanToolStripMenuItem_Click(object sender, EventArgs e)
@@ -49,8 +51,11 @@ namespace QuanLyQuanAn.GUI
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo", MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
-                this.Close();
+            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+            {
+                BienToanCuc.NguoiDangNhap = null;
+                this.Dispose();
+            }
         }
 
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +72,11 @@ namespace QuanLyQuanAn.GUI
             f.ShowDialog();
             this.Hide();
             this.Show();
+        }
+
+        private void frmTableManger_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

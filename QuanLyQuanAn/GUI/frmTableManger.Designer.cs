@@ -235,6 +235,7 @@ namespace QuanLyQuanAn.GUI
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmTableManger";
             this.Text = "Phần mềm quản lý quán cafe An Nhiên";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTableManger_FormClosing);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbb_SoLuong)).EndInit();
             this.panel1.ResumeLayout(false);

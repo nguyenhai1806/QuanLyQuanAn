@@ -609,16 +609,22 @@
   </data>
   <data name="btn_Reset_KH.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAFlSURBVEhL5ZW7SgQxFIan8oIPIeKriD6J2okoqAi+goUgskmWlS23UWzF1lKSESsLWzszs17Q
-        JntOPNFMjOOMkAXxg58wc/7zZy6ZSfa/MJf704VkSzrnKzpn2zjisbnrTZHl9zxcidlC8WPQEGQiGhZS
-        9NBHLe2AgHXQixdYJ/StUWszoOHIC2ghcUgR9ZS52IoHNFMp+SZFxdHXnXkwvoWNTlrxZ3jxXRxjddIr
-        1Oco8iuFYv1I04e0ZCfvPn4a1iqCxWADQ+5Vf+aHKzSl4gP04hire3rEZW+DfbTsLkbMFbWYxMBjXbDB
-        PlqK1Yj5CXSGoVaSbaAXR3cO6+Sr9MIkyzbYBx7VbmiEldKhci2lEizs1ZLvUPmT7+4ErvYCxnMryffQ
-        i6M7R/WGdzKOd2JuDyahWIZmX40nyVlhbgYTNjgk+XeCjOWLR5L/uxxgTvsXdkBT2v3EkXxn9Em6x/8h
-        smwEGgcravdJK1AAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAABGdBTUEAALGPC/xhBQAAAWVJREFUSEvl
+        lbtKBDEUhqfygg8h4quIPonaiSioCL6ChSCySZaVLbdRbMXWUpIRKwtbOzOzXtAme0480UyM44yQBfGD
+        nzBz/vNnLplJ9r8wl/vThWRLOucrOmfbOOKxuetNkeX3PFyJ2ULxY9AQZCIaFlL00Ect7YCAddCLF1gn
+        9K1RazOg4cgLaCFxSBH1lLnYigc0Uyn5JkXF0dedeTC+hY1OWvFnePFdHGN10ivU5yjyK4Vi/UjTh7Rk
+        J+8+fhrWKoLFYAND7lV/5ocrNKXiA/TiGKt7esRlb4N9tOwuRswVtZjEwGNdsME+WorViPkJdIahVpJt
+        oBdHdw7r5Kv0wiTLNtgHHtVuaISV0qFyLaUSLOzVku9Q+ZPv7gSu9gLGcyvJ99CLoztH9YZ3Mo53Ym4P
+        JqFYhmZfjSfJWWFuBhM2OCT5d4KM5YtHkv+7HGBO+xd2QFPa/cSRfGf0SbrH/yGybAQaBytq90krUAAA
+        AABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="mtxt_NgaySinh.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="mtxt_NgaySinh.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

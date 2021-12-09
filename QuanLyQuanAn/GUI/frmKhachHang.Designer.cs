@@ -32,6 +32,7 @@ namespace QuanLyQuanAn.GUI
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblGioiTinh = new System.Windows.Forms.Label();
             this.panel37 = new System.Windows.Forms.Panel();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
             this.panel38 = new System.Windows.Forms.Panel();
@@ -42,6 +43,10 @@ namespace QuanLyQuanAn.GUI
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.btn_Reset_KH = new System.Windows.Forms.Button();
+            this.txtMaKhach = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtDienThoai = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -56,7 +61,6 @@ namespace QuanLyQuanAn.GUI
             this.mtxt_NgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.btn_Reset_KH = new System.Windows.Forms.Button();
             this.txtTenKhach = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panel33 = new System.Windows.Forms.Panel();
@@ -64,15 +68,13 @@ namespace QuanLyQuanAn.GUI
             this.rdb_HienThi = new System.Windows.Forms.RadioButton();
             this.label20 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.txt_NNV_Ma = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
             this.panel38.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -80,11 +82,11 @@ namespace QuanLyQuanAn.GUI
             this.panel26.SuspendLayout();
             this.panel33.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.panel15.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lblGioiTinh);
             this.panel1.Controls.Add(this.panel37);
             this.panel1.Controls.Add(this.panel38);
             this.panel1.Controls.Add(this.panel7);
@@ -95,6 +97,19 @@ namespace QuanLyQuanAn.GUI
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1664, 826);
             this.panel1.TabIndex = 3;
+            // 
+            // lblGioiTinh
+            // 
+            this.lblGioiTinh.AutoSize = true;
+            this.lblGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGioiTinh.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblGioiTinh.Location = new System.Drawing.Point(1061, 711);
+            this.lblGioiTinh.Name = "lblGioiTinh";
+            this.lblGioiTinh.Size = new System.Drawing.Size(37, 17);
+            this.lblGioiTinh.TabIndex = 18;
+            this.lblGioiTinh.Text = "Nam";
+            this.lblGioiTinh.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGioiTinh.TextChanged += new System.EventHandler(this.lblGioiTinh_TextChanged);
             // 
             // panel37
             // 
@@ -115,6 +130,7 @@ namespace QuanLyQuanAn.GUI
             this.dgvKhachHang.RowTemplate.Height = 24;
             this.dgvKhachHang.Size = new System.Drawing.Size(819, 674);
             this.dgvKhachHang.TabIndex = 1;
+            this.dgvKhachHang.Click += new System.EventHandler(this.dgvKhachHang_Click);
             // 
             // panel38
             // 
@@ -209,6 +225,49 @@ namespace QuanLyQuanAn.GUI
             this.panel8.Size = new System.Drawing.Size(592, 441);
             this.panel8.TabIndex = 14;
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.btn_Reset_KH);
+            this.panel15.Controls.Add(this.txtMaKhach);
+            this.panel15.Controls.Add(this.label5);
+            this.panel15.Location = new System.Drawing.Point(3, 2);
+            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(580, 57);
+            this.panel15.TabIndex = 20;
+            // 
+            // btn_Reset_KH
+            // 
+            this.btn_Reset_KH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_Reset_KH.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reset_KH.Image")));
+            this.btn_Reset_KH.Location = new System.Drawing.Point(531, 8);
+            this.btn_Reset_KH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_Reset_KH.Name = "btn_Reset_KH";
+            this.btn_Reset_KH.Size = new System.Drawing.Size(45, 39);
+            this.btn_Reset_KH.TabIndex = 6;
+            this.btn_Reset_KH.UseVisualStyleBackColor = true;
+            this.btn_Reset_KH.Click += new System.EventHandler(this.btn_Reset_KH_Click);
+            // 
+            // txtMaKhach
+            // 
+            this.txtMaKhach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaKhach.Location = new System.Drawing.Point(161, 14);
+            this.txtMaKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtMaKhach.Name = "txtMaKhach";
+            this.txtMaKhach.ReadOnly = true;
+            this.txtMaKhach.Size = new System.Drawing.Size(364, 30);
+            this.txtMaKhach.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 14);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(115, 26);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã khách";
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.txtDienThoai);
@@ -221,6 +280,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // txtDienThoai
             // 
+            this.txtDienThoai.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txtDienThoai.Location = new System.Drawing.Point(163, 14);
             this.txtDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDienThoai.Name = "txtDienThoai";
@@ -250,6 +310,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // txt_DiaChi
             // 
+            this.txt_DiaChi.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txt_DiaChi.Location = new System.Drawing.Point(163, 14);
             this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_DiaChi.Name = "txt_DiaChi";
@@ -280,10 +341,11 @@ namespace QuanLyQuanAn.GUI
             // rdb_Nu
             // 
             this.rdb_Nu.AutoSize = true;
+            this.rdb_Nu.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.rdb_Nu.Location = new System.Drawing.Point(349, 16);
             this.rdb_Nu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Nu.Name = "rdb_Nu";
-            this.rdb_Nu.Size = new System.Drawing.Size(58, 29);
+            this.rdb_Nu.Size = new System.Drawing.Size(56, 26);
             this.rdb_Nu.TabIndex = 4;
             this.rdb_Nu.Text = "Nữ";
             this.rdb_Nu.UseVisualStyleBackColor = true;
@@ -292,14 +354,16 @@ namespace QuanLyQuanAn.GUI
             // 
             this.rdb_Nam.AutoSize = true;
             this.rdb_Nam.Checked = true;
+            this.rdb_Nam.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.rdb_Nam.Location = new System.Drawing.Point(189, 14);
             this.rdb_Nam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Nam.Name = "rdb_Nam";
-            this.rdb_Nam.Size = new System.Drawing.Size(74, 29);
+            this.rdb_Nam.Size = new System.Drawing.Size(68, 26);
             this.rdb_Nam.TabIndex = 3;
             this.rdb_Nam.TabStop = true;
             this.rdb_Nam.Text = "Nam";
             this.rdb_Nam.UseVisualStyleBackColor = true;
+            this.rdb_Nam.CheckedChanged += new System.EventHandler(this.rdb_Nam_CheckedChanged);
             // 
             // label2
             // 
@@ -323,6 +387,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // mtxt_NgaySinh
             // 
+            this.mtxt_NgaySinh.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.mtxt_NgaySinh.Location = new System.Drawing.Point(163, 10);
             this.mtxt_NgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.mtxt_NgaySinh.Mask = "00/00/0000";
@@ -350,20 +415,9 @@ namespace QuanLyQuanAn.GUI
             this.panel26.Size = new System.Drawing.Size(576, 57);
             this.panel26.TabIndex = 13;
             // 
-            // btn_Reset_KH
-            // 
-            this.btn_Reset_KH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_Reset_KH.Image = ((System.Drawing.Image)(resources.GetObject("btn_Reset_KH.Image")));
-            this.btn_Reset_KH.Location = new System.Drawing.Point(531, 8);
-            this.btn_Reset_KH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_Reset_KH.Name = "btn_Reset_KH";
-            this.btn_Reset_KH.Size = new System.Drawing.Size(45, 39);
-            this.btn_Reset_KH.TabIndex = 6;
-            this.btn_Reset_KH.UseVisualStyleBackColor = true;
-            this.btn_Reset_KH.Click += new System.EventHandler(this.btn_Reset_KH_Click);
-            // 
             // txtTenKhach
             // 
+            this.txtTenKhach.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenKhach.Location = new System.Drawing.Point(163, 14);
             this.txtTenKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenKhach.Name = "txtTenKhach";
@@ -394,10 +448,11 @@ namespace QuanLyQuanAn.GUI
             // rdb_KhongHienThi
             // 
             this.rdb_KhongHienThi.AutoSize = true;
+            this.rdb_KhongHienThi.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.rdb_KhongHienThi.Location = new System.Drawing.Point(347, 17);
             this.rdb_KhongHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_KhongHienThi.Name = "rdb_KhongHienThi";
-            this.rdb_KhongHienThi.Size = new System.Drawing.Size(158, 29);
+            this.rdb_KhongHienThi.Size = new System.Drawing.Size(145, 26);
             this.rdb_KhongHienThi.TabIndex = 2;
             this.rdb_KhongHienThi.Text = "Không hiển thị";
             this.rdb_KhongHienThi.UseVisualStyleBackColor = true;
@@ -406,14 +461,16 @@ namespace QuanLyQuanAn.GUI
             // 
             this.rdb_HienThi.AutoSize = true;
             this.rdb_HienThi.Checked = true;
+            this.rdb_HienThi.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.rdb_HienThi.Location = new System.Drawing.Point(185, 17);
             this.rdb_HienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_HienThi.Name = "rdb_HienThi";
-            this.rdb_HienThi.Size = new System.Drawing.Size(98, 29);
+            this.rdb_HienThi.Size = new System.Drawing.Size(94, 26);
             this.rdb_HienThi.TabIndex = 1;
             this.rdb_HienThi.TabStop = true;
             this.rdb_HienThi.Text = "Hiển thị";
             this.rdb_HienThi.UseVisualStyleBackColor = true;
+            this.rdb_HienThi.CheckedChanged += new System.EventHandler(this.rdb_HienThi_CheckedChanged);
             // 
             // label20
             // 
@@ -429,36 +486,6 @@ namespace QuanLyQuanAn.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // panel15
-            // 
-            this.panel15.Controls.Add(this.btn_Reset_KH);
-            this.panel15.Controls.Add(this.txt_NNV_Ma);
-            this.panel15.Controls.Add(this.label5);
-            this.panel15.Location = new System.Drawing.Point(3, 2);
-            this.panel15.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(580, 57);
-            this.panel15.TabIndex = 20;
-            // 
-            // txt_NNV_Ma
-            // 
-            this.txt_NNV_Ma.Location = new System.Drawing.Point(161, 14);
-            this.txt_NNV_Ma.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_NNV_Ma.Name = "txt_NNV_Ma";
-            this.txt_NNV_Ma.ReadOnly = true;
-            this.txt_NNV_Ma.Size = new System.Drawing.Size(364, 30);
-            this.txt_NNV_Ma.TabIndex = 3;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(5, 14);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(150, 26);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Mã nhóm NV";
-            // 
             // frmKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -470,12 +497,15 @@ namespace QuanLyQuanAn.GUI
             this.Name = "frmKhachHang";
             this.Text = "Khách Hàng";
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel37.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
             this.panel38.ResumeLayout(false);
             this.panel38.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
@@ -489,8 +519,6 @@ namespace QuanLyQuanAn.GUI
             this.panel33.ResumeLayout(false);
             this.panel33.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -531,7 +559,8 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.MaskedTextBox mtxt_NgaySinh;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox txt_NNV_Ma;
+        private System.Windows.Forms.TextBox txtMaKhach;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblGioiTinh;
     }
 }

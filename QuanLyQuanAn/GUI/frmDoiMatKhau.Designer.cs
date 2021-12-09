@@ -42,7 +42,7 @@ namespace QuanLyQuanAn.GUI
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_Invisible = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.lbl_Hide = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -133,6 +133,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_DangNhap.TabIndex = 12;
             this.btn_DangNhap.Text = "Đổi mật khẩu";
             this.btn_DangNhap.UseVisualStyleBackColor = true;
+            this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
             // 
             // label5
             // 
@@ -165,14 +166,15 @@ namespace QuanLyQuanAn.GUI
             this.label6.TabIndex = 15;
             this.label6.Text = "Username";
             // 
-            // textBox1
+            // txtUsername
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(187, 100);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(256, 30);
-            this.textBox1.TabIndex = 16;
+            this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(187, 100);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.ReadOnly = true;
+            this.txtUsername.Size = new System.Drawing.Size(256, 30);
+            this.txtUsername.TabIndex = 16;
             // 
             // lbl_Hide
             // 
@@ -197,7 +199,7 @@ namespace QuanLyQuanAn.GUI
             this.ClientSize = new System.Drawing.Size(485, 402);
             this.Controls.Add(this.lbl_Hide);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.lbl_Invisible);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_DangNhap);
@@ -232,7 +234,7 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbl_Invisible;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lbl_Hide;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }

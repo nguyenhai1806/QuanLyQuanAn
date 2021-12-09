@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanAn.DAL;
+using QuanLyQuanAn.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,10 +22,35 @@ namespace QuanLyQuanAn.GUI
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            frmTableManger f = new frmTableManger();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+            try
+            {
+                string username = txtUsername.Text.Trim();
+                string pass = txtPassword.Text.Trim();
+                if (username.Length != 0 && pass.Length != 0)
+                {
+                    pass = Lib.MaHoa.MD5Encrypt(pass);
+
+                    NhanVien nhanVien = NhanVienDAO.Instance.LayNhanVienDangNhap(username, pass);
+                    if (nhanVien != null)
+                    {
+                        BienToanCuc.NguoiDangNhap = nhanVien;
+                        txtUsername.Text = null;
+                        txtPassword.Text = null;
+                        frmTableManger f = new frmTableManger();
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
+                    else
+                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Tên tài khoản và mật khẩu không được trông", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: Kết nối cơ sở dữ liệu không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnDoiServer_Click(object sender, EventArgs e)
@@ -31,7 +58,11 @@ namespace QuanLyQuanAn.GUI
             frmDoiServer f = new frmDoiServer();
             this.Hide();
             f.ShowDialog();
-            this.Show();
+            try
+            {
+                this.Show();
+            }
+            catch (Exception) { }
         }
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
