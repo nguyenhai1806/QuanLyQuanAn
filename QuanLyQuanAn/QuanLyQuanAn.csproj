@@ -51,9 +51,9 @@
     <Compile Include="DAL\KhachHangDAO.cs" />
     <Compile Include="DAL\LoaiMonDAO.cs" />
     <Compile Include="DAL\MonAnDAO.cs" />
-    <Compile Include="Database\DTO\KhachHangDTO.cs" />
-    <Compile Include="Database\DTO\LoaiMon.cs" />
-    <Compile Include="Database\DTO\MonAn.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
+    <Compile Include="DTO\LoaiMon.cs" />
+    <Compile Include="DTO\MonAn.cs" />
     <Compile Include="GUI\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
