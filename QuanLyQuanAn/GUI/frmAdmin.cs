@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLyQuanAn.DAL;
+using QuanLyQuanAn.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,10 +14,23 @@ namespace QuanLyQuanAn.GUI
 {
     public partial class frmAdmin : Form
     {
+        BindingSource DSLoaiMon = new BindingSource();
         public frmAdmin()
         {
             InitializeComponent();
             this.CenterToScreen();
+            Load();
+            
+        }
+
+        void Load()
+        {
+            LoadLoaiMon();
+            LoadMonAn();
+            AddLoaiMonBinding();
+            AddMonAnBinding();
+            BindingCombobox();
+            LoadLoaiMonLenCombobox(cbb_MonAn_LoaiMon);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -55,6 +70,81 @@ namespace QuanLyQuanAn.GUI
             txt_MonAn_GiaBan.Text = null;
             cbb_MonAn_LoaiMon.Text = null;
             txt_MonAn_Ten.Focus();
+        }
+
+        void LoadLoaiMon()
+        {
+            dgv_LoaiMon.DataSource = LoaiMonDAO.Instance.LayDSLoaiMon();
+        }
+
+        void LoadMonAn()
+        {
+            dgv_MonAn.DataSource = MonAnDAO.Instance.LayDSMonAn();
+        }
+
+        void LoadLoaiMonLenCombobox(ComboBox cbb)
+        {
+            cbb.DataSource = LoaiMonDAO.Instance.LayDSLoaiMon();
+            cbb.DisplayMember = "TenLoai";
+        }
+
+        void BindingCombobox()
+        {
+            if (dgv_MonAn.SelectedCells.Count>0)
+            {
+                int id = (int)dgv_MonAn.SelectedCells[0].OwningRow.Cells["MaLoai"].Value;
+
+                LoaiMon loai = LoaiMonDAO.Instance.LayLoaiMonTheoID(id);
+
+                cbb_MonAn_LoaiMon.SelectedItem = loai.TenLoai;
+
+                //int index = -1;
+                //int i = 0;
+                //foreach (LoaiMon item in cbb_MonAn_LoaiMon.Items)
+                //{
+                //    if (item.MaLoai==loai.MaLoai)
+                //    {
+                //        index = i;
+                //        break;
+                //    }
+                //    i++;
+                //}
+
+                //cbb_MonAn_LoaiMon.SelectedIndex = index;
+            }
+        }
+
+        void AddLoaiMonBinding()
+        {
+            txt_LoaiMon_Ten.DataBindings.Add(new Binding("Text", dgv_LoaiMon.DataSource, "TenLoai"));
+        }
+
+        void AddMonAnBinding()
+        {
+            txt_MonAn_Ten.DataBindings.Add(new Binding("Text", dgv_MonAn.DataSource, "TenMon"));
+            txt_MonAn_GiaBan.DataBindings.Add(new Binding("Text", dgv_MonAn.DataSource, "GiaBan"));
+            if (dgv_MonAn.SelectedCells.Count > 0)
+            {
+                int id = (int)dgv_MonAn.SelectedCells[0].OwningRow.Cells["MaLoai"].Value;
+
+                LoaiMon loai = LoaiMonDAO.Instance.LayLoaiMonTheoID(id);
+
+                cbb_MonAn_LoaiMon.SelectedItem = loai.TenLoai;
+
+                //int index = -1;
+                //int i = 0;
+                //foreach (LoaiMon item in cbb_MonAn_LoaiMon.Items)
+                //{
+                //    if (item.MaLoai==loai.MaLoai)
+                //    {
+                //        index = i;
+                //        break;
+                //    }
+                //    i++;
+                //}
+
+                //cbb_MonAn_LoaiMon.SelectedIndex = index;
+            }
         }
     }
 }

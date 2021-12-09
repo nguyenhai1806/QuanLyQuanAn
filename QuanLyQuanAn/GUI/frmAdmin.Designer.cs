@@ -71,6 +71,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NV_DiaChi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
+            this.mtxt_NV_NgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
             this.rdb_NV_Nu = new System.Windows.Forms.RadioButton();
@@ -136,7 +137,6 @@ namespace QuanLyQuanAn.GUI
             this.panel58 = new System.Windows.Forms.Panel();
             this.btn_MonAn_Search = new System.Windows.Forms.Button();
             this.txt_MonAn_Search = new System.Windows.Forms.TextBox();
-            this.mtxt_NV_NgaySinh = new System.Windows.Forms.MaskedTextBox();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -625,6 +625,14 @@ namespace QuanLyQuanAn.GUI
             this.panel12.Size = new System.Drawing.Size(427, 46);
             this.panel12.TabIndex = 17;
             // 
+            // mtxt_NV_NgaySinh
+            // 
+            this.mtxt_NV_NgaySinh.Location = new System.Drawing.Point(122, 9);
+            this.mtxt_NV_NgaySinh.Mask = "00/00/0000";
+            this.mtxt_NV_NgaySinh.Name = "mtxt_NV_NgaySinh";
+            this.mtxt_NV_NgaySinh.Size = new System.Drawing.Size(276, 26);
+            this.mtxt_NV_NgaySinh.TabIndex = 1;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1013,12 +1021,12 @@ namespace QuanLyQuanAn.GUI
             // dgv_LoaiMon
             // 
             this.dgv_LoaiMon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_LoaiMon.Location = new System.Drawing.Point(-196, 2);
+            this.dgv_LoaiMon.Location = new System.Drawing.Point(13, 0);
             this.dgv_LoaiMon.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_LoaiMon.Name = "dgv_LoaiMon";
             this.dgv_LoaiMon.RowHeadersWidth = 51;
             this.dgv_LoaiMon.RowTemplate.Height = 24;
-            this.dgv_LoaiMon.Size = new System.Drawing.Size(812, 592);
+            this.dgv_LoaiMon.Size = new System.Drawing.Size(605, 592);
             this.dgv_LoaiMon.TabIndex = 1;
             // 
             // panel44
@@ -1078,7 +1086,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel46.Controls.Add(this.btn_MonAn_Sua);
             this.panel46.Controls.Add(this.btn_MonAn_Them);
-            this.panel46.Location = new System.Drawing.Point(629, 283);
+            this.panel46.Location = new System.Drawing.Point(629, 282);
             this.panel46.Margin = new System.Windows.Forms.Padding(2);
             this.panel46.Name = "panel46";
             this.panel46.Size = new System.Drawing.Size(439, 62);
@@ -1120,7 +1128,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel10.Controls.Add(this.cbb_MonAn_LoaiMon);
             this.panel10.Controls.Add(this.label10);
-            this.panel10.Location = new System.Drawing.Point(10, 101);
+            this.panel10.Location = new System.Drawing.Point(6, 102);
             this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(426, 46);
@@ -1151,7 +1159,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel51.Controls.Add(this.txt_MonAn_GiaBan);
             this.panel51.Controls.Add(this.label31);
-            this.panel51.Location = new System.Drawing.Point(9, 50);
+            this.panel51.Location = new System.Drawing.Point(6, 52);
             this.panel51.Margin = new System.Windows.Forms.Padding(2);
             this.panel51.Name = "panel51";
             this.panel51.Size = new System.Drawing.Size(426, 46);
@@ -1182,7 +1190,7 @@ namespace QuanLyQuanAn.GUI
             this.panel52.Controls.Add(this.rdb_MonAn_Reset);
             this.panel52.Controls.Add(this.txt_MonAn_Ten);
             this.panel52.Controls.Add(this.label32);
-            this.panel52.Location = new System.Drawing.Point(9, 0);
+            this.panel52.Location = new System.Drawing.Point(5, 2);
             this.panel52.Margin = new System.Windows.Forms.Padding(2);
             this.panel52.Name = "panel52";
             this.panel52.Size = new System.Drawing.Size(432, 46);
@@ -1192,7 +1200,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.rdb_MonAn_Reset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.rdb_MonAn_Reset.Image = ((System.Drawing.Image)(resources.GetObject("rdb_MonAn_Reset.Image")));
-            this.rdb_MonAn_Reset.Location = new System.Drawing.Point(398, 6);
+            this.rdb_MonAn_Reset.Location = new System.Drawing.Point(400, 5);
             this.rdb_MonAn_Reset.Margin = new System.Windows.Forms.Padding(2);
             this.rdb_MonAn_Reset.Name = "rdb_MonAn_Reset";
             this.rdb_MonAn_Reset.Size = new System.Drawing.Size(34, 32);
@@ -1224,7 +1232,7 @@ namespace QuanLyQuanAn.GUI
             this.panel56.Controls.Add(this.rdb_MonAn_KhongHienThi);
             this.panel56.Controls.Add(this.rdb_MonAn_HienThi);
             this.panel56.Controls.Add(this.label36);
-            this.panel56.Location = new System.Drawing.Point(9, 151);
+            this.panel56.Location = new System.Drawing.Point(5, 152);
             this.panel56.Margin = new System.Windows.Forms.Padding(2);
             this.panel56.Name = "panel56";
             this.panel56.Size = new System.Drawing.Size(426, 46);
@@ -1277,12 +1285,12 @@ namespace QuanLyQuanAn.GUI
             // dgv_MonAn
             // 
             this.dgv_MonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MonAn.Location = new System.Drawing.Point(-196, 2);
+            this.dgv_MonAn.Location = new System.Drawing.Point(13, 2);
             this.dgv_MonAn.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_MonAn.Name = "dgv_MonAn";
             this.dgv_MonAn.RowHeadersWidth = 51;
             this.dgv_MonAn.RowTemplate.Height = 24;
-            this.dgv_MonAn.Size = new System.Drawing.Size(812, 592);
+            this.dgv_MonAn.Size = new System.Drawing.Size(605, 592);
             this.dgv_MonAn.TabIndex = 1;
             // 
             // panel58
@@ -1313,14 +1321,6 @@ namespace QuanLyQuanAn.GUI
             this.txt_MonAn_Search.Name = "txt_MonAn_Search";
             this.txt_MonAn_Search.Size = new System.Drawing.Size(551, 26);
             this.txt_MonAn_Search.TabIndex = 1;
-            // 
-            // mtxt_NV_NgaySinh
-            // 
-            this.mtxt_NV_NgaySinh.Location = new System.Drawing.Point(122, 9);
-            this.mtxt_NV_NgaySinh.Mask = "00/00/0000";
-            this.mtxt_NV_NgaySinh.Name = "mtxt_NV_NgaySinh";
-            this.mtxt_NV_NgaySinh.Size = new System.Drawing.Size(276, 26);
-            this.mtxt_NV_NgaySinh.TabIndex = 1;
             // 
             // frmAdmin
             // 

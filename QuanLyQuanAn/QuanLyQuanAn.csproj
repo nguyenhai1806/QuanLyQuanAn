@@ -49,6 +49,10 @@
   <ItemGroup>
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\KhachHangDAO.cs" />
+    <Compile Include="DAL\LoaiMonDAO.cs" />
+    <Compile Include="DAL\MonAnDAO.cs" />
+    <Compile Include="DTO\LoaiMon.cs" />
+    <Compile Include="DTO\MonAn.cs" />
     <Compile Include="GUI\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,7 +151,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="images\monan\" />
   </ItemGroup>
   <ItemGroup>
