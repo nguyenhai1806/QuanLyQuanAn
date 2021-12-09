@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\KhachHangDAO.cs" />
+    <Compile Include="DTO\KhachHangDTO.cs" />
     <Compile Include="GUI\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,7 +148,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DTO\" />
     <Folder Include="images\monan\" />
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +158,7 @@
     <Content Include="images\icon\add_25px.png" />
     <Content Include="images\icon\an nhiên.png" />
     <Content Include="images\icon\an-nhiên.ico" />
+    <Content Include="images\icon\back.jpg" />
     <Content Include="images\icon\delete_50px.png" />
     <Content Include="images\icon\edit_50px.png" />
     <Content Include="images\icon\glasses_50px.png" />
