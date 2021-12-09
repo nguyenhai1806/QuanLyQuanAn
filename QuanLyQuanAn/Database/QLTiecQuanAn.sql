@@ -56,7 +56,7 @@ create table NhanVien
 (
 	MaNV INT IDENTITY not null primary key,
 	MaNhomNV INT not null,
-	TenDangNhap nvarchar(100) not null,
+	TenDangNhap nvarchar(100) not NULL,
 	MatKhau nvarchar(100) not null,
 	HoTen nvarchar(100) not null,
 	GioiTinh nchar(5) NOT NULL CHECK(GioiTinh IN (N'Nam',N'Nữ')),

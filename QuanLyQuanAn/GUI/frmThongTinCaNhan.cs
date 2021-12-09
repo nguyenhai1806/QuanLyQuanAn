@@ -55,14 +55,8 @@ namespace QuanLyQuanAn.GUI
         private void txt_NgaySinh_Leave(object sender, EventArgs e)
         {
             Control ctr = (Control)sender;
-            int ngay, thang, nam;
-            string[] temp = txt_NgaySinh.Text.Split('/');
 
-            int.TryParse(temp[0],out ngay);
-            int.TryParse(temp[1], out thang);
-            int.TryParse(temp[2], out nam);
-
-            if (!Date.laNgayHopLe(ngay, thang, nam))
+            if (!Date.laNgayHopLe(txt_NgaySinh.Text))
             {
                 this.errorProvider1.SetError(ctr, "Ngày tháng không hợp lệ");
             }
@@ -74,14 +68,7 @@ namespace QuanLyQuanAn.GUI
         {
             try
             {
-                int ngay, thang, nam;
-                string[] temp = txt_NgaySinh.Text.Split('/');
-
-                int.TryParse(temp[0], out ngay);
-                int.TryParse(temp[1], out thang);
-                int.TryParse(temp[2], out nam);
-
-                if (Date.laNgayHopLe(ngay, thang, nam) || txt_NgaySinh.Text == null)
+                if (txt_NgaySinh.Text == null || Date.laNgayHopLe(txt_NgaySinh.Text))
                 {
                     int maNV = int.Parse(txt_MaNV.Text);
                     string gioiTinh = rdb_Nam.Checked ? rdb_Nam.Text : rdb_Nu.Text;
@@ -90,7 +77,7 @@ namespace QuanLyQuanAn.GUI
                     string sdt = txt_SDT.Text.Trim();
                     if (NhanVienDAO.Instance.UpdateInfo(maNV, gioiTinh, ngaySinh, diaChi, sdt))
                     {
-                        MessageBox.Show("Thay đổi thông tin thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thay đổi thông tin thành công\nBạn cần đăng xuất để cập nhập lại thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Thay đổi thông tin không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);

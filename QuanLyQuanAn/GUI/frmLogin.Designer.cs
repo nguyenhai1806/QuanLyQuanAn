@@ -53,10 +53,10 @@ namespace QuanLyQuanAn.GUI
             // panel2
             // 
             this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Location = new System.Drawing.Point(5, 10);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2);
+            this.panel2.Location = new System.Drawing.Point(7, 12);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(270, 295);
+            this.panel2.Size = new System.Drawing.Size(360, 363);
             this.panel2.TabIndex = 10;
             // 
             // pictureBox1
@@ -64,10 +64,10 @@ namespace QuanLyQuanAn.GUI
             this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(260, 290);
+            this.pictureBox1.Size = new System.Drawing.Size(347, 357);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -83,10 +83,10 @@ namespace QuanLyQuanAn.GUI
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtPassword);
             this.panel1.Controls.Add(this.txtUsername);
-            this.panel1.Location = new System.Drawing.Point(280, 10);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Location = new System.Drawing.Point(373, 12);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(387, 295);
+            this.panel1.Size = new System.Drawing.Size(516, 363);
             this.panel1.TabIndex = 9;
             // 
             // lbl_Hide
@@ -94,10 +94,9 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Hide.AutoSize = true;
             this.lbl_Hide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Hide.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Hide.Image")));
-            this.lbl_Hide.Location = new System.Drawing.Point(365, 157);
-            this.lbl_Hide.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Hide.Location = new System.Drawing.Point(487, 193);
             this.lbl_Hide.Name = "lbl_Hide";
-            this.lbl_Hide.Size = new System.Drawing.Size(20, 17);
+            this.lbl_Hide.Size = new System.Drawing.Size(24, 20);
             this.lbl_Hide.TabIndex = 8;
             this.lbl_Hide.Text = "   ";
             this.lbl_Hide.Click += new System.EventHandler(this.lbl_Hide_Click);
@@ -107,10 +106,9 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Invisible.AutoSize = true;
             this.lbl_Invisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Invisible.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Invisible.Image")));
-            this.lbl_Invisible.Location = new System.Drawing.Point(364, 155);
-            this.lbl_Invisible.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_Invisible.Location = new System.Drawing.Point(485, 191);
             this.lbl_Invisible.Name = "lbl_Invisible";
-            this.lbl_Invisible.Size = new System.Drawing.Size(20, 17);
+            this.lbl_Invisible.Size = new System.Drawing.Size(24, 20);
             this.lbl_Invisible.TabIndex = 7;
             this.lbl_Invisible.Text = "   ";
             this.lbl_Invisible.Click += new System.EventHandler(this.lbl_Invisible_Click);
@@ -118,10 +116,10 @@ namespace QuanLyQuanAn.GUI
             // btnDangNhap
             // 
             this.btnDangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDangNhap.Location = new System.Drawing.Point(243, 198);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDangNhap.Location = new System.Drawing.Point(324, 244);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(118, 39);
+            this.btnDangNhap.Size = new System.Drawing.Size(157, 48);
             this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
@@ -132,10 +130,9 @@ namespace QuanLyQuanAn.GUI
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(142, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(189, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 22);
+            this.label1.Size = new System.Drawing.Size(155, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐĂNG NHẬP";
             // 
@@ -143,20 +140,19 @@ namespace QuanLyQuanAn.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 100);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(11, 123);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(87, 22);
+            this.label2.Size = new System.Drawing.Size(109, 26);
             this.label2.TabIndex = 1;
             this.label2.Text = "Usernane";
             // 
             // btnDoiServer
             // 
             this.btnDoiServer.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDoiServer.Location = new System.Drawing.Point(114, 198);
-            this.btnDoiServer.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDoiServer.Location = new System.Drawing.Point(152, 244);
+            this.btnDoiServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDoiServer.Name = "btnDoiServer";
-            this.btnDoiServer.Size = new System.Drawing.Size(117, 39);
+            this.btnDoiServer.Size = new System.Drawing.Size(156, 48);
             this.btnDoiServer.TabIndex = 3;
             this.btnDoiServer.Text = "Đổi Server";
             this.btnDoiServer.UseVisualStyleBackColor = true;
@@ -166,32 +162,33 @@ namespace QuanLyQuanAn.GUI
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(8, 152);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(11, 187);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 22);
+            this.label3.Size = new System.Drawing.Size(110, 26);
             this.label3.TabIndex = 2;
             this.label3.Text = "Password";
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(114, 150);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Location = new System.Drawing.Point(152, 185);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(247, 26);
+            this.txtPassword.Size = new System.Drawing.Size(328, 30);
             this.txtPassword.TabIndex = 2;
+            this.txtPassword.Text = "2";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(114, 103);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsername.Location = new System.Drawing.Point(152, 127);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(247, 26);
+            this.txtUsername.Size = new System.Drawing.Size(328, 30);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.Text = "NguyenHai";
             // 
             // errorProvider1
             // 
@@ -201,13 +198,13 @@ namespace QuanLyQuanAn.GUI
             // frmLogin
             // 
             this.AcceptButton = this.btnDangNhap;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 318);
+            this.ClientSize = new System.Drawing.Size(904, 391);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmLogin";
             this.Text = "Phần mềm quản lý cafe An Nhiên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);

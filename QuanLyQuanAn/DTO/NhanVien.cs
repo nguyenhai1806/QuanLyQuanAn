@@ -22,7 +22,7 @@ namespace QuanLyQuanAn.DTO
 
         public int MaNV { get => maNV; set => maNV = value; }
         public string TenDangNhap { get => tenDangNhap.Trim(); set => tenDangNhap = value.Trim(); }
-        public string MatKhau { get => matKhau.Trim(); set => matKhau = value.Trim(); }
+        public string MatKhau { get => matKhau; set => matKhau = value.Trim(); }
         public string HoTen { get => hoTen.Trim(); set => hoTen = value.Trim(); }
         public string GioiTinh { get => gioiTinh.Trim(); set => gioiTinh = value.Trim(); }
         public string DiaChi { get => diaChi.Trim(); set => diaChi = value.Trim(); }

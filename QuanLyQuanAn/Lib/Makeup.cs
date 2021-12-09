@@ -19,11 +19,11 @@ namespace QuanLyQuanAn.Lib
             dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman     ", 13F, FontStyle.Bold, GraphicsUnit.Pixel);
             dataGridView.BackgroundColor = Color.White;
             dataGridView.RowHeadersVisible = false;
-            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView.RowTemplate.Height = 30;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView.DefaultCellStyle.Font = new Font("Times New Roman", 12);
-
+            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            dataGridView.AllowUserToResizeRows = false;
         }
     }
 }

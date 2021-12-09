@@ -29,6 +29,7 @@ namespace QuanLyQuanAn.GUI
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAdmin));
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,6 +63,7 @@ namespace QuanLyQuanAn.GUI
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblGioiTinh = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_NV_CapLaiMK = new System.Windows.Forms.Button();
             this.btn_NV_Sua = new System.Windows.Forms.Button();
@@ -149,6 +151,8 @@ namespace QuanLyQuanAn.GUI
             this.panel58 = new System.Windows.Forms.Panel();
             this.btn_MonAn_Search = new System.Windows.Forms.Button();
             this.txt_MonAn_Search = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -201,16 +205,17 @@ namespace QuanLyQuanAn.GUI
             this.panel57.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MonAn)).BeginInit();
             this.panel58.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.panel1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 32);
+            this.tabPage3.Location = new System.Drawing.Point(4, 31);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1436, 844);
+            this.tabPage3.Size = new System.Drawing.Size(1436, 845);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Nhóm nhân viên";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -231,7 +236,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel7.Controls.Add(this.btn_NNV_Sua);
             this.panel7.Controls.Add(this.btn_NNV_Them);
-            this.panel7.Location = new System.Drawing.Point(835, 311);
+            this.panel7.Location = new System.Drawing.Point(836, 275);
             this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(585, 76);
@@ -246,6 +251,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Sua.TabIndex = 7;
             this.btn_NNV_Sua.Text = "Sửa";
             this.btn_NNV_Sua.UseVisualStyleBackColor = true;
+            this.btn_NNV_Sua.Click += new System.EventHandler(this.btn_NNV_Sua_Click);
             // 
             // btn_NNV_Them
             // 
@@ -256,6 +262,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Them.TabIndex = 6;
             this.btn_NNV_Them.Text = "Thêm";
             this.btn_NNV_Them.UseVisualStyleBackColor = true;
+            this.btn_NNV_Them.Click += new System.EventHandler(this.btn_NNV_Them_Click);
             // 
             // panel8
             // 
@@ -265,7 +272,7 @@ namespace QuanLyQuanAn.GUI
             this.panel8.Location = new System.Drawing.Point(833, 92);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(592, 215);
+            this.panel8.Size = new System.Drawing.Size(592, 179);
             this.panel8.TabIndex = 14;
             // 
             // panel15
@@ -372,6 +379,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NNV_HienThi.TabStop = true;
             this.rdb_NNV_HienThi.Text = "Hiển thị";
             this.rdb_NNV_HienThi.UseVisualStyleBackColor = true;
+            this.rdb_NNV_HienThi.CheckedChanged += new System.EventHandler(this.rdb_NNV_HienThi_CheckedChanged);
             // 
             // label20
             // 
@@ -395,12 +403,12 @@ namespace QuanLyQuanAn.GUI
             // dgv_NhomNV
             // 
             this.dgv_NhomNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhomNV.Location = new System.Drawing.Point(-261, 2);
+            this.dgv_NhomNV.Location = new System.Drawing.Point(5, 7);
             this.dgv_NhomNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_NhomNV.Name = "dgv_NhomNV";
             this.dgv_NhomNV.RowHeadersWidth = 51;
             this.dgv_NhomNV.RowTemplate.Height = 24;
-            this.dgv_NhomNV.Size = new System.Drawing.Size(1083, 729);
+            this.dgv_NhomNV.Size = new System.Drawing.Size(814, 725);
             this.dgv_NhomNV.TabIndex = 1;
             // 
             // panel38
@@ -524,17 +532,19 @@ namespace QuanLyQuanAn.GUI
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 32);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1436, 844);
+            this.tabPage2.Size = new System.Drawing.Size(1436, 845);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Nhân viên";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.lblGioiTinh);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel20);
@@ -544,6 +554,19 @@ namespace QuanLyQuanAn.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1427, 826);
             this.panel2.TabIndex = 1;
+            // 
+            // lblGioiTinh
+            // 
+            this.lblGioiTinh.AutoSize = true;
+            this.lblGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGioiTinh.ForeColor = System.Drawing.Color.Transparent;
+            this.lblGioiTinh.Location = new System.Drawing.Point(838, 721);
+            this.lblGioiTinh.Name = "lblGioiTinh";
+            this.lblGioiTinh.Size = new System.Drawing.Size(37, 17);
+            this.lblGioiTinh.TabIndex = 19;
+            this.lblGioiTinh.Text = "Nam";
+            this.lblGioiTinh.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGioiTinh.TextChanged += new System.EventHandler(this.lblGioiTinh_TextChanged);
             // 
             // panel3
             // 
@@ -565,6 +588,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NV_CapLaiMK.TabIndex = 14;
             this.btn_NV_CapLaiMK.Text = "Cấp lại MK";
             this.btn_NV_CapLaiMK.UseVisualStyleBackColor = true;
+            this.btn_NV_CapLaiMK.Click += new System.EventHandler(this.btn_NV_CapLaiMK_Click);
             // 
             // btn_NV_Sua
             // 
@@ -575,6 +599,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NV_Sua.TabIndex = 13;
             this.btn_NV_Sua.Text = "Sửa";
             this.btn_NV_Sua.UseVisualStyleBackColor = true;
+            this.btn_NV_Sua.Click += new System.EventHandler(this.btn_NV_Sua_Click);
             // 
             // btn_NV_Them
             // 
@@ -584,7 +609,9 @@ namespace QuanLyQuanAn.GUI
             this.btn_NV_Them.Size = new System.Drawing.Size(113, 48);
             this.btn_NV_Them.TabIndex = 12;
             this.btn_NV_Them.Text = "Thêm";
-            this.btn_NV_Them.UseVisualStyleBackColor = true;            // 
+            this.btn_NV_Them.UseVisualStyleBackColor = true;
+            this.btn_NV_Them.Click += new System.EventHandler(this.btn_NV_Them_Click);
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel16);
@@ -647,7 +674,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel11.Controls.Add(this.txt_NV_Username);
             this.panel11.Controls.Add(this.label11);
-            this.panel11.Location = new System.Drawing.Point(3, 434);
+            this.panel11.Location = new System.Drawing.Point(3, 62);
             this.panel11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(565, 57);
@@ -658,6 +685,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NV_Username.Location = new System.Drawing.Point(161, 14);
             this.txt_NV_Username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NV_Username.Name = "txt_NV_Username";
+            this.txt_NV_Username.ReadOnly = true;
             this.txt_NV_Username.Size = new System.Drawing.Size(364, 30);
             this.txt_NV_Username.TabIndex = 11;
             // 
@@ -675,7 +703,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel9.Controls.Add(this.txt_NV_DiaChi);
             this.panel9.Controls.Add(this.label1);
-            this.panel9.Location = new System.Drawing.Point(5, 249);
+            this.panel9.Location = new System.Drawing.Point(5, 310);
             this.panel9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(567, 57);
@@ -703,7 +731,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel12.Controls.Add(this.mtxt_NV_NgaySinh);
             this.panel12.Controls.Add(this.label2);
-            this.panel12.Location = new System.Drawing.Point(3, 186);
+            this.panel12.Location = new System.Drawing.Point(3, 247);
             this.panel12.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(569, 57);
@@ -717,6 +745,7 @@ namespace QuanLyQuanAn.GUI
             this.mtxt_NV_NgaySinh.Name = "mtxt_NV_NgaySinh";
             this.mtxt_NV_NgaySinh.Size = new System.Drawing.Size(367, 30);
             this.mtxt_NV_NgaySinh.TabIndex = 1;
+            this.mtxt_NV_NgaySinh.Leave += new System.EventHandler(this.mtxt_NV_NgaySinh_Leave);
             // 
             // label2
             // 
@@ -733,7 +762,7 @@ namespace QuanLyQuanAn.GUI
             this.panel13.Controls.Add(this.rdb_NV_Nu);
             this.panel13.Controls.Add(this.rdb_NV_Nam);
             this.panel13.Controls.Add(this.label3);
-            this.panel13.Location = new System.Drawing.Point(3, 124);
+            this.panel13.Location = new System.Drawing.Point(3, 185);
             this.panel13.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(569, 57);
@@ -778,10 +807,10 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel14.Controls.Add(this.txt_NV_Ten);
             this.panel14.Controls.Add(this.label4);
-            this.panel14.Location = new System.Drawing.Point(3, 62);
+            this.panel14.Location = new System.Drawing.Point(3, 123);
             this.panel14.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(575, 57);
+            this.panel14.Size = new System.Drawing.Size(565, 57);
             this.panel14.TabIndex = 14;
             // 
             // txt_NV_Ten
@@ -806,7 +835,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.panel18.Controls.Add(this.txt_NV_SDT);
             this.panel18.Controls.Add(this.label8);
-            this.panel18.Location = new System.Drawing.Point(5, 310);
+            this.panel18.Location = new System.Drawing.Point(7, 372);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(567, 57);
@@ -835,7 +864,7 @@ namespace QuanLyQuanAn.GUI
             this.panel19.Controls.Add(this.rdb_NV_KhongHienThi);
             this.panel19.Controls.Add(this.rdb_NV_HienThi);
             this.panel19.Controls.Add(this.label9);
-            this.panel19.Location = new System.Drawing.Point(5, 372);
+            this.panel19.Location = new System.Drawing.Point(5, 433);
             this.panel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(565, 57);
@@ -864,6 +893,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NV_HienThi.TabStop = true;
             this.rdb_NV_HienThi.Text = "Hiển thị";
             this.rdb_NV_HienThi.UseVisualStyleBackColor = true;
+            this.rdb_NV_HienThi.CheckedChanged += new System.EventHandler(this.rdb_NV_HienThi_CheckedChanged);
             // 
             // label9
             // 
@@ -887,13 +917,14 @@ namespace QuanLyQuanAn.GUI
             // dgv_NhanVien
             // 
             this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(-261, 2);
+            this.dgv_NhanVien.Location = new System.Drawing.Point(3, 2);
             this.dgv_NhanVien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.RowHeadersWidth = 51;
             this.dgv_NhanVien.RowTemplate.Height = 24;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(1083, 729);
+            this.dgv_NhanVien.Size = new System.Drawing.Size(816, 732);
             this.dgv_NhanVien.TabIndex = 1;
+            this.dgv_NhanVien.Click += new System.EventHandler(this.dgv_NhanVien_Click);
             // 
             // panel21
             // 
@@ -927,11 +958,11 @@ namespace QuanLyQuanAn.GUI
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.panel23);
-            this.tabPage4.Location = new System.Drawing.Point(4, 32);
+            this.tabPage4.Location = new System.Drawing.Point(4, 31);
             this.tabPage4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage4.Size = new System.Drawing.Size(1436, 844);
+            this.tabPage4.Size = new System.Drawing.Size(1436, 845);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Loại món";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -1159,11 +1190,11 @@ namespace QuanLyQuanAn.GUI
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.panel45);
-            this.tabPage5.Location = new System.Drawing.Point(4, 32);
+            this.tabPage5.Location = new System.Drawing.Point(4, 31);
             this.tabPage5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage5.Size = new System.Drawing.Size(1436, 844);
+            this.tabPage5.Size = new System.Drawing.Size(1436, 845);
             this.tabPage5.TabIndex = 5;
             this.tabPage5.Text = "Món ăn";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1223,7 +1254,8 @@ namespace QuanLyQuanAn.GUI
             this.panel47.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel47.Name = "panel47";
             this.panel47.Size = new System.Drawing.Size(592, 321);
-            this.panel47.TabIndex = 14;            // 
+            this.panel47.TabIndex = 14;
+            // 
             // panel22
             // 
             this.panel22.Controls.Add(this.rdb_MonAn_Reset);
@@ -1449,6 +1481,20 @@ namespace QuanLyQuanAn.GUI
             this.txt_MonAn_Search.Size = new System.Drawing.Size(733, 30);
             this.txt_MonAn_Search.TabIndex = 1;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(899, 759);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 26);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Mã NV";
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1480,6 +1526,7 @@ namespace QuanLyQuanAn.GUI
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -1534,6 +1581,7 @@ namespace QuanLyQuanAn.GUI
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MonAn)).EndInit();
             this.panel58.ResumeLayout(false);
             this.panel58.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1658,5 +1706,8 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.TextBox txt_MonAn_Ma;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblGioiTinh;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Label label13;
     }
 }

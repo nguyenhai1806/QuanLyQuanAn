@@ -60,27 +60,41 @@ namespace QuanLyQuanAn.Lib
 		}
 
 		// Hàm kiểm tra ngày dd/mm/yyyy cho trước có phải là ngày hợp lệ
-		public static bool laNgayHopLe(int nDay, int nMonth, int nYear)
+		public static bool laNgayHopLe(string value)
 		{
-			// Kiểm tra năm
-			if (nYear < 0)
-			{
-				return false; // Ngày không còn hợp lệ nữa!
-			}
+            try
+            {
+				int ngay, thang, nam;
+				string[] temp = value.Split('/');
 
-			// Kiểm tra tháng
-			if (nMonth < 1 || nMonth > 12)
-			{
-				return false; // Ngày không còn hợp lệ nữa!
-			}
+				int.TryParse(temp[0], out ngay);
+				int.TryParse(temp[1], out thang);
+				int.TryParse(temp[2], out nam);
 
-			// Kiểm tra ngày
-			if (nDay < 1 || nDay > tinhSoNgayTrongThang(nMonth, nYear))
-			{
-				return false; // Ngày không còn hợp lệ nữa!
-			}
+				// Kiểm tra năm
+				if (nam < 0)
+				{
+					return false; // Ngày không còn hợp lệ nữa!
+				}
 
-			return true; // Trả về trạng thái cuối cùng...
+				// Kiểm tra tháng
+				if (thang < 1 || thang > 12)
+				{
+					return false; // Ngày không còn hợp lệ nữa!
+				}
+
+				// Kiểm tra ngày
+				if (ngay < 1 || ngay > tinhSoNgayTrongThang(thang, nam))
+				{
+					return false; // Ngày không còn hợp lệ nữa!
+				}
+
+				return true; // Trả về trạng thái cuối cùng...
+			}
+            catch(Exception ex)
+            {
+				return false;
+            }
 		}
 		public static DateTime StringToDate(string value)
 		{

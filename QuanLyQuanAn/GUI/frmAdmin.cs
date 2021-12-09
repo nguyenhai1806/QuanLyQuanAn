@@ -15,13 +15,16 @@ namespace QuanLyQuanAn.GUI
 {
     public partial class frmAdmin : Form
     {
+        BindingSource DSLoaiMon = new BindingSource();
         BindingSource DSMonAn = new BindingSource();
+        BindingSource DSNhomNV = new BindingSource();
+        BindingSource DSNhanVien = new BindingSource();
+
         public frmAdmin()
         {
             InitializeComponent();
             this.CenterToScreen();
             Load();
-
             Makeup.DataGridView(dgv_LoaiMon);
             Makeup.DataGridView(dgv_MonAn);
             Makeup.DataGridView(dgv_NhanVien);
@@ -33,11 +36,23 @@ namespace QuanLyQuanAn.GUI
         void Load()
         {
             dgv_MonAn.DataSource = DSMonAn;
+            dgv_NhanVien.DataSource = DSNhanVien;
+            dgv_LoaiMon.DataSource = DSLoaiMon;
+            dgv_NhomNV.DataSource = DSNhomNV;
+            
             LoadLoaiMon();
             LoadMonAn();
+            LoadNhomNhanVien();
+            LoadNhanVien();
+
+            NhomNVBinding();
+            NhanVienBinding();
             AddLoaiMonBinding();
             AddMonAnBinding();
             LoadLoaiMonLenCombobox(cbb_MonAn_LoaiMon);
+
+            dgv_NhanVien.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dgv_NhanVien.Columns["MatKhau"].Visible = false;
         }
 
         #region Nhóm NV
@@ -48,7 +63,68 @@ namespace QuanLyQuanAn.GUI
             rdb_NNV_HienThi.Checked = true;
             txt_NNV_Ten.Focus();
         }
+        void LoadNhomNhanVien()
+        {
+            DSNhomNV.DataSource = NhomNVDAO.Instance.LayDSNhomNV();
+        }
+        private void NhomNVBinding()
+        {
+            txt_NNV_Ma.DataBindings.Add(new Binding("Text", dgv_NhomNV.DataSource, "MaNhom", true, DataSourceUpdateMode.Never));
+            txt_NNV_Ten.DataBindings.Add(new Binding("Text", dgv_NhomNV.DataSource, "TenNhom", true, DataSourceUpdateMode.Never));
+            rdb_NNV_HienThi.DataBindings.Add(new Binding("Checked", dgv_NhomNV.DataSource, "TrangThai", true, DataSourceUpdateMode.Never));
+        }
+        private void rdb_NNV_HienThi_CheckedChanged(object sender, EventArgs e)
+        {
+            rdb_NNV_KhongHienThi.Checked = !rdb_NNV_HienThi.Checked;
+        }
 
+        private void btn_NNV_Them_Click(object sender, EventArgs e)
+        {
+            string tenNhom = txt_NNV_Ten.Text.Trim();
+            bool trangThai = rdb_NNV_HienThi.Checked;
+            if (tenNhom.Length != 0)
+            {
+                if (NhomNVDAO.Instance.LayNNVTheoTenNhom(tenNhom) != null)
+                {
+                    if (NhomNVDAO.Instance.ThemNhomNV(tenNhom,trangThai))
+                    {
+                        MessageBox.Show("Thêm thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadNhomNhanVien();
+                    }
+                    else
+                        MessageBox.Show("Thêm không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Tên nhóm đã tồn tại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Vui lòng điền đày đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btn_NNV_Sua_Click(object sender, EventArgs e)
+        {
+            int maNhom = int.Parse(txt_NNV_Ma.Text);
+            string tenNhom = txt_NNV_Ten.Text.Trim();
+            bool trangThai = rdb_NNV_HienThi.Checked;
+            if (tenNhom.Length != 0)
+            {
+                NhomNhanVien nhomNhanVien = NhomNVDAO.Instance.LayNNVTheoTenNhom(tenNhom);
+                if (nhomNhanVien == null|| nhomNhanVien.MaNhom == maNhom)
+                {
+                    if (NhomNVDAO.Instance.SuaNhomNV(maNhom,tenNhom, trangThai))
+                    {
+                        MessageBox.Show("Sửa thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        LoadNhomNhanVien();
+                    }
+                    else
+                        MessageBox.Show("Sửa không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Tên nhóm đã tồn tại", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
         #endregion
 
         #region Nhân Viên
@@ -62,8 +138,98 @@ namespace QuanLyQuanAn.GUI
             txt_NV_SDT.Text = null;
             rdb_NV_HienThi.Checked = true;
             txt_NV_Username.Text = null;
-            txt_NV_Ten.Focus();
+            txt_NV_Username.Focus();
+            txt_NV_Username.ReadOnly = false;
         }
+        private void LoadNhanVien()
+        {
+            DSNhanVien.DataSource = NhanVienDAO.Instance.LayDSNhanVien();
+        }
+        private void NhanVienBinding()
+        {
+            txt_NV_Ma.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "MaNV", true, DataSourceUpdateMode.Never));
+            txt_NV_Username.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never));
+            txt_NV_Ten.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "HoTen", true, DataSourceUpdateMode.Never));
+            lblGioiTinh.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "GioiTinh", true, DataSourceUpdateMode.Never));
+            txt_NV_DiaChi.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
+            txt_NV_SDT.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "Sdt", true, DataSourceUpdateMode.Never));
+            mtxt_NV_NgaySinh.DataBindings.Add("Text", dgv_NhanVien.DataSource, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
+
+        }
+        private void lblGioiTinh_TextChanged(object sender, EventArgs e)
+        {
+            if (lblGioiTinh.Text.Trim().Equals(rdb_NV_Nam.Text))
+                rdb_NV_Nam.Checked = true;
+            else
+                rdb_NV_Nu.Checked = true;
+        }
+
+        private void rdb_NV_HienThi_CheckedChanged(object sender, EventArgs e)
+        {
+            rdb_NV_KhongHienThi.Checked = !rdb_NV_HienThi.Checked;
+        }
+        private void dgv_NhanVien_Click(object sender, EventArgs e)
+        {
+            txt_NV_Username.ReadOnly = true;
+        }
+        private void btn_NV_Them_Click(object sender, EventArgs e)
+        {
+            string userName = txt_NV_Username.Text.Trim();
+            string tenNV = txt_NV_Ten.Text.Trim();
+            string gioiTinh = rdb_NV_Nam.Checked ? rdb_NV_Nam.Text : rdb_NV_Nu.Text;
+            string diaChi = txt_NV_DiaChi.Text;
+            string soDienThoai = txt_NV_SDT.Text;
+            bool trangThai = rdb_NV_HienThi.Checked;
+
+            DateTime ngaySinh;
+            if (Date.laNgayHopLe(mtxt_NV_NgaySinh.Text))
+            {
+                ngaySinh = Date.StringToDate(mtxt_NV_NgaySinh.Text);
+            }
+            else
+                MessageBox.Show("Định dạng ngày tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void btn_NV_Sua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_NV_CapLaiMK_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string userName = txt_NV_Username.Text;
+                if (userName.Length != 0)
+                {
+                    string pass = MaHoa.MD5Encrypt("1");
+                    if (NhanVienDAO.Instance.UpdatePassword(userName, pass))
+                    {
+                        MessageBox.Show("Đã reset về mật khẩu mặc định", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Reset không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Bạn chưa chọn nhân viên nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void mtxt_NV_NgaySinh_Leave(object sender, EventArgs e)
+        {
+            Control ctr = (Control)sender;
+
+            if (!Date.laNgayHopLe(mtxt_NV_NgaySinh.Text))
+            {
+                this.errorProvider1.SetError(ctr, "Ngày tháng không hợp lệ");
+            }
+            else
+                this.errorProvider1.Clear();
+        }
+
         #endregion
 
         #region Loại món
@@ -76,7 +242,7 @@ namespace QuanLyQuanAn.GUI
         }
         void LoadLoaiMon()
         {
-            dgv_LoaiMon.DataSource = LoaiMonDAO.Instance.LayDSLoaiMon();
+            DSLoaiMon.DataSource = LoaiMonDAO.Instance.LayDSLoaiMon();
         }
         private void rdb_LoaiMon_HienThi_CheckedChanged(object sender, EventArgs e)
         {
@@ -214,6 +380,11 @@ namespace QuanLyQuanAn.GUI
         {
             rdb_MonAn_KhongHienThi.Checked = !rdb_MonAn_HienThi.Checked;
         }
+
+
+
+
         #endregion
+
     }
 }

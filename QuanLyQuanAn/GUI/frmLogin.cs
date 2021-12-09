@@ -33,13 +33,18 @@ namespace QuanLyQuanAn.GUI
                     NhanVien nhanVien = NhanVienDAO.Instance.LayNhanVienDangNhap(username, pass);
                     if (nhanVien != null)
                     {
-                        BienToanCuc.NguoiDangNhap = nhanVien;
-                        txtUsername.Text = null;
-                        txtPassword.Text = null;
-                        frmTableManger f = new frmTableManger();
-                        this.Hide();
-                        f.ShowDialog();
-                        this.Show();
+                        if (nhanVien.TrangThai != false)
+                        {
+                            BienToanCuc.NguoiDangNhap = nhanVien;
+                            txtUsername.Text = null;
+                            txtPassword.Text = null;
+                            frmTableManger f = new frmTableManger();
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                            MessageBox.Show("Bạn không được phép đăng nhập", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                         MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -49,7 +54,7 @@ namespace QuanLyQuanAn.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: Kết nối cơ sở dữ liệu không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

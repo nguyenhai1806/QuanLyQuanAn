@@ -15,7 +15,7 @@ namespace QuanLyQuanAn.GUI
 {
     public partial class frmKhachHang : Form
     {
-        BindingSource dsKhachHang = new BindingSource();        
+        BindingSource dsKhachHang = new BindingSource();
 
         public frmKhachHang()
         {

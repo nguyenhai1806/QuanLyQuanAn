@@ -25,6 +25,32 @@ namespace QuanLyQuanAn.DAL
         }
         #endregion
 
+        public List<NhanVien> LayDSNhanVien()
+        {
+            List<NhanVien> danhSach = new List<NhanVien>();
+
+            string query = "SELECT * FROM dbo.NhanVien";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                danhSach.Add(new NhanVien(item));
+            }
+            return danhSach;
+        }
+        public bool ThemNhanVien(int maNhomNV, string tenDanhNhap,string matKhau, string hoTen, string gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, bool trangThai )
+        {
+            string sql = "EXEC dbo.P_ThemNhanVien @MaNhomNV , @TenDanhNhap , @MatKhau , @HoTen , @GioiTinh , @NgaySinh , @DiaChi , @SDT , @TrangThai ";
+            int result = DataProvider.Instance.ExcuteNonQuery(sql, new Object[] { maNhomNV, tenDanhNhap, matKhau, hoTen, gioiTinh, ngaySinh, diaChi, soDienThoai, trangThai });
+            return result > 0;
+        }
+        public bool SuaNhanVien(int maNV,int maNhomNV, string hoTen, string gioiTinh, DateTime ngaySinh, string diaChi, string soDienThoai, bool trangThai)
+        {
+            bool result = false;
+            string query = "EXEC dbo.P_SuaNhanVien @MaNV , @MaNhomNV , @HoTen , @GioiTinh , @NgaySinh , @DiaChi , @SDT , @TrangThai ";
+            result = DataProvider.Instance.ExcuteNonQuery(query, new object[] { maNV, hoTen, gioiTinh, ngaySinh, diaChi, soDienThoai, trangThai}) > 0;
+            return result;
+        }
         public NhanVien LayNhanVienDangNhap(string userName, string password)
         {
             NhanVien nhanVien = null;
