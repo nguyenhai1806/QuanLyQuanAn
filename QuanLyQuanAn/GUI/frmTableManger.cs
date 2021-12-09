@@ -20,6 +20,7 @@ namespace QuanLyQuanAn.GUI
             thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
         }
 
+        #region Nối form
         private void thôngTinCáNhanToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -78,5 +79,18 @@ namespace QuanLyQuanAn.GUI
         {
             e.Cancel = true;
         }
+        #endregion
+
+        #region Load loại món, Món ăn
+
+        #endregion
+
+        #region Load bàn
+
+        #endregion
+
+        #region Thêm món, chuyển bàn, thanh toán
+
+        #endregion
     }
 }
