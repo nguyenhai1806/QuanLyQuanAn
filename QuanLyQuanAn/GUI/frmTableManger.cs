@@ -101,7 +101,7 @@ namespace QuanLyQuanAn.GUI
             {
                 Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
-
+                
                 switch (item.TrangThai)
                 {
                     case "Trống":

@@ -23,8 +23,8 @@ namespace QuanLyQuanAn.DTO
 
         public Ban(DataRow row)
         {
-            MaBan = row["maKH"].ToString();
-            TenBan = row["tenKH"].ToString();
+            MaBan = row["MaBan"].ToString();
+            TenBan = row["TenBan"].ToString();
             TrangThai = row["TrangThai"].ToString();
         }
     }

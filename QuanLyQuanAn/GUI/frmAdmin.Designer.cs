@@ -63,6 +63,7 @@ namespace QuanLyQuanAn.GUI
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_NV_CapLaiMK = new System.Windows.Forms.Button();
@@ -152,7 +153,6 @@ namespace QuanLyQuanAn.GUI
             this.btn_MonAn_Search = new System.Windows.Forms.Button();
             this.txt_MonAn_Search = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label13 = new System.Windows.Forms.Label();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -408,7 +408,7 @@ namespace QuanLyQuanAn.GUI
             this.dgv_NhomNV.Name = "dgv_NhomNV";
             this.dgv_NhomNV.RowHeadersWidth = 51;
             this.dgv_NhomNV.RowTemplate.Height = 24;
-            this.dgv_NhomNV.Size = new System.Drawing.Size(814, 725);
+            this.dgv_NhomNV.Size = new System.Drawing.Size(814, 680);
             this.dgv_NhomNV.TabIndex = 1;
             // 
             // panel38
@@ -472,7 +472,7 @@ namespace QuanLyQuanAn.GUI
             this.dgv_ThongKe.Name = "dgv_ThongKe";
             this.dgv_ThongKe.RowHeadersWidth = 51;
             this.dgv_ThongKe.RowTemplate.Height = 24;
-            this.dgv_ThongKe.Size = new System.Drawing.Size(1413, 724);
+            this.dgv_ThongKe.Size = new System.Drawing.Size(1413, 689);
             this.dgv_ThongKe.TabIndex = 4;
             // 
             // panel6
@@ -554,6 +554,16 @@ namespace QuanLyQuanAn.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1427, 826);
             this.panel2.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(899, 759);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(87, 26);
+            this.label13.TabIndex = 20;
+            this.label13.Text = "Mã NV";
             // 
             // lblGioiTinh
             // 
@@ -922,7 +932,7 @@ namespace QuanLyQuanAn.GUI
             this.dgv_NhanVien.Name = "dgv_NhanVien";
             this.dgv_NhanVien.RowHeadersWidth = 51;
             this.dgv_NhanVien.RowTemplate.Height = 24;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(816, 732);
+            this.dgv_NhanVien.Size = new System.Drawing.Size(816, 691);
             this.dgv_NhanVien.TabIndex = 1;
             this.dgv_NhanVien.Click += new System.EventHandler(this.dgv_NhanVien_Click);
             // 
@@ -1155,7 +1165,7 @@ namespace QuanLyQuanAn.GUI
             this.dgv_LoaiMon.Name = "dgv_LoaiMon";
             this.dgv_LoaiMon.RowHeadersWidth = 51;
             this.dgv_LoaiMon.RowTemplate.Height = 24;
-            this.dgv_LoaiMon.Size = new System.Drawing.Size(807, 729);
+            this.dgv_LoaiMon.Size = new System.Drawing.Size(807, 675);
             this.dgv_LoaiMon.TabIndex = 1;
             // 
             // panel44
@@ -1449,7 +1459,7 @@ namespace QuanLyQuanAn.GUI
             this.dgv_MonAn.Name = "dgv_MonAn";
             this.dgv_MonAn.RowHeadersWidth = 51;
             this.dgv_MonAn.RowTemplate.Height = 24;
-            this.dgv_MonAn.Size = new System.Drawing.Size(807, 729);
+            this.dgv_MonAn.Size = new System.Drawing.Size(807, 685);
             this.dgv_MonAn.TabIndex = 1;
             // 
             // panel58
@@ -1484,16 +1494,6 @@ namespace QuanLyQuanAn.GUI
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(899, 759);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 26);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Mã NV";
             // 
             // frmAdmin
             // 
