@@ -47,12 +47,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\BanDAO.cs" />
     <Compile Include="DAL\DataProvider.cs" />
     <Compile Include="DAL\KhachHangDAO.cs" />
     <Compile Include="DAL\LoaiMonDAO.cs" />
     <Compile Include="DAL\MonAnDAO.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\NhomNVDAO.cs" />
+    <Compile Include="DTO\Ban.cs" />
     <Compile Include="DTO\BienToanCuc.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiMon.cs" />

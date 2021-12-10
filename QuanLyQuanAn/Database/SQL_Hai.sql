@@ -3,7 +3,7 @@ GO
 
 SELECT * FROM dbo.NhanVien
 UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'
-UPDATE dbo.NhanVien SET TenDangNhap = '1' WHERE MaNV = 1
+
 
 CREATE PROC P_LayNhanVienDangNhap
 	@Username NVARCHAR(100), @MatKhau NVARCHAR(100)

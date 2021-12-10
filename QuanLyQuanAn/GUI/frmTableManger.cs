@@ -1,4 +1,5 @@
-﻿using QuanLyQuanAn.DTO;
+﻿using QuanLyQuanAn.DAL;
+using QuanLyQuanAn.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +14,15 @@ namespace QuanLyQuanAn.GUI
 {
     public partial class frmTableManger : Form
     {
+        BindingSource dsBan = new BindingSource();
+
         public frmTableManger()
         {
             InitializeComponent();
             this.CenterToScreen();
             thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
+
+            hienthiDanhSachBan();
         }
 
         #region Nối form
@@ -86,6 +91,28 @@ namespace QuanLyQuanAn.GUI
         #endregion
 
         #region Load bàn
+
+
+        void hienthiDanhSachBan()
+        {
+            List<Ban> tableList = BanDAO.Instance.LayDSBan();
+
+            foreach (Ban item in tableList)
+            {
+                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
+
+                switch (item.TrangThai)
+                {
+                    case "Trống":
+                        btn.BackColor = Color.Aqua;
+                        break;
+                    default:
+                        btn.BackColor = Color.LightPink;
+                        break;
+                }
+            }
+        }
 
         #endregion
 
