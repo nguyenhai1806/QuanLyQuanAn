@@ -11,10 +11,10 @@ namespace QuanLyQuanAn.DTO
     {
         public string MaBan { get; set; }
         public string TenBan { get; set; }
-        public string TrangThai { get; set; }
+        public bool TrangThai { get; set; }
 
 
-        public Ban(string maBan, string tenBan, string trangThai)
+        public Ban(string maBan, string tenBan, bool trangThai)
         {
             this.MaBan = maBan;
             this.TenBan = tenBan;
@@ -25,7 +25,7 @@ namespace QuanLyQuanAn.DTO
         {
             MaBan = row["MaBan"].ToString();
             TenBan = row["TenBan"].ToString();
-            TrangThai = row["TrangThai"].ToString();
+            TrangThai = Boolean.Parse(row["TrangThai"].ToString());
         }
     }
 }

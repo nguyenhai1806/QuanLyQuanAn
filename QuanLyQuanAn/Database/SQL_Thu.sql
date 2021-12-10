@@ -17,3 +17,7 @@ AS
 GO
 
 
+update Ban
+set TrangThai = 0
+
+

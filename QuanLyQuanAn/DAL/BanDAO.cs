@@ -25,14 +25,14 @@ namespace QuanLyQuanAn.DAL
         }
         #endregion
 
-        public static int TableWidth = 100;
-        public static int TableHeight = 100;
+        public static int TableWidth = 130;
+        public static int TableHeight = 130;
 
         public List<Ban> LayDSBan()
         {
             List<Ban> danhSach = new List<Ban>();
 
-            string query = "SELECT * FROM dbo.Ban";
+            string query = "SELECT * FROM Ban";
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)

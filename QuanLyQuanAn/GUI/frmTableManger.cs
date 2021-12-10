@@ -92,7 +92,6 @@ namespace QuanLyQuanAn.GUI
 
         #region Load bàn
 
-
         void hienthiDanhSachBan()
         {
             List<Ban> tableList = BanDAO.Instance.LayDSBan();
@@ -101,16 +100,18 @@ namespace QuanLyQuanAn.GUI
             {
                 Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
-                
+
                 switch (item.TrangThai)
                 {
-                    case "Trống":
+                    case false:
                         btn.BackColor = Color.Aqua;
                         break;
+
                     default:
                         btn.BackColor = Color.LightPink;
                         break;
                 }
+                flpTable.Controls.Add(btn);
             }
         }
 

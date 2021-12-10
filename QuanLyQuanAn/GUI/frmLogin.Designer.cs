@@ -188,7 +188,7 @@ namespace QuanLyQuanAn.GUI
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(328, 30);
             this.txtUsername.TabIndex = 1;
-            this.txtUsername.Text = "NguyenHai";
+            this.txtUsername.Text = "ThuNguyen";
             // 
             // errorProvider1
             // 
