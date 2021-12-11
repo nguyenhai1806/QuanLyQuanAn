@@ -59,7 +59,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_Ban.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_Ban.FormattingEnabled = true;
-            this.cbb_Ban.Location = new System.Drawing.Point(713, 745);
+            this.cbb_Ban.Location = new System.Drawing.Point(858, 813);
             this.cbb_Ban.Name = "cbb_Ban";
             this.cbb_Ban.Size = new System.Drawing.Size(162, 30);
             this.cbb_Ban.TabIndex = 6;
@@ -67,7 +67,7 @@ namespace QuanLyQuanAn.GUI
             // btn_ChuyenBan
             // 
             this.btn_ChuyenBan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ChuyenBan.Location = new System.Drawing.Point(713, 700);
+            this.btn_ChuyenBan.Location = new System.Drawing.Point(858, 768);
             this.btn_ChuyenBan.Name = "btn_ChuyenBan";
             this.btn_ChuyenBan.Size = new System.Drawing.Size(162, 39);
             this.btn_ChuyenBan.TabIndex = 7;
@@ -77,7 +77,7 @@ namespace QuanLyQuanAn.GUI
             // cbb_ThanhToan
             // 
             this.cbb_ThanhToan.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_ThanhToan.Location = new System.Drawing.Point(979, 704);
+            this.cbb_ThanhToan.Location = new System.Drawing.Point(1308, 768);
             this.cbb_ThanhToan.Name = "cbb_ThanhToan";
             this.cbb_ThanhToan.Size = new System.Drawing.Size(156, 71);
             this.cbb_ThanhToan.TabIndex = 5;
@@ -86,9 +86,9 @@ namespace QuanLyQuanAn.GUI
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(713, 153);
+            this.panel3.Location = new System.Drawing.Point(858, 159);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(431, 545);
+            this.panel3.Size = new System.Drawing.Size(606, 603);
             this.panel3.TabIndex = 8;
             // 
             // panel2
@@ -97,9 +97,9 @@ namespace QuanLyQuanAn.GUI
             this.panel2.Controls.Add(this.btn_ThemMon);
             this.panel2.Controls.Add(this.cbb_MonAn);
             this.panel2.Controls.Add(this.ccb_LoaiMon);
-            this.panel2.Location = new System.Drawing.Point(713, 33);
+            this.panel2.Location = new System.Drawing.Point(854, 37);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(431, 112);
+            this.panel2.Size = new System.Drawing.Size(610, 112);
             this.panel2.TabIndex = 7;
             // 
             // cbb_SoLuong
@@ -107,13 +107,13 @@ namespace QuanLyQuanAn.GUI
             this.cbb_SoLuong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_SoLuong.Location = new System.Drawing.Point(4, 76);
             this.cbb_SoLuong.Name = "cbb_SoLuong";
-            this.cbb_SoLuong.Size = new System.Drawing.Size(263, 30);
+            this.cbb_SoLuong.Size = new System.Drawing.Size(450, 30);
             this.cbb_SoLuong.TabIndex = 3;
             // 
             // btn_ThemMon
             // 
             this.btn_ThemMon.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ThemMon.Location = new System.Drawing.Point(273, 4);
+            this.btn_ThemMon.Location = new System.Drawing.Point(459, 4);
             this.btn_ThemMon.Name = "btn_ThemMon";
             this.btn_ThemMon.Size = new System.Drawing.Size(148, 100);
             this.btn_ThemMon.TabIndex = 4;
@@ -126,7 +126,7 @@ namespace QuanLyQuanAn.GUI
             this.cbb_MonAn.FormattingEnabled = true;
             this.cbb_MonAn.Location = new System.Drawing.Point(4, 40);
             this.cbb_MonAn.Name = "cbb_MonAn";
-            this.cbb_MonAn.Size = new System.Drawing.Size(262, 30);
+            this.cbb_MonAn.Size = new System.Drawing.Size(449, 30);
             this.cbb_MonAn.TabIndex = 2;
             // 
             // ccb_LoaiMon
@@ -135,7 +135,7 @@ namespace QuanLyQuanAn.GUI
             this.ccb_LoaiMon.FormattingEnabled = true;
             this.ccb_LoaiMon.Location = new System.Drawing.Point(4, 4);
             this.ccb_LoaiMon.Name = "ccb_LoaiMon";
-            this.ccb_LoaiMon.Size = new System.Drawing.Size(262, 30);
+            this.ccb_LoaiMon.Size = new System.Drawing.Size(449, 30);
             this.ccb_LoaiMon.TabIndex = 1;
             // 
             // panel1
@@ -143,14 +143,14 @@ namespace QuanLyQuanAn.GUI
             this.panel1.Controls.Add(this.flpTable);
             this.panel1.Location = new System.Drawing.Point(12, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(694, 742);
+            this.panel1.Size = new System.Drawing.Size(836, 810);
             this.panel1.TabIndex = 6;
             // 
             // flpTable
             // 
             this.flpTable.Location = new System.Drawing.Point(4, 4);
             this.flpTable.Name = "flpTable";
-            this.flpTable.Size = new System.Drawing.Size(687, 735);
+            this.flpTable.Size = new System.Drawing.Size(822, 803);
             this.flpTable.TabIndex = 0;
             // 
             // menuStrip1
@@ -163,7 +163,7 @@ namespace QuanLyQuanAn.GUI
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1147, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1498, 28);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -223,7 +223,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 787);
+            this.ClientSize = new System.Drawing.Size(1498, 855);
             this.Controls.Add(this.cbb_Ban);
             this.Controls.Add(this.btn_ChuyenBan);
             this.Controls.Add(this.cbb_ThanhToan);

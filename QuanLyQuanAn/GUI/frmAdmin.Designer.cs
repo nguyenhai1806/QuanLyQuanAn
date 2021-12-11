@@ -63,7 +63,6 @@ namespace QuanLyQuanAn.GUI
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label13 = new System.Windows.Forms.Label();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_NV_CapLaiMK = new System.Windows.Forms.Button();
@@ -543,7 +542,6 @@ namespace QuanLyQuanAn.GUI
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label13);
             this.panel2.Controls.Add(this.lblGioiTinh);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.panel4);
@@ -554,16 +552,6 @@ namespace QuanLyQuanAn.GUI
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1427, 826);
             this.panel2.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(899, 759);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(87, 26);
-            this.label13.TabIndex = 20;
-            this.label13.Text = "Mã NV";
             // 
             // lblGioiTinh
             // 
@@ -1708,6 +1696,5 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label lblGioiTinh;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.Label label13;
     }
 }

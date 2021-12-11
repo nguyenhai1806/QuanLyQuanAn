@@ -20,6 +20,7 @@ namespace QuanLyQuanAn.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
+
             thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
 
             hienthiDanhSachBan();
@@ -104,11 +105,11 @@ namespace QuanLyQuanAn.GUI
                 switch (item.TrangThai)
                 {
                     case false:
-                        btn.BackColor = Color.Aqua;
+                        btn.BackColor = Color.FromArgb(223, 215, 192);
                         break;
 
                     default:
-                        btn.BackColor = Color.LightPink;
+                        btn.BackColor = Color.FromArgb(252, 243, 210);
                         break;
                 }
                 flpTable.Controls.Add(btn);
