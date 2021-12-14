@@ -184,7 +184,7 @@ namespace QuanLyQuanAn
             this.lbl_Hide.AutoSize = true;
             this.lbl_Hide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Hide.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Hide.Image")));
-            this.lbl_Hide.Location = new System.Drawing.Point(516, 249);
+            this.lbl_Hide.Location = new System.Drawing.Point(516, 246);
             this.lbl_Hide.Name = "lbl_Hide";
             this.lbl_Hide.Size = new System.Drawing.Size(24, 20);
             this.lbl_Hide.TabIndex = 18;

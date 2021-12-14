@@ -9,7 +9,7 @@ namespace QuanLyQuanAn.DTO
 {
     class LoaiMon
     {
-        public LoaiMon(int maloai, string tenloai, string trangthai)
+        public LoaiMon(int maloai, string tenloai, bool trangthai)
         {
             this.MaLoai = maloai;
             this.TenLoai = tenloai;
@@ -20,10 +20,10 @@ namespace QuanLyQuanAn.DTO
         {
             this.MaLoai = (int)row["MaLoai"];
             this.TenLoai = row["TenLoai"].ToString();
-            this.TrangThai = row["TrangThai"].ToString();
+            this.TrangThai = (bool)row["TrangThai"];
         }
 
-        private string trangThai;
+        private bool trangThai;
 
         private string tenLoai;
 
@@ -31,6 +31,6 @@ namespace QuanLyQuanAn.DTO
 
         public int MaLoai { get => maLoai; set => maLoai = value; }
         public string TenLoai { get => tenLoai; set => tenLoai = value; }
-        public string TrangThai { get => trangThai; set => trangThai = value; }
+        public bool TrangThai { get => trangThai; set => trangThai = value; }
     }
 }
