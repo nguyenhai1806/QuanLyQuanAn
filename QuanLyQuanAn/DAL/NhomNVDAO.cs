@@ -48,6 +48,16 @@ namespace QuanLyQuanAn.DAL
             }
             return null;
         }
+        public NhomNhanVien LayNNVTheoID(int id)
+        {
+            string sql = "SELECT * FROM dbo.NhomNhanVien WHERE MaNhomNV = " + id.ToString();
+            DataTable data = DataProvider.Instance.ExcuteQuery(sql);
+            foreach (DataRow item in data.Rows)
+            {
+                return new NhomNhanVien(item);
+            }
+            return null;
+        }
         public bool ThemNhomNV(string tenNhom, bool trangThai)
         {
             string sql = "EXEC dbo.P_ThemNhomNV @TenNhom , @TrangThai ";

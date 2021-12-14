@@ -142,7 +142,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(328, 30);
-            this.txt_DiaChi.TabIndex = 6;
+            this.txt_DiaChi.TabIndex = 4;
             // 
             // label7
             // 
@@ -161,7 +161,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_SDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_SDT.Name = "txt_SDT";
             this.txt_SDT.Size = new System.Drawing.Size(328, 30);
-            this.txt_SDT.TabIndex = 7;
+            this.txt_SDT.TabIndex = 5;
             this.txt_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_SDT_KeyPress);
             // 
             // label8
@@ -181,7 +181,7 @@ namespace QuanLyQuanAn.GUI
             this.btnDangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(328, 48);
-            this.btnDangNhap.TabIndex = 9;
+            this.btnDangNhap.TabIndex = 7;
             this.btnDangNhap.Text = "Lưu thông tin";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnLuu_Click);
@@ -194,7 +194,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NhomNV.Name = "txt_NhomNV";
             this.txt_NhomNV.ReadOnly = true;
             this.txt_NhomNV.Size = new System.Drawing.Size(328, 30);
-            this.txt_NhomNV.TabIndex = 8;
+            this.txt_NhomNV.TabIndex = 6;
             // 
             // rdb_Nu
             // 
@@ -204,7 +204,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_Nu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Nu.Name = "rdb_Nu";
             this.rdb_Nu.Size = new System.Drawing.Size(56, 26);
-            this.rdb_Nu.TabIndex = 4;
+            this.rdb_Nu.TabIndex = 2;
             this.rdb_Nu.TabStop = true;
             this.rdb_Nu.Text = "Nữ";
             this.rdb_Nu.UseVisualStyleBackColor = true;
@@ -218,7 +218,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_Nam.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_Nam.Name = "rdb_Nam";
             this.rdb_Nam.Size = new System.Drawing.Size(68, 26);
-            this.rdb_Nam.TabIndex = 3;
+            this.rdb_Nam.TabIndex = 1;
             this.rdb_Nam.TabStop = true;
             this.rdb_Nam.Text = "Nam";
             this.rdb_Nam.UseVisualStyleBackColor = true;
@@ -255,7 +255,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NgaySinh.Mask = "00/00/0000";
             this.txt_NgaySinh.Name = "txt_NgaySinh";
             this.txt_NgaySinh.Size = new System.Drawing.Size(328, 30);
-            this.txt_NgaySinh.TabIndex = 20;
+            this.txt_NgaySinh.TabIndex = 3;
             this.txt_NgaySinh.Leave += new System.EventHandler(this.txt_NgaySinh_Leave);
             // 
             // frmThongTinCaNhan

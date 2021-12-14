@@ -49,6 +49,7 @@ namespace QuanLyQuanAn.GUI
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
@@ -137,7 +138,7 @@ namespace QuanLyQuanAn.GUI
             this.button2.Location = new System.Drawing.Point(328, 120);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(172, 54);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Backup Diff";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -148,7 +149,7 @@ namespace QuanLyQuanAn.GUI
             this.button1.Location = new System.Drawing.Point(52, 120);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(172, 54);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Backup Full";
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -159,7 +160,7 @@ namespace QuanLyQuanAn.GUI
             this.button3.Location = new System.Drawing.Point(604, 120);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(172, 54);
-            this.button3.TabIndex = 15;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Backup Log";
             this.button3.UseVisualStyleBackColor = true;
             // 
@@ -210,12 +211,14 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.Controls.Add(this.button5, 2, 1);
             this.tableLayoutPanel3.Controls.Add(this.button4, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.button7, 1, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 82);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 3;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(810, 234);
             this.tableLayoutPanel3.TabIndex = 13;
             // 
@@ -224,7 +227,7 @@ namespace QuanLyQuanAn.GUI
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(3, 181);
+            this.label4.Location = new System.Drawing.Point(3, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(148, 28);
             this.label4.TabIndex = 3;
@@ -235,7 +238,7 @@ namespace QuanLyQuanAn.GUI
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(3, 103);
+            this.label6.Location = new System.Drawing.Point(3, 73);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(148, 28);
             this.label6.TabIndex = 2;
@@ -245,63 +248,63 @@ namespace QuanLyQuanAn.GUI
             // 
             this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(157, 24);
+            this.textBox5.Location = new System.Drawing.Point(157, 14);
             this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(456, 30);
-            this.textBox5.TabIndex = 4;
+            this.textBox5.TabIndex = 1;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 102);
+            this.textBox1.Location = new System.Drawing.Point(157, 72);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(456, 30);
-            this.textBox1.TabIndex = 5;
+            this.textBox1.TabIndex = 3;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(157, 180);
+            this.textBox2.Location = new System.Drawing.Point(157, 130);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(456, 30);
-            this.textBox2.TabIndex = 6;
+            this.textBox2.TabIndex = 5;
             // 
             // button6
             // 
             this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(619, 18);
+            this.button6.Location = new System.Drawing.Point(619, 8);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(188, 42);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Restorse Full";
+            this.button6.TabIndex = 2;
+            this.button6.Text = "File";
             this.button6.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
             this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(619, 96);
+            this.button5.Location = new System.Drawing.Point(619, 66);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(188, 42);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Restorse Diff";
+            this.button5.TabIndex = 4;
+            this.button5.Text = "File";
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(619, 173);
+            this.button4.Location = new System.Drawing.Point(619, 123);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(188, 43);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Restorse Log";
+            this.button4.TabIndex = 6;
+            this.button4.Text = "File";
             this.button4.UseVisualStyleBackColor = true;
             // 
             // label7
@@ -309,11 +312,22 @@ namespace QuanLyQuanAn.GUI
             this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 25);
+            this.label7.Location = new System.Drawing.Point(3, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(148, 28);
             this.label7.TabIndex = 1;
             this.label7.Text = "File full";
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.button7.Location = new System.Drawing.Point(157, 182);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(456, 43);
+            this.button7.TabIndex = 7;
+            this.button7.Text = "RESOTRSE";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
@@ -389,5 +403,6 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button7;
     }
 }

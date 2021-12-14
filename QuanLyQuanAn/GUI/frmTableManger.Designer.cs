@@ -330,7 +330,7 @@ namespace QuanLyQuanAn.GUI
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(253, 34);
-            this.txtUsername.TabIndex = 5;
+            this.txtUsername.TabIndex = 6;
             // 
             // label2
             // 
@@ -426,7 +426,7 @@ namespace QuanLyQuanAn.GUI
             this.listView1.Location = new System.Drawing.Point(3, 147);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(431, 410);
-            this.listView1.TabIndex = 2;
+            this.listView1.TabIndex = 5;
             this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // frmTableManger

@@ -152,7 +152,7 @@ namespace QuanLyQuanAn.GUI
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(328, 30);
             this.txtPassword.TabIndex = 2;
-            this.txtPassword.Text = "2";
+            this.txtPassword.Text = "1";
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 

@@ -63,7 +63,7 @@ namespace QuanLyQuanAn
             this.txtTenServer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTenServer.Name = "txtTenServer";
             this.txtTenServer.Size = new System.Drawing.Size(367, 30);
-            this.txtTenServer.TabIndex = 5;
+            this.txtTenServer.TabIndex = 1;
             // 
             // label1
             // 
@@ -94,7 +94,7 @@ namespace QuanLyQuanAn
             this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(367, 30);
-            this.txtUsername.TabIndex = 9;
+            this.txtUsername.TabIndex = 3;
             // 
             // label4
             // 
@@ -114,7 +114,7 @@ namespace QuanLyQuanAn
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(367, 30);
-            this.txtPassword.TabIndex = 11;
+            this.txtPassword.TabIndex = 4;
             this.txtPassword.UseSystemPasswordChar = true;
             this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
@@ -136,7 +136,7 @@ namespace QuanLyQuanAn
             this.btnTestConnect.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTestConnect.Name = "btnTestConnect";
             this.btnTestConnect.Size = new System.Drawing.Size(208, 48);
-            this.btnTestConnect.TabIndex = 14;
+            this.btnTestConnect.TabIndex = 6;
             this.btnTestConnect.Text = "Test connetion";
             this.btnTestConnect.UseVisualStyleBackColor = true;
             this.btnTestConnect.Click += new System.EventHandler(this.btnTestConnect_Click);
@@ -149,7 +149,7 @@ namespace QuanLyQuanAn
             this.btnLuu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(156, 48);
-            this.btnLuu.TabIndex = 15;
+            this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Lưu";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
@@ -162,7 +162,7 @@ namespace QuanLyQuanAn
             this.chkQuyenWindows.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkQuyenWindows.Name = "chkQuyenWindows";
             this.chkQuyenWindows.Size = new System.Drawing.Size(205, 26);
-            this.chkQuyenWindows.TabIndex = 16;
+            this.chkQuyenWindows.TabIndex = 2;
             this.chkQuyenWindows.Text = "Dùng quyền Windows";
             this.chkQuyenWindows.UseVisualStyleBackColor = true;
             this.chkQuyenWindows.CheckedChanged += new System.EventHandler(this.chkQuyenWindows_CheckedChanged);
@@ -198,7 +198,7 @@ namespace QuanLyQuanAn
             this.txtDatabase.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDatabase.Name = "txtDatabase";
             this.txtDatabase.Size = new System.Drawing.Size(367, 30);
-            this.txtDatabase.TabIndex = 19;
+            this.txtDatabase.TabIndex = 5;
             // 
             // frmDoiServer
             // 

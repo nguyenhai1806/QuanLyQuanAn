@@ -38,16 +38,21 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Search = new System.Windows.Forms.Button();
             this.txt_NNV_Search = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel27 = new System.Windows.Forms.TableLayoutPanel();
+            this.btn_NNV_XuatExcel = new System.Windows.Forms.Button();
+            this.btn_NNV_NhapExcel = new System.Windows.Forms.Button();
+            this.btn_NNV_Sua = new System.Windows.Forms.Button();
+            this.btn_NNV_Them = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_NNV_Reset = new System.Windows.Forms.Button();
             this.txt_NNV_Ten = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.rdb_NNV_KhongHienThi = new System.Windows.Forms.RadioButton();
             this.rdb_NNV_HienThi = new System.Windows.Forms.RadioButton();
             this.txt_NNV_Ma = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
@@ -56,17 +61,17 @@ namespace QuanLyQuanAn.GUI
             this.txt_NV_Search = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_NV_XuatExcel = new System.Windows.Forms.Button();
+            this.btn_NV_NhapExcel = new System.Windows.Forms.Button();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_NV_CapLaiMK = new System.Windows.Forms.Button();
             this.btn_NV_Them = new System.Windows.Forms.Button();
             this.btn_NV_Sua = new System.Windows.Forms.Button();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.rdb_NV_Nam = new System.Windows.Forms.RadioButton();
             this.rdb_NV_Nu = new System.Windows.Forms.RadioButton();
-            this.btn_NV_Reset = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NV_Ten = new System.Windows.Forms.TextBox();
@@ -84,7 +89,12 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.rdb_NV_KhongHienThi = new System.Windows.Forms.RadioButton();
             this.rdb_NV_HienThi = new System.Windows.Forms.RadioButton();
+            this.cbb_NV_NhomNV = new System.Windows.Forms.ComboBox();
+            this.btn_NV_Reset = new System.Windows.Forms.Button();
+            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.lblGioiTinh = new System.Windows.Forms.Label();
+            this.lblTrangThai = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
@@ -99,8 +109,8 @@ namespace QuanLyQuanAn.GUI
             this.label27 = new System.Windows.Forms.Label();
             this.txt_LoaiMon_MaLoai = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel18 = new System.Windows.Forms.TableLayoutPanel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_LM_XuatExcel = new System.Windows.Forms.Button();
+            this.btn_LM_NhapExcel = new System.Windows.Forms.Button();
             this.btn_LoaiMon_Sua = new System.Windows.Forms.Button();
             this.btn_LoaiMon_Them = new System.Windows.Forms.Button();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
@@ -125,8 +135,8 @@ namespace QuanLyQuanAn.GUI
             this.label12 = new System.Windows.Forms.Label();
             this.txt_MonAn_Ten = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel22 = new System.Windows.Forms.TableLayoutPanel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btn_MonAn_XuatExcel = new System.Windows.Forms.Button();
+            this.btn_MonAn_NhapExcel = new System.Windows.Forms.Button();
             this.btn_MonAn_Sua = new System.Windows.Forms.Button();
             this.btn_MonAn_Them = new System.Windows.Forms.Button();
             this.tableLayoutPanel21 = new System.Windows.Forms.TableLayoutPanel();
@@ -134,12 +144,12 @@ namespace QuanLyQuanAn.GUI
             this.txt_MonAn_Search = new System.Windows.Forms.TextBox();
             this.dgv_MonAn = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dgv_NhanVien = new System.Windows.Forms.DataGridView();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhomNV)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel27.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -152,6 +162,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel8.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
             this.tableLayoutPanel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
+            this.tableLayoutPanel26.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel19.SuspendLayout();
@@ -169,7 +181,6 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel21.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MonAn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPage3
@@ -261,14 +272,81 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel5.ColumnCount = 1;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel27, 0, 1);
             this.tableLayoutPanel5.Controls.Add(this.tableLayoutPanel3, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(858, 84);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
-            this.tableLayoutPanel5.RowCount = 1;
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(564, 182);
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.37288F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.62712F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(564, 295);
             this.tableLayoutPanel5.TabIndex = 19;
+            // 
+            // tableLayoutPanel27
+            // 
+            this.tableLayoutPanel27.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.tableLayoutPanel27.ColumnCount = 4;
+            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel27.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel27.Controls.Add(this.btn_NNV_XuatExcel, 1, 0);
+            this.tableLayoutPanel27.Controls.Add(this.btn_NNV_NhapExcel, 0, 0);
+            this.tableLayoutPanel27.Controls.Add(this.btn_NNV_Sua, 3, 0);
+            this.tableLayoutPanel27.Controls.Add(this.btn_NNV_Them, 2, 0);
+            this.tableLayoutPanel27.Location = new System.Drawing.Point(3, 205);
+            this.tableLayoutPanel27.Name = "tableLayoutPanel27";
+            this.tableLayoutPanel27.RowCount = 1;
+            this.tableLayoutPanel27.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel27.Size = new System.Drawing.Size(558, 68);
+            this.tableLayoutPanel27.TabIndex = 18;
+            // 
+            // btn_NNV_XuatExcel
+            // 
+            this.btn_NNV_XuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NNV_XuatExcel.Location = new System.Drawing.Point(142, 10);
+            this.btn_NNV_XuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NNV_XuatExcel.Name = "btn_NNV_XuatExcel";
+            this.btn_NNV_XuatExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_NNV_XuatExcel.TabIndex = 5;
+            this.btn_NNV_XuatExcel.Text = "Xuất Excel";
+            this.btn_NNV_XuatExcel.UseVisualStyleBackColor = true;
+            // 
+            // btn_NNV_NhapExcel
+            // 
+            this.btn_NNV_NhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NNV_NhapExcel.Location = new System.Drawing.Point(3, 10);
+            this.btn_NNV_NhapExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NNV_NhapExcel.Name = "btn_NNV_NhapExcel";
+            this.btn_NNV_NhapExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_NNV_NhapExcel.TabIndex = 4;
+            this.btn_NNV_NhapExcel.Text = "Nhập Excel";
+            this.btn_NNV_NhapExcel.UseVisualStyleBackColor = true;
+            // 
+            // btn_NNV_Sua
+            // 
+            this.btn_NNV_Sua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NNV_Sua.Location = new System.Drawing.Point(420, 10);
+            this.btn_NNV_Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NNV_Sua.Name = "btn_NNV_Sua";
+            this.btn_NNV_Sua.Size = new System.Drawing.Size(135, 48);
+            this.btn_NNV_Sua.TabIndex = 7;
+            this.btn_NNV_Sua.Text = "Sửa";
+            this.btn_NNV_Sua.UseVisualStyleBackColor = true;
+            this.btn_NNV_Sua.Click += new System.EventHandler(this.btn_NNV_Sua_Click);
+            // 
+            // btn_NNV_Them
+            // 
+            this.btn_NNV_Them.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NNV_Them.Location = new System.Drawing.Point(281, 10);
+            this.btn_NNV_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NNV_Them.Name = "btn_NNV_Them";
+            this.btn_NNV_Them.Size = new System.Drawing.Size(133, 48);
+            this.btn_NNV_Them.TabIndex = 6;
+            this.btn_NNV_Them.Text = "Thêm";
+            this.btn_NNV_Them.UseVisualStyleBackColor = true;
+            this.btn_NNV_Them.Click += new System.EventHandler(this.btn_NNV_Them_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -281,10 +359,10 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.Controls.Add(this.btn_NNV_Reset, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_NNV_Ten, 1, 1);
             this.tableLayoutPanel3.Controls.Add(this.label20, 0, 2);
-            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.label15, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 1, 2);
             this.tableLayoutPanel3.Controls.Add(this.txt_NNV_Ma, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.label5, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 3;
@@ -313,7 +391,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NNV_Ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NNV_Ten.Name = "txt_NNV_Ten";
             this.txt_NNV_Ten.Size = new System.Drawing.Size(328, 30);
-            this.txt_NNV_Ten.TabIndex = 3;
+            this.txt_NNV_Ten.TabIndex = 1;
             // 
             // label20
             // 
@@ -325,17 +403,6 @@ namespace QuanLyQuanAn.GUI
             this.label20.Size = new System.Drawing.Size(161, 26);
             this.label20.TabIndex = 0;
             this.label20.Text = "Trạng thái";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(161, 26);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Mã nhóm NV";
             // 
             // label15
             // 
@@ -370,7 +437,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NNV_KhongHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_NNV_KhongHienThi.Name = "rdb_NNV_KhongHienThi";
             this.rdb_NNV_KhongHienThi.Size = new System.Drawing.Size(158, 26);
-            this.rdb_NNV_KhongHienThi.TabIndex = 5;
+            this.rdb_NNV_KhongHienThi.TabIndex = 3;
             this.rdb_NNV_KhongHienThi.Text = "Không hiển thị";
             this.rdb_NNV_KhongHienThi.UseVisualStyleBackColor = true;
             // 
@@ -383,7 +450,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NNV_HienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_NNV_HienThi.Name = "rdb_NNV_HienThi";
             this.rdb_NNV_HienThi.Size = new System.Drawing.Size(158, 26);
-            this.rdb_NNV_HienThi.TabIndex = 4;
+            this.rdb_NNV_HienThi.TabIndex = 2;
             this.rdb_NNV_HienThi.TabStop = true;
             this.rdb_NNV_HienThi.Text = "Hiển thị";
             this.rdb_NNV_HienThi.UseVisualStyleBackColor = true;
@@ -397,6 +464,17 @@ namespace QuanLyQuanAn.GUI
             this.txt_NNV_Ma.ReadOnly = true;
             this.txt_NNV_Ma.Size = new System.Drawing.Size(328, 30);
             this.txt_NNV_Ma.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(161, 26);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Mã nhóm NV";
             // 
             // tabControl1
             // 
@@ -437,8 +515,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel7, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel14, 1, 1);
-            this.tableLayoutPanel6.Controls.Add(this.lblGioiTinh, 1, 0);
             this.tableLayoutPanel6.Controls.Add(this.dgv_NhanVien, 0, 1);
+            this.tableLayoutPanel6.Controls.Add(this.tableLayoutPanel26, 1, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 5);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 2;
@@ -501,7 +579,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 70F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
             this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(565, 649);
+            this.tableLayoutPanel14.Size = new System.Drawing.Size(565, 711);
             this.tableLayoutPanel14.TabIndex = 28;
             // 
             // tableLayoutPanel12
@@ -511,36 +589,36 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel12.ColumnCount = 2;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.button2, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 554);
+            this.tableLayoutPanel12.Controls.Add(this.btn_NV_XuatExcel, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btn_NV_NhapExcel, 0, 0);
+            this.tableLayoutPanel12.Location = new System.Drawing.Point(3, 606);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
             this.tableLayoutPanel12.RowCount = 1;
             this.tableLayoutPanel12.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.Size = new System.Drawing.Size(559, 72);
             this.tableLayoutPanel12.TabIndex = 25;
             // 
-            // button2
+            // btn_NV_XuatExcel
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(282, 12);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(274, 48);
-            this.button2.TabIndex = 14;
-            this.button2.Text = "Xuất Excel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_NV_XuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NV_XuatExcel.Location = new System.Drawing.Point(282, 12);
+            this.btn_NV_XuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NV_XuatExcel.Name = "btn_NV_XuatExcel";
+            this.btn_NV_XuatExcel.Size = new System.Drawing.Size(274, 48);
+            this.btn_NV_XuatExcel.TabIndex = 16;
+            this.btn_NV_XuatExcel.Text = "Xuất Excel";
+            this.btn_NV_XuatExcel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_NV_NhapExcel
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(3, 12);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(273, 48);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Nhập Execl";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_NV_NhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NV_NhapExcel.Location = new System.Drawing.Point(3, 12);
+            this.btn_NV_NhapExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NV_NhapExcel.Name = "btn_NV_NhapExcel";
+            this.btn_NV_NhapExcel.Size = new System.Drawing.Size(273, 48);
+            this.btn_NV_NhapExcel.TabIndex = 15;
+            this.btn_NV_NhapExcel.Text = "Nhập Execl";
+            this.btn_NV_NhapExcel.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel11
             // 
@@ -554,7 +632,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel11.Controls.Add(this.btn_NV_CapLaiMK, 2, 0);
             this.tableLayoutPanel11.Controls.Add(this.btn_NV_Them, 0, 0);
             this.tableLayoutPanel11.Controls.Add(this.btn_NV_Sua, 1, 0);
-            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 457);
+            this.tableLayoutPanel11.Location = new System.Drawing.Point(3, 500);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
             this.tableLayoutPanel11.RowCount = 1;
             this.tableLayoutPanel11.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -603,11 +681,11 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel8.ColumnCount = 3;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.45017F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.65292F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 29.9691F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.38895F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.64195F));
+            this.tableLayoutPanel8.Controls.Add(this.label10, 0, 8);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel9, 1, 3);
-            this.tableLayoutPanel8.Controls.Add(this.btn_NV_Reset, 2, 0);
             this.tableLayoutPanel8.Controls.Add(this.label9, 0, 7);
             this.tableLayoutPanel8.Controls.Add(this.label2, 0, 4);
             this.tableLayoutPanel8.Controls.Add(this.txt_NV_Ten, 1, 2);
@@ -623,20 +701,34 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel8.Controls.Add(this.txt_NV_SDT, 1, 6);
             this.tableLayoutPanel8.Controls.Add(this.txt_NV_DiaChi, 1, 5);
             this.tableLayoutPanel8.Controls.Add(this.tableLayoutPanel10, 1, 7);
+            this.tableLayoutPanel8.Controls.Add(this.cbb_NV_NhomNV, 1, 8);
+            this.tableLayoutPanel8.Controls.Add(this.btn_NV_Reset, 2, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
-            this.tableLayoutPanel8.RowCount = 8;
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(559, 447);
+            this.tableLayoutPanel8.RowCount = 9;
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(559, 491);
             this.tableLayoutPanel8.TabIndex = 23;
             this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(3, 448);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(161, 26);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Nhóm NV";
             // 
             // tableLayoutPanel9
             // 
@@ -648,11 +740,11 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel9.Controls.Add(this.rdb_NV_Nam, 0, 0);
             this.tableLayoutPanel9.Controls.Add(this.rdb_NV_Nu, 1, 0);
-            this.tableLayoutPanel9.Location = new System.Drawing.Point(170, 168);
+            this.tableLayoutPanel9.Location = new System.Drawing.Point(170, 165);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
             this.tableLayoutPanel9.RowCount = 1;
             this.tableLayoutPanel9.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel9.Size = new System.Drawing.Size(325, 49);
+            this.tableLayoutPanel9.Size = new System.Drawing.Size(325, 48);
             this.tableLayoutPanel9.TabIndex = 24;
             // 
             // rdb_NV_Nam
@@ -668,6 +760,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NV_Nam.TabStop = true;
             this.rdb_NV_Nam.Text = "Nam";
             this.rdb_NV_Nam.UseVisualStyleBackColor = true;
+            this.rdb_NV_Nam.CheckedChanged += new System.EventHandler(this.rdb_NV_Nam_CheckedChanged);
             // 
             // rdb_NV_Nu
             // 
@@ -682,24 +775,12 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NV_Nu.Text = "Nữ";
             this.rdb_NV_Nu.UseVisualStyleBackColor = true;
             // 
-            // btn_NV_Reset
-            // 
-            this.btn_NV_Reset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_NV_Reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_NV_Reset.Image")));
-            this.btn_NV_Reset.Location = new System.Drawing.Point(501, 2);
-            this.btn_NV_Reset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_NV_Reset.Name = "btn_NV_Reset";
-            this.btn_NV_Reset.Size = new System.Drawing.Size(5, 1);
-            this.btn_NV_Reset.TabIndex = 15;
-            this.btn_NV_Reset.UseVisualStyleBackColor = true;
-            this.btn_NV_Reset.Click += new System.EventHandler(this.btn_NV_Reset_Click);
-            // 
             // label9
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(3, 403);
+            this.label9.Location = new System.Drawing.Point(3, 392);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(161, 26);
             this.label9.TabIndex = 0;
@@ -710,7 +791,7 @@ namespace QuanLyQuanAn.GUI
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 234);
+            this.label2.Location = new System.Drawing.Point(3, 230);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 26);
             this.label2.TabIndex = 0;
@@ -720,7 +801,7 @@ namespace QuanLyQuanAn.GUI
             // txt_NV_Ten
             // 
             this.txt_NV_Ten.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_NV_Ten.Location = new System.Drawing.Point(170, 122);
+            this.txt_NV_Ten.Location = new System.Drawing.Point(170, 120);
             this.txt_NV_Ten.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NV_Ten.Name = "txt_NV_Ten";
             this.txt_NV_Ten.Size = new System.Drawing.Size(325, 30);
@@ -742,7 +823,7 @@ namespace QuanLyQuanAn.GUI
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 69);
+            this.label11.Location = new System.Drawing.Point(3, 68);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(161, 26);
             this.label11.TabIndex = 0;
@@ -753,7 +834,7 @@ namespace QuanLyQuanAn.GUI
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(3, 124);
+            this.label4.Location = new System.Drawing.Point(3, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(161, 26);
             this.label4.TabIndex = 0;
@@ -764,7 +845,7 @@ namespace QuanLyQuanAn.GUI
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 179);
+            this.label3.Location = new System.Drawing.Point(3, 176);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(161, 26);
             this.label3.TabIndex = 0;
@@ -775,7 +856,7 @@ namespace QuanLyQuanAn.GUI
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 289);
+            this.label1.Location = new System.Drawing.Point(3, 284);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 26);
             this.label1.TabIndex = 0;
@@ -786,7 +867,7 @@ namespace QuanLyQuanAn.GUI
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(3, 344);
+            this.label8.Location = new System.Drawing.Point(3, 338);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 26);
             this.label8.TabIndex = 0;
@@ -800,33 +881,34 @@ namespace QuanLyQuanAn.GUI
             this.txt_NV_Ma.Name = "txt_NV_Ma";
             this.txt_NV_Ma.ReadOnly = true;
             this.txt_NV_Ma.Size = new System.Drawing.Size(325, 30);
-            this.txt_NV_Ma.TabIndex = 3;
+            this.txt_NV_Ma.TabIndex = 1;
+            this.txt_NV_Ma.TextChanged += new System.EventHandler(this.txt_NV_Ma_TextChanged);
             // 
             // txt_NV_Username
             // 
             this.txt_NV_Username.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_NV_Username.Location = new System.Drawing.Point(170, 67);
+            this.txt_NV_Username.Location = new System.Drawing.Point(170, 66);
             this.txt_NV_Username.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NV_Username.Name = "txt_NV_Username";
             this.txt_NV_Username.ReadOnly = true;
             this.txt_NV_Username.Size = new System.Drawing.Size(325, 30);
-            this.txt_NV_Username.TabIndex = 11;
+            this.txt_NV_Username.TabIndex = 2;
             // 
             // mtxt_NV_NgaySinh
             // 
             this.mtxt_NV_NgaySinh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.mtxt_NV_NgaySinh.Location = new System.Drawing.Point(171, 232);
+            this.mtxt_NV_NgaySinh.Location = new System.Drawing.Point(171, 228);
             this.mtxt_NV_NgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.mtxt_NV_NgaySinh.Mask = "00/00/0000";
             this.mtxt_NV_NgaySinh.Name = "mtxt_NV_NgaySinh";
             this.mtxt_NV_NgaySinh.Size = new System.Drawing.Size(323, 30);
-            this.mtxt_NV_NgaySinh.TabIndex = 1;
+            this.mtxt_NV_NgaySinh.TabIndex = 6;
             this.mtxt_NV_NgaySinh.Leave += new System.EventHandler(this.mtxt_NV_NgaySinh_Leave);
             // 
             // txt_NV_SDT
             // 
             this.txt_NV_SDT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_NV_SDT.Location = new System.Drawing.Point(170, 342);
+            this.txt_NV_SDT.Location = new System.Drawing.Point(170, 336);
             this.txt_NV_SDT.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NV_SDT.Name = "txt_NV_SDT";
             this.txt_NV_SDT.Size = new System.Drawing.Size(325, 30);
@@ -835,7 +917,7 @@ namespace QuanLyQuanAn.GUI
             // txt_NV_DiaChi
             // 
             this.txt_NV_DiaChi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_NV_DiaChi.Location = new System.Drawing.Point(170, 287);
+            this.txt_NV_DiaChi.Location = new System.Drawing.Point(170, 282);
             this.txt_NV_DiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NV_DiaChi.Name = "txt_NV_DiaChi";
             this.txt_NV_DiaChi.Size = new System.Drawing.Size(325, 30);
@@ -851,18 +933,18 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel10.Controls.Add(this.rdb_NV_KhongHienThi, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.rdb_NV_HienThi, 0, 0);
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(170, 388);
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(170, 381);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
             this.tableLayoutPanel10.RowCount = 1;
             this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(325, 56);
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(325, 48);
             this.tableLayoutPanel10.TabIndex = 25;
             // 
             // rdb_NV_KhongHienThi
             // 
             this.rdb_NV_KhongHienThi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rdb_NV_KhongHienThi.AutoSize = true;
-            this.rdb_NV_KhongHienThi.Location = new System.Drawing.Point(165, 15);
+            this.rdb_NV_KhongHienThi.Location = new System.Drawing.Point(165, 11);
             this.rdb_NV_KhongHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_NV_KhongHienThi.Name = "rdb_NV_KhongHienThi";
             this.rdb_NV_KhongHienThi.Size = new System.Drawing.Size(157, 26);
@@ -875,7 +957,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NV_HienThi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.rdb_NV_HienThi.AutoSize = true;
             this.rdb_NV_HienThi.Checked = true;
-            this.rdb_NV_HienThi.Location = new System.Drawing.Point(3, 15);
+            this.rdb_NV_HienThi.Location = new System.Drawing.Point(3, 11);
             this.rdb_NV_HienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_NV_HienThi.Name = "rdb_NV_HienThi";
             this.rdb_NV_HienThi.Size = new System.Drawing.Size(156, 26);
@@ -885,14 +967,77 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NV_HienThi.UseVisualStyleBackColor = true;
             this.rdb_NV_HienThi.CheckedChanged += new System.EventHandler(this.rdb_NV_HienThi_CheckedChanged);
             // 
+            // cbb_NV_NhomNV
+            // 
+            this.cbb_NV_NhomNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbb_NV_NhomNV.FormattingEnabled = true;
+            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 449);
+            this.cbb_NV_NhomNV.Name = "cbb_NV_NhomNV";
+            this.cbb_NV_NhomNV.Size = new System.Drawing.Size(325, 30);
+            this.cbb_NV_NhomNV.TabIndex = 11;
+            // 
+            // btn_NV_Reset
+            // 
+            this.btn_NV_Reset.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NV_Reset.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_NV_Reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_NV_Reset.Image")));
+            this.btn_NV_Reset.Location = new System.Drawing.Point(501, 8);
+            this.btn_NV_Reset.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NV_Reset.Name = "btn_NV_Reset";
+            this.btn_NV_Reset.Size = new System.Drawing.Size(55, 38);
+            this.btn_NV_Reset.TabIndex = 17;
+            this.btn_NV_Reset.UseVisualStyleBackColor = true;
+            this.btn_NV_Reset.Click += new System.EventHandler(this.btn_NV_Reset_Click);
+            // 
+            // dgv_NhanVien
+            // 
+            this.dgv_NhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_NhanVien.Location = new System.Drawing.Point(3, 95);
+            this.dgv_NhanVien.Name = "dgv_NhanVien";
+            this.dgv_NhanVien.RowHeadersWidth = 51;
+            this.dgv_NhanVien.RowTemplate.Height = 24;
+            this.dgv_NhanVien.Size = new System.Drawing.Size(850, 737);
+            this.dgv_NhanVien.TabIndex = 30;
+            this.dgv_NhanVien.Click += new System.EventHandler(this.dgv_NhanVien_Click_1);
+            // 
+            // tableLayoutPanel26
+            // 
+            this.tableLayoutPanel26.ColumnCount = 2;
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.Controls.Add(this.lblGioiTinh, 0, 0);
+            this.tableLayoutPanel26.Controls.Add(this.lblTrangThai, 1, 0);
+            this.tableLayoutPanel26.Location = new System.Drawing.Point(859, 3);
+            this.tableLayoutPanel26.Name = "tableLayoutPanel26";
+            this.tableLayoutPanel26.RowCount = 2;
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel26.Size = new System.Drawing.Size(200, 86);
+            this.tableLayoutPanel26.TabIndex = 31;
+            // 
             // lblGioiTinh
             // 
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGioiTinh.Location = new System.Drawing.Point(859, 0);
+            this.lblGioiTinh.Location = new System.Drawing.Point(3, 0);
             this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(0, 22);
+            this.lblGioiTinh.Size = new System.Drawing.Size(42, 22);
             this.lblGioiTinh.TabIndex = 29;
+            this.lblGioiTinh.Text = "Đây";
+            this.lblGioiTinh.TextChanged += new System.EventHandler(this.lblGioiTinh_TextChanged_1);
+            // 
+            // lblTrangThai
+            // 
+            this.lblTrangThai.AutoSize = true;
+            this.lblTrangThai.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblTrangThai.Location = new System.Drawing.Point(103, 0);
+            this.lblTrangThai.Name = "lblTrangThai";
+            this.lblTrangThai.Size = new System.Drawing.Size(0, 22);
+            this.lblTrangThai.TabIndex = 30;
+            this.lblTrangThai.TextChanged += new System.EventHandler(this.lblTrangThai_TextChanged);
             // 
             // tabPage4
             // 
@@ -1083,8 +1228,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel18.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel18.Controls.Add(this.button4, 1, 0);
-            this.tableLayoutPanel18.Controls.Add(this.button3, 0, 0);
+            this.tableLayoutPanel18.Controls.Add(this.btn_LM_XuatExcel, 1, 0);
+            this.tableLayoutPanel18.Controls.Add(this.btn_LM_NhapExcel, 0, 0);
             this.tableLayoutPanel18.Controls.Add(this.btn_LoaiMon_Sua, 3, 0);
             this.tableLayoutPanel18.Controls.Add(this.btn_LoaiMon_Them, 2, 0);
             this.tableLayoutPanel18.Location = new System.Drawing.Point(3, 186);
@@ -1094,27 +1239,27 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel18.Size = new System.Drawing.Size(556, 68);
             this.tableLayoutPanel18.TabIndex = 19;
             // 
-            // button4
+            // btn_LM_XuatExcel
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(142, 10);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 48);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Xuất Excel";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_LM_XuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LM_XuatExcel.Location = new System.Drawing.Point(142, 10);
+            this.btn_LM_XuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_LM_XuatExcel.Name = "btn_LM_XuatExcel";
+            this.btn_LM_XuatExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_LM_XuatExcel.TabIndex = 9;
+            this.btn_LM_XuatExcel.Text = "Xuất Excel";
+            this.btn_LM_XuatExcel.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_LM_NhapExcel
             // 
-            this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(3, 10);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 48);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Nhập Excel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_LM_NhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_LM_NhapExcel.Location = new System.Drawing.Point(3, 10);
+            this.btn_LM_NhapExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_LM_NhapExcel.Name = "btn_LM_NhapExcel";
+            this.btn_LM_NhapExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_LM_NhapExcel.TabIndex = 8;
+            this.btn_LM_NhapExcel.Text = "Nhập Excel";
+            this.btn_LM_NhapExcel.UseVisualStyleBackColor = true;
             // 
             // btn_LoaiMon_Sua
             // 
@@ -1332,7 +1477,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_MonAn_LoaiMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_MonAn_LoaiMon.FormattingEnabled = true;
-            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 170);
+            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 169);
             this.cbb_MonAn_LoaiMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_MonAn_LoaiMon.Name = "cbb_MonAn_LoaiMon";
             this.cbb_MonAn_LoaiMon.Size = new System.Drawing.Size(327, 30);
@@ -1434,8 +1579,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel22.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel22.Controls.Add(this.button6, 1, 0);
-            this.tableLayoutPanel22.Controls.Add(this.button5, 0, 0);
+            this.tableLayoutPanel22.Controls.Add(this.btn_MonAn_XuatExcel, 1, 0);
+            this.tableLayoutPanel22.Controls.Add(this.btn_MonAn_NhapExcel, 0, 0);
             this.tableLayoutPanel22.Controls.Add(this.btn_MonAn_Sua, 3, 0);
             this.tableLayoutPanel22.Controls.Add(this.btn_MonAn_Them, 2, 0);
             this.tableLayoutPanel22.Location = new System.Drawing.Point(3, 283);
@@ -1445,27 +1590,27 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel22.Size = new System.Drawing.Size(556, 87);
             this.tableLayoutPanel22.TabIndex = 17;
             // 
-            // button6
+            // btn_MonAn_XuatExcel
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(142, 19);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 48);
-            this.button6.TabIndex = 11;
-            this.button6.Text = "Xuất Excel";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_MonAn_XuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_MonAn_XuatExcel.Location = new System.Drawing.Point(142, 19);
+            this.btn_MonAn_XuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_MonAn_XuatExcel.Name = "btn_MonAn_XuatExcel";
+            this.btn_MonAn_XuatExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_MonAn_XuatExcel.TabIndex = 11;
+            this.btn_MonAn_XuatExcel.Text = "Xuất Excel";
+            this.btn_MonAn_XuatExcel.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btn_MonAn_NhapExcel
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Location = new System.Drawing.Point(3, 19);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(133, 48);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Nhập Excel";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_MonAn_NhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_MonAn_NhapExcel.Location = new System.Drawing.Point(3, 19);
+            this.btn_MonAn_NhapExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_MonAn_NhapExcel.Name = "btn_MonAn_NhapExcel";
+            this.btn_MonAn_NhapExcel.Size = new System.Drawing.Size(133, 48);
+            this.btn_MonAn_NhapExcel.TabIndex = 10;
+            this.btn_MonAn_NhapExcel.Text = "Nhập Excel";
+            this.btn_MonAn_NhapExcel.UseVisualStyleBackColor = true;
             // 
             // btn_MonAn_Sua
             // 
@@ -1547,19 +1692,6 @@ namespace QuanLyQuanAn.GUI
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dgv_NhanVien
-            // 
-            this.dgv_NhanVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgv_NhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_NhanVien.Location = new System.Drawing.Point(3, 95);
-            this.dgv_NhanVien.Name = "dgv_NhanVien";
-            this.dgv_NhanVien.RowHeadersWidth = 51;
-            this.dgv_NhanVien.RowTemplate.Height = 24;
-            this.dgv_NhanVien.Size = new System.Drawing.Size(850, 737);
-            this.dgv_NhanVien.TabIndex = 30;
-            // 
             // frmQuanLy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1577,6 +1709,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel27.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
@@ -1584,7 +1717,6 @@ namespace QuanLyQuanAn.GUI
             this.tabControl1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
-            this.tableLayoutPanel6.PerformLayout();
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel14.ResumeLayout(false);
@@ -1596,6 +1728,9 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel9.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
+            this.tableLayoutPanel26.ResumeLayout(false);
+            this.tableLayoutPanel26.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel19.ResumeLayout(false);
@@ -1619,7 +1754,6 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel21.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MonAn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_NhanVien)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1707,8 +1841,8 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel9;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel12;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_NV_XuatExcel;
+        private System.Windows.Forms.Button btn_NV_NhapExcel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel11;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel14;
         private System.Windows.Forms.Label lblGioiTinh;
@@ -1717,17 +1851,26 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel16;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel17;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel18;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_LM_XuatExcel;
+        private System.Windows.Forms.Button btn_LM_NhapExcel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel15;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel20;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel25;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel23;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel24;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel22;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btn_MonAn_XuatExcel;
+        private System.Windows.Forms.Button btn_MonAn_NhapExcel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel21;
         private System.Windows.Forms.DataGridView dgv_NhanVien;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ComboBox cbb_NV_NhomNV;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel26;
+        private System.Windows.Forms.Label lblTrangThai;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel27;
+        private System.Windows.Forms.Button btn_NNV_XuatExcel;
+        private System.Windows.Forms.Button btn_NNV_NhapExcel;
+        private System.Windows.Forms.Button btn_NNV_Sua;
+        private System.Windows.Forms.Button btn_NNV_Them;
     }
 }

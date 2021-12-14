@@ -50,6 +50,7 @@ namespace QuanLyQuanAn.GUI
             AddLoaiMonBinding();
             AddMonAnBinding();
             LoadLoaiMonLenCombobox(cbb_MonAn_LoaiMon);
+            LoadNVVLenCombobox(cbb_NV_NhomNV);
 
             dgv_NhanVien.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
             dgv_NhanVien.Columns["MatKhau"].Visible = false;
@@ -131,6 +132,11 @@ namespace QuanLyQuanAn.GUI
         #endregion
 
         #region Nhân Viên
+        private void LoadNVVLenCombobox(ComboBox cbb)
+        {
+            cbb.DataSource = NhomNVDAO.Instance.LayDSNhomNV();
+            cbb.DisplayMember = "TenNhom";
+        }
         private void btn_NV_Reset_Click(object sender, EventArgs e)
         {
             txt_NV_Ma.Text = null;
@@ -167,7 +173,8 @@ namespace QuanLyQuanAn.GUI
             txt_NV_DiaChi.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
             txt_NV_SDT.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "Sdt", true, DataSourceUpdateMode.Never));
             mtxt_NV_NgaySinh.DataBindings.Add("Text", dgv_NhanVien.DataSource, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
-
+            //rdb_NV_HienThi.DataBindings.Add(new Binding("Checked", dgv_MonAn.DataSource, "TrangThai", true, DataSourceUpdateMode.Never));
+            lblTrangThai.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "TrangThai", true, DataSourceUpdateMode.Never));
         }
         private void lblGioiTinh_TextChanged(object sender, EventArgs e)
         {
@@ -193,18 +200,63 @@ namespace QuanLyQuanAn.GUI
             string diaChi = txt_NV_DiaChi.Text;
             string soDienThoai = txt_NV_SDT.Text;
             bool trangThai = rdb_NV_HienThi.Checked;
+            int nhomNhanVien = (cbb_NV_NhomNV.SelectedItem as NhomNhanVien).MaNhom;
 
-            DateTime ngaySinh;
-            if (Date.laNgayHopLe(mtxt_NV_NgaySinh.Text))
+            if (userName.Length == 0 && tenNV.Length != 0 || diaChi.Length != 0 || soDienThoai.Length != 0)
             {
-                ngaySinh = Date.StringToDate(mtxt_NV_NgaySinh.Text);
+                DateTime ngaySinh;
+                if (Date.laNgayHopLe(mtxt_NV_NgaySinh.Text))
+                {
+                    ngaySinh = Date.StringToDate(mtxt_NV_NgaySinh.Text);
+                    if (NhanVienDAO.Instance.LayNhanVienTheoUsername(userName) == null)
+                    {
+                        if (NhanVienDAO.Instance.ThemNhanVien(nhomNhanVien,userName, "659cbbf1e02f19a7e2402df9d23be037",tenNV, gioiTinh,ngaySinh,diaChi,soDienThoai,trangThai))
+                        {
+                            LoadNhanVien();
+                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Thêm không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                        MessageBox.Show("Username đã tồn tại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Định dạng ngày tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
-                MessageBox.Show("Định dạng ngày tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Vui lòng điền đầy đủ dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void btn_NV_Sua_Click(object sender, EventArgs e)
         {
+            int maNV = int.Parse (txt_NV_Ma.Text);
+            string tenNV = txt_NV_Ten.Text.Trim();
+            string gioiTinh = rdb_NV_Nam.Checked ? rdb_NV_Nam.Text : rdb_NV_Nu.Text;
+            string diaChi = txt_NV_DiaChi.Text;
+            string soDienThoai = txt_NV_SDT.Text;
+            bool trangThai = rdb_NV_HienThi.Checked;
+            int nhomNhanVien = (cbb_NV_NhomNV.SelectedItem as NhomNhanVien).MaNhom;
+
+            if (tenNV.Length != 0 && gioiTinh.Length != 0 && diaChi.Length != 0 && soDienThoai.Length != 0)
+            {
+                DateTime ngaySinh;
+                if (Date.laNgayHopLe(mtxt_NV_NgaySinh.Text))
+                {
+                    ngaySinh = Date.StringToDate(mtxt_NV_NgaySinh.Text);
+                    if (NhanVienDAO.Instance.SuaNhanVien(maNV,nhomNhanVien,tenNV,gioiTinh,ngaySinh,diaChi,soDienThoai,trangThai))
+                    {
+                        LoadNhanVien();
+                        MessageBox.Show("Sửa thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Sửa không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                    MessageBox.Show("Định dạng ngày tháng không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+                MessageBox.Show("Vui lòng nhập đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
@@ -563,6 +615,68 @@ namespace QuanLyQuanAn.GUI
         private void frmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
         {
 
+        }
+
+        private void txt_NV_Ma_TextChanged(object sender, EventArgs e)
+        {
+            if (dgv_NhanVien.SelectedCells.Count > 0)
+            {
+                int id = -1;
+                try
+                {
+                    id = (int)dgv_NhanVien.SelectedCells[0].OwningRow.Cells["MaNhomNV"].Value;
+                    //NhomNhanVien nhomNhanVien = NhomNVDAO.Instance.LayNNVTheoID(id);
+                    //cbb_NV_NhomNV.SelectedItem = nhomNhanVien;
+                }
+                catch { }
+
+
+                int index = -1;
+                int i = 0;
+                foreach (NhomNhanVien item in cbb_NV_NhomNV.Items)
+                {
+                    if (item.MaNhom == id)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                cbb_NV_NhomNV.SelectedIndex = index;
+            }
+        }
+
+        private void btn_Reset_NV_Click(object sender, EventArgs e)
+        {
+            txt_NV_Ma.Text = null;
+            txt_NV_Ten.Text = null;
+            txt_NV_SDT.Text = null;
+            txt_NV_Username.Text = null;
+            txt_NV_Username.ReadOnly = false;
+            mtxt_NV_NgaySinh.Text = null;
+            txt_NV_DiaChi.Text = null;
+            rdb_NV_Nam.Checked = true;
+            rdb_NV_HienThi.Checked = true;
+            cbb_NV_NhomNV.SelectedIndex = -1;
+        }
+        private void dgv_NhanVien_Click_1(object sender, EventArgs e)
+        {
+            txt_NV_Username.ReadOnly = true;
+        }
+
+        private void rdb_NV_Nam_CheckedChanged(object sender, EventArgs e)
+        {
+            rdb_NV_Nu.Checked = !rdb_NV_Nam.Checked;
+        }
+
+        private void lblGioiTinh_TextChanged_1(object sender, EventArgs e)
+        {
+            rdb_NV_Nam.Checked = lblGioiTinh.Text.Equals(rdb_NV_Nam.Text);
+        }
+
+        private void lblTrangThai_TextChanged(object sender, EventArgs e)
+        {
+            rdb_NV_HienThi.Checked = lblTrangThai.Text.Equals("True");
         }
     }
 }

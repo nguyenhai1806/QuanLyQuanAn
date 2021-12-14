@@ -48,7 +48,7 @@ namespace QuanLyQuanAn.DAL
         {
             bool result = false;
             string query = "EXEC dbo.P_SuaNhanVien @MaNV , @MaNhomNV , @HoTen , @GioiTinh , @NgaySinh , @DiaChi , @SDT , @TrangThai ";
-            result = DataProvider.Instance.ExcuteNonQuery(query, new object[] { maNV, hoTen, gioiTinh, ngaySinh, diaChi, soDienThoai, trangThai}) > 0;
+            result = DataProvider.Instance.ExcuteNonQuery(query, new object[] {maNV,maNhomNV,hoTen, gioiTinh, ngaySinh, diaChi, soDienThoai, trangThai}) > 0;
             return result;
         }
         public NhanVien LayNhanVienDangNhap(string userName, string password)
@@ -57,6 +57,20 @@ namespace QuanLyQuanAn.DAL
 
             string query = "EXEC dbo.P_LayNhanVienDangNhap @Username , @MatKhau ";
             DataTable data = DataProvider.Instance.ExcuteQuery(query, new object[] { userName,password});
+
+            foreach (DataRow item in data.Rows)
+            {
+                nhanVien = new NhanVien(item);
+                return nhanVien;
+            }
+            return nhanVien;
+        }
+        public NhanVien LayNhanVienTheoUsername(string userName)
+        {
+            NhanVien nhanVien = null;
+
+            string query = "SELECT * FROM dbo.NhanVien WHERE TenDangNhap = '" + userName + "'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {

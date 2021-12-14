@@ -76,7 +76,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_Pass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(256, 30);
-            this.txt_Pass.TabIndex = 7;
+            this.txt_Pass.TabIndex = 1;
             this.txt_Pass.UseSystemPasswordChar = true;
             this.txt_Pass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_Pass_KeyPress);
             // 
@@ -97,7 +97,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NewPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NewPass.Name = "txt_NewPass";
             this.txt_NewPass.Size = new System.Drawing.Size(256, 30);
-            this.txt_NewPass.TabIndex = 9;
+            this.txt_NewPass.TabIndex = 2;
             this.txt_NewPass.UseSystemPasswordChar = true;
             this.txt_NewPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NewPass_KeyPress);
             // 
@@ -118,7 +118,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_RepeatPass.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_RepeatPass.Name = "txt_RepeatPass";
             this.txt_RepeatPass.Size = new System.Drawing.Size(256, 30);
-            this.txt_RepeatPass.TabIndex = 11;
+            this.txt_RepeatPass.TabIndex = 3;
             this.txt_RepeatPass.UseSystemPasswordChar = true;
             this.txt_RepeatPass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_RepeatPass_KeyPress);
             this.txt_RepeatPass.Leave += new System.EventHandler(this.txt_RepeatPass_Leave);
@@ -130,7 +130,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_DangNhap.Name = "btn_DangNhap";
             this.btn_DangNhap.Size = new System.Drawing.Size(203, 48);
-            this.btn_DangNhap.TabIndex = 12;
+            this.btn_DangNhap.TabIndex = 4;
             this.btn_DangNhap.Text = "Đổi mật khẩu";
             this.btn_DangNhap.UseVisualStyleBackColor = true;
             this.btn_DangNhap.Click += new System.EventHandler(this.btn_DangNhap_Click);
@@ -184,7 +184,7 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Hide.Location = new System.Drawing.Point(449, 153);
             this.lbl_Hide.Name = "lbl_Hide";
             this.lbl_Hide.Size = new System.Drawing.Size(24, 20);
-            this.lbl_Hide.TabIndex = 17;
+            this.lbl_Hide.TabIndex = 5;
             this.lbl_Hide.Text = "   ";
             this.lbl_Hide.Click += new System.EventHandler(this.lbl_Hide_Click);
             // 

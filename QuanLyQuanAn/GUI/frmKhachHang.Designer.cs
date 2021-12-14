@@ -55,8 +55,8 @@ namespace QuanLyQuanAn.GUI
             this.label16 = new System.Windows.Forms.Label();
             this.txtMaKhach = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_XuatExcel = new System.Windows.Forms.Button();
+            this.btn_NhapExcel = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
@@ -173,7 +173,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_Reset_KH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Reset_KH.Name = "btn_Reset_KH";
             this.btn_Reset_KH.Size = new System.Drawing.Size(54, 39);
-            this.btn_Reset_KH.TabIndex = 6;
+            this.btn_Reset_KH.TabIndex = 13;
             this.btn_Reset_KH.UseVisualStyleBackColor = true;
             this.btn_Reset_KH.Click += new System.EventHandler(this.btn_Reset_KH_Click);
             // 
@@ -203,7 +203,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_KhongHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_KhongHienThi.Name = "rdb_KhongHienThi";
             this.rdb_KhongHienThi.Size = new System.Drawing.Size(167, 26);
-            this.rdb_KhongHienThi.TabIndex = 2;
+            this.rdb_KhongHienThi.TabIndex = 8;
             this.rdb_KhongHienThi.Text = "Không hiển thị";
             this.rdb_KhongHienThi.UseVisualStyleBackColor = true;
             // 
@@ -217,7 +217,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_HienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rdb_HienThi.Name = "rdb_HienThi";
             this.rdb_HienThi.Size = new System.Drawing.Size(166, 26);
-            this.rdb_HienThi.TabIndex = 1;
+            this.rdb_HienThi.TabIndex = 7;
             this.rdb_HienThi.TabStop = true;
             this.rdb_HienThi.Text = "Hiển thị";
             this.rdb_HienThi.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@ namespace QuanLyQuanAn.GUI
             this.txtDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(345, 30);
-            this.txtDienThoai.TabIndex = 1;
+            this.txtDienThoai.TabIndex = 6;
             this.txtDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDienThoai_KeyPress);
             // 
             // txt_DiaChi
@@ -288,7 +288,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_DiaChi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_DiaChi.Name = "txt_DiaChi";
             this.txt_DiaChi.Size = new System.Drawing.Size(345, 30);
-            this.txt_DiaChi.TabIndex = 1;
+            this.txt_DiaChi.TabIndex = 5;
             // 
             // mtxt_NgaySinh
             // 
@@ -299,7 +299,7 @@ namespace QuanLyQuanAn.GUI
             this.mtxt_NgaySinh.Mask = "00/00/0000";
             this.mtxt_NgaySinh.Name = "mtxt_NgaySinh";
             this.mtxt_NgaySinh.Size = new System.Drawing.Size(343, 30);
-            this.mtxt_NgaySinh.TabIndex = 1;
+            this.mtxt_NgaySinh.TabIndex = 2;
             // 
             // txtTenKhach
             // 
@@ -407,8 +407,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel7.Controls.Add(this.button2, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.button1, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btn_XuatExcel, 1, 0);
+            this.tableLayoutPanel7.Controls.Add(this.btn_NhapExcel, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_Them, 2, 0);
             this.tableLayoutPanel7.Controls.Add(this.btn_Sua, 3, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 390);
@@ -418,29 +418,29 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel7.Size = new System.Drawing.Size(586, 84);
             this.tableLayoutPanel7.TabIndex = 22;
             // 
-            // button2
+            // btn_XuatExcel
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(149, 15);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 54);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Xuất Excel";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_XuatExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_XuatExcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_XuatExcel.Location = new System.Drawing.Point(149, 15);
+            this.btn_XuatExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_XuatExcel.Name = "btn_XuatExcel";
+            this.btn_XuatExcel.Size = new System.Drawing.Size(140, 54);
+            this.btn_XuatExcel.TabIndex = 10;
+            this.btn_XuatExcel.Text = "Xuất Excel";
+            this.btn_XuatExcel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_NhapExcel
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(3, 15);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 54);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Nhập Excel";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_NhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NhapExcel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_NhapExcel.Location = new System.Drawing.Point(3, 15);
+            this.btn_NhapExcel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NhapExcel.Name = "btn_NhapExcel";
+            this.btn_NhapExcel.Size = new System.Drawing.Size(140, 54);
+            this.btn_NhapExcel.TabIndex = 9;
+            this.btn_NhapExcel.Text = "Nhập Excel";
+            this.btn_NhapExcel.UseVisualStyleBackColor = true;
             // 
             // btn_Them
             // 
@@ -450,7 +450,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_Them.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(140, 54);
-            this.btn_Them.TabIndex = 0;
+            this.btn_Them.TabIndex = 11;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -463,7 +463,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_Sua.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(142, 54);
-            this.btn_Sua.TabIndex = 2;
+            this.btn_Sua.TabIndex = 12;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
@@ -600,8 +600,8 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_XuatExcel;
+        private System.Windows.Forms.Button btn_NhapExcel;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;

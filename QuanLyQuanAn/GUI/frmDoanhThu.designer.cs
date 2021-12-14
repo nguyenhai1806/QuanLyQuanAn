@@ -167,7 +167,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_NNV_Search.Name = "btn_NNV_Search";
             this.btn_NNV_Search.Size = new System.Drawing.Size(43, 39);
-            this.btn_NNV_Search.TabIndex = 3;
+            this.btn_NNV_Search.TabIndex = 2;
             this.btn_NNV_Search.UseVisualStyleBackColor = true;
             // 
             // txt_NNV_Search
@@ -178,7 +178,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_NNV_Search.Name = "txt_NNV_Search";
             this.txt_NNV_Search.Size = new System.Drawing.Size(350, 30);
-            this.txt_NNV_Search.TabIndex = 2;
+            this.txt_NNV_Search.TabIndex = 1;
             // 
             // tabPage1
             // 

@@ -54,13 +54,16 @@ namespace QuanLyQuanAn.GUI
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            DangXuat();
+        }
+        private void DangXuat()
+        {
             if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
             {
                 BienToanCuc.NguoiDangNhap = null;
                 this.Dispose();
             }
         }
-
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKhachHang f = new frmKhachHang();
@@ -79,7 +82,7 @@ namespace QuanLyQuanAn.GUI
 
         private void frmTableManger_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            DangXuat();
         }
         #endregion
 

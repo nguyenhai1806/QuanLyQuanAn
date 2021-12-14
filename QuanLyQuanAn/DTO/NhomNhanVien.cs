@@ -28,5 +28,6 @@ namespace QuanLyQuanAn.DTO
             TenNhom = row["TenNhom"].ToString();
             TrangThai = Boolean.Parse(row["TrangThai"].ToString());
         }
+
     }
 }
