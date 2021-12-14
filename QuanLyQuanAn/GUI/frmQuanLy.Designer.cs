@@ -970,7 +970,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_NV_NhomNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_NV_NhomNV.FormattingEnabled = true;
-            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 446);
+            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 449);
             this.cbb_NV_NhomNV.Name = "cbb_NV_NhomNV";
             this.cbb_NV_NhomNV.Size = new System.Drawing.Size(325, 30);
             this.cbb_NV_NhomNV.TabIndex = 11;
@@ -1476,7 +1476,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_MonAn_LoaiMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_MonAn_LoaiMon.FormattingEnabled = true;
-            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 170);
+            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 169);
             this.cbb_MonAn_LoaiMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_MonAn_LoaiMon.Name = "cbb_MonAn_LoaiMon";
             this.cbb_MonAn_LoaiMon.Size = new System.Drawing.Size(327, 30);
@@ -1700,7 +1700,7 @@ namespace QuanLyQuanAn.GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuanLy";
-            this.Text = "admin";
+            this.Text = "Quản lý";
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhomNV)).EndInit();

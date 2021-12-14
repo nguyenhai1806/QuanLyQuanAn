@@ -1,4 +1,5 @@
 ﻿using QuanLyQuanAn.DAL;
+using QuanLyQuanAn.DAO;
 using QuanLyQuanAn.DTO;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace QuanLyQuanAn.GUI
             InitializeComponent();
             this.CenterToScreen();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            DataProvider.Instance.ExcuteNonQuery("UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'");
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
