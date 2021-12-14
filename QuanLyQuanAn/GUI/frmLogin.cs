@@ -18,7 +18,6 @@ namespace QuanLyQuanAn.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

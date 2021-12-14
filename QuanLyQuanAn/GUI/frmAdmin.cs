@@ -13,24 +13,24 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanAn.GUI
 {
-    public partial class frmQuanLy : Form
+    public partial class frmAdmin : Form
     {
         BindingSource DSLoaiMon = new BindingSource();
         BindingSource DSMonAn = new BindingSource();
         BindingSource DSNhomNV = new BindingSource();
         BindingSource DSNhanVien = new BindingSource();
 
-        public frmQuanLy()
+        public frmAdmin()
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.WindowState = FormWindowState.Maximized;
             Load();
             Makeup.DataGridView(dgv_LoaiMon);
             Makeup.DataGridView(dgv_MonAn);
             Makeup.DataGridView(dgv_NhanVien);
             Makeup.DataGridView(dgv_MonAn);
             Makeup.DataGridView(dgv_NhomNV);
+            Makeup.DataGridView(dgv_ThongKe);
         }
         
         void Load()
@@ -66,9 +66,6 @@ namespace QuanLyQuanAn.GUI
         void LoadNhomNhanVien()
         {
             DSNhomNV.DataSource = NhomNVDAO.Instance.LayDSNhomNV();
-            dgv_NhomNV.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgv_NhomNV.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgv_NhomNV.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
         private void NhomNVBinding()
         {
@@ -147,16 +144,6 @@ namespace QuanLyQuanAn.GUI
         private void LoadNhanVien()
         {
             DSNhanVien.DataSource = NhanVienDAO.Instance.LayDSNhanVien();
-            dgv_NhanVien.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_NhanVien.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dgv_NhanVien.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgv_NhanVien.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-
         }
         private void NhanVienBinding()
         {
@@ -256,9 +243,6 @@ namespace QuanLyQuanAn.GUI
         void LoadLoaiMon()
         {
             DSLoaiMon.DataSource = LoaiMonDAO.Instance.LayDSLoaiMon();
-            dgv_LoaiMon.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_LoaiMon.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgv_LoaiMon.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
         private void rdb_LoaiMon_HienThi_CheckedChanged(object sender, EventArgs e)
         {
@@ -278,49 +262,20 @@ namespace QuanLyQuanAn.GUI
         void LoadMonAn()
         {
             DSMonAn.DataSource = MonAnDAO.Instance.LayDSMonAn();
-
-            dgv_MonAn.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_MonAn.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgv_MonAn.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_MonAn.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgv_MonAn.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
         }
         private void btn_LoaiMon_Them_Click(object sender, EventArgs e)
         {
             string tenLoai = txt_LoaiMon_Ten.Text;
             bool trangThai = rdb_LoaiMon_HienThi.Checked;
 
-            if (tenLoai == "")
+            if (LoaiMonDAO.Instance.ThemLoaiMon(tenLoai, trangThai))
             {
-                MessageBox.Show("Bạn phải nhập " + lblTenLoai.Text, "Thêm loại Món", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_LoaiMon_Ten.Focus();
-                return;
+                MessageBox.Show("Thêm loại món thành công!");
+                LoadLoaiMon();
             }
-
-            try
+            else
             {
-                LoaiMon loaiMon = LoaiMonDAO.Instance.LayLoaiMonTheoTen(tenLoai);
-                if (loaiMon != null)
-                {
-                    MessageBox.Show("Lỗi!! Loại Món này đã tồn tại!", "Thêm Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (LoaiMonDAO.Instance.ThemLoaiMon(tenLoai, trangThai))
-                    {
-                        MessageBox.Show("Thêm Loại Món thành công!", "Thêm Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadLoaiMon();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm Loại Món không thành công!", "Thêm Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Có lỗi khi thêm loại món mới!");
             }
         }
 
@@ -330,51 +285,16 @@ namespace QuanLyQuanAn.GUI
             string tenLoai = txt_LoaiMon_Ten.Text;
             bool trangThai = rdb_LoaiMon_HienThi.Checked;
 
-            if (tenLoai == "")
+            if (LoaiMonDAO.Instance.SuaLoaiMon(maLoai, tenLoai, trangThai))
             {
-                MessageBox.Show("Bạn phải nhập " + lblTenLoai.Text, "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_LoaiMon_Ten.Focus();
-                return;
-            }
-
-
-            try
-            {
-                LoaiMon loaiMon = LoaiMonDAO.Instance.LayLoaiMonTheoTen(tenLoai);
-                if (loaiMon == null || loaiMon.MaLoai != maLoai)
-                {
-                    MessageBox.Show("Lỗi!! Loại Món này đã tồn tại!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (LoaiMonDAO.Instance.SuaLoaiMon(maLoai, tenLoai, trangThai))
-                    {
-                        MessageBox.Show("Sửa Loại Món thành công!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadLoaiMon();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Sửa Loại Món không thành công!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Sửa loại món thành công!");
+                LoadLoaiMon();
 
             }
-
-            //if (LoaiMonDAO.Instance.SuaLoaiMon(maLoai, tenLoai, trangThai))
-            //{
-            //    MessageBox.Show("Sửa Loại Món thành công!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    LoadLoaiMon();
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sửa Loại Món không thành công!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            else
+            {
+                MessageBox.Show("Có lỗi khi sửa loại món mới!");
+            }
         }
         void AddLoaiMonBinding()
         {
@@ -426,46 +346,15 @@ namespace QuanLyQuanAn.GUI
             int maLoai = (cbb_MonAn_LoaiMon.SelectedItem as LoaiMon).MaLoai;
             bool trangThai = rdb_MonAn_HienThi.Checked;
 
-            if (tenMon == "")
+            if (MonAnDAO.Instance.ThemMonAn(tenMon, giaBan, maLoai, trangThai))
             {
-                MessageBox.Show("Bạn phải nhập " + lbl_MonAn_TenMon.Text, "Thêm Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_MonAn_Ten.Focus();
-                return;
+                MessageBox.Show("Thêm món thành công!");
+                LoadMonAn();
             }
-
-            if (giaBan == "")
+            else
             {
-                MessageBox.Show("Bạn phải nhập " + lbl_MonAn_GiaBan.Text, "Thêm Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_MonAn_Ten.Focus();
-                return;
+                MessageBox.Show("Có lỗi khi thêm!");
             }
-
-            try
-            {
-                MonAn monAn = MonAnDAO.Instance.LayMonAnTheoTen(tenMon);
-                if (monAn != null)
-                {
-                    MessageBox.Show("Lỗi!! Món Ăn này đã tồn tại!", "Thêm Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (MonAnDAO.Instance.ThemMonAn(tenMon, giaBan, maLoai, trangThai))
-                    {
-                        MessageBox.Show("Thêm món thành công!", "Thêm Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        LoadMonAn();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm món không thành công!", "Thêm Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-           
         }
         private void btn_MonAn_Sua_Click(object sender, EventArgs e)
         {
@@ -475,60 +364,17 @@ namespace QuanLyQuanAn.GUI
             int maLoai = (cbb_MonAn_LoaiMon.SelectedItem as LoaiMon).MaLoai;
             bool trangThai = rdb_MonAn_HienThi.Checked;
 
-            if (tenMon == "")
+            if (MonAnDAO.Instance.SuaMonAn(maMon, tenMon, giaBan, maLoai, trangThai))
             {
-                MessageBox.Show("Bạn phải nhập " + lbl_MonAn_TenMon.Text, "Sửa Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_MonAn_Ten.Focus();
-                return;
-            }
+                MessageBox.Show("Sửa món thành công!");
+                DSMonAn.ResetBindings(false);
+                LoadMonAn();
 
-            if (giaBan == "")
+            }
+            else
             {
-                MessageBox.Show("Bạn phải nhập " + lbl_MonAn_GiaBan.Text, "Sửa Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_MonAn_Ten.Focus();
-                return;
+                MessageBox.Show("Có lỗi khi sửa!");
             }
-
-            try
-            {
-                MonAn monAn = MonAnDAO.Instance.LayMonAnTheoTen(tenMon);
-                if (monAn == null || monAn.MaMon != maMon)
-                {
-                    MessageBox.Show("Lỗi!! Món Ăn này đã tồn tại!", "Sửa Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (MonAnDAO.Instance.SuaMonAn(maMon, tenMon, giaBan, maLoai, trangThai))
-                    {
-                        MessageBox.Show("Sửa món thành công!", "Sửa Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        DSMonAn.ResetBindings(false);
-                        LoadMonAn();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("Thêm món không thành công!", "Sửa Món Ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            //if (MonAnDAO.Instance.SuaMonAn(maMon, tenMon, giaBan, maLoai, trangThai))
-            //{
-            //    MessageBox.Show("Sửa món thành công!");
-            //    DSMonAn.ResetBindings(false);
-            //    LoadMonAn();
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Có lỗi khi sửa!");
-            //}
         }
         private void rdb_MonAn_HienThi_CheckedChanged(object sender, EventArgs e)
         {
@@ -540,29 +386,5 @@ namespace QuanLyQuanAn.GUI
 
         #endregion
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
     }
 }

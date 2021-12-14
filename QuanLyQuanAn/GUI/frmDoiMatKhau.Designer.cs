@@ -149,7 +149,7 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Invisible.AutoSize = true;
             this.lbl_Invisible.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Invisible.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Invisible.Image")));
-            this.lbl_Invisible.Location = new System.Drawing.Point(449, 153);
+            this.lbl_Invisible.Location = new System.Drawing.Point(455, 149);
             this.lbl_Invisible.Name = "lbl_Invisible";
             this.lbl_Invisible.Size = new System.Drawing.Size(24, 20);
             this.lbl_Invisible.TabIndex = 14;
@@ -181,7 +181,7 @@ namespace QuanLyQuanAn.GUI
             this.lbl_Hide.AutoSize = true;
             this.lbl_Hide.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Hide.Image = ((System.Drawing.Image)(resources.GetObject("lbl_Hide.Image")));
-            this.lbl_Hide.Location = new System.Drawing.Point(449, 153);
+            this.lbl_Hide.Location = new System.Drawing.Point(455, 150);
             this.lbl_Hide.Name = "lbl_Hide";
             this.lbl_Hide.Size = new System.Drawing.Size(24, 20);
             this.lbl_Hide.TabIndex = 17;
@@ -197,8 +197,10 @@ namespace QuanLyQuanAn.GUI
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(485, 402);
+            this.Controls.Add(this.lbl_Hide);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.lbl_Invisible);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btn_DangNhap);
             this.Controls.Add(this.txt_RepeatPass);
@@ -208,11 +210,8 @@ namespace QuanLyQuanAn.GUI
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_Pass);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lbl_Hide);
-            this.Controls.Add(this.lbl_Invisible);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MaximizeBox = false;
             this.Name = "frmDoiMatKhau";
             this.Text = "frmDoiMatKhau";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);

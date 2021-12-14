@@ -20,10 +20,10 @@ namespace QuanLyQuanAn.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.WindowState = FormWindowState.Maximized;
+
             thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
+
             hienthiDanhSachBan();
-            LoadLoaiMonTM();
         }
 
         #region Nối form
@@ -34,6 +34,10 @@ namespace QuanLyQuanAn.GUI
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            frmAdmin f = new frmAdmin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void thôngTinCáNhânToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -84,35 +88,7 @@ namespace QuanLyQuanAn.GUI
         #endregion
 
         #region Load loại món, Món ăn
-        void LoadLoaiMonTM()
-        {
-            List<LoaiMon> loaiMons = LoaiMonDAO.Instance.LayDSLoaiMonTM();
-            cbb_LoaiMon.DataSource = loaiMons;
-            cbb_LoaiMon.DisplayMember = "TenLoai";
-        }
 
-        void LoaiMonAnTheoMaLoaiMon(int id)
-        {
-            List<MonAn> monAns = MonAnDAO.Instance.LayDSMonAnTheoMa(id);
-            cbb_MonAn.DataSource = monAns;
-            cbb_MonAn.DisplayMember = "TenMon";
-        }
-
-        private void ccb_LoaiMon_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = 0;
-            cbb_MonAn.SelectedIndex = -1;
-            ComboBox cb = sender as ComboBox;
-
-            if (cb.SelectedItem == null)
-            {
-                return;
-            }
-
-            LoaiMon selected = cb.SelectedItem as LoaiMon;
-            id = selected.MaLoai;
-            LoaiMonAnTheoMaLoaiMon(id);
-        }
         #endregion
 
         #region Load bàn
@@ -140,33 +116,10 @@ namespace QuanLyQuanAn.GUI
             }
         }
 
-
         #endregion
 
         #region Thêm món, chuyển bàn, thanh toán
 
         #endregion
-
-        private void mónĂnNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLy f = new frmQuanLy();
-            this.Hide();
-            f.ShowDialog();
-            LoadLoaiMonTM();
-            cbb_LoaiMon.SelectedIndex = -1;
-            this.Show();
-        }
-
-        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDoanhThu f = new frmDoanhThu();
-            f.ShowDialog();
-        }
-
-        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBackup f = new frmBackup();
-            f.ShowDialog();
-        }
     }
 }

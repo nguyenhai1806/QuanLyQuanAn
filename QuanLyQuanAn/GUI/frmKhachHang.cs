@@ -32,21 +32,27 @@ namespace QuanLyQuanAn.GUI
         void hienthiDanhSachKhachHang()
         {
             dsKhachHang.DataSource = KhachHangDAO.Instance.LayDsKhachHang();
-            dgvKhachHang.Columns[0].HeaderText = "Mã Khách Hàng";
-            dgvKhachHang.Columns[1].HeaderText = "Tên Khách Hàng";
-            dgvKhachHang.Columns[2].HeaderText = "Ngày Sinh";
-            dgvKhachHang.Columns[3].HeaderText = "Giới Tính";
-            dgvKhachHang.Columns[4].HeaderText = "Địa Chỉ";
-            dgvKhachHang.Columns[5].HeaderText = "Số Điện Thoại";
-            dgvKhachHang.Columns[6].HeaderText = "Trạng Thái";
 
-            dgvKhachHang.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dgvKhachHang.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvKhachHang.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCellsExceptHeader;
-            dgvKhachHang.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvKhachHang.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvKhachHang.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dgvKhachHang.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvKhachHang.Columns[0].HeaderText = "Mã Khách Hàng";
+            dgvKhachHang.Columns[0].Width = 70;
+
+            dgvKhachHang.Columns[1].HeaderText = "Tên Khách Hàng";
+            dgvKhachHang.Columns[1].Width = 170;
+
+            dgvKhachHang.Columns[2].HeaderText = "Ngày Sinh";
+            dgvKhachHang.Columns[2].Width = 130;
+
+            dgvKhachHang.Columns[3].HeaderText = "Giới Tính";
+            dgvKhachHang.Columns[3].Width = 100;
+
+            dgvKhachHang.Columns[4].HeaderText = "Địa Chỉ";
+            dgvKhachHang.Columns[4].Width = 120;
+
+            dgvKhachHang.Columns[5].HeaderText = "Số Điện Thoại";
+            dgvKhachHang.Columns[5].Width = 140;
+
+            dgvKhachHang.Columns[6].HeaderText = "Trạng Thái";
+            dgvKhachHang.Columns[6].Width = 100;
 
         }
 
@@ -207,22 +213,6 @@ namespace QuanLyQuanAn.GUI
         private void dgvKhachHang_Click(object sender, EventArgs e)
         {
             txtDienThoai.ReadOnly = true;
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txt_Search_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void txt_Search_Click(object sender, EventArgs e)
-        {
-            txt_Search.SelectAll();
-            txt_Search.Focus();
         }
     }
 }

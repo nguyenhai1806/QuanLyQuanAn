@@ -18,8 +18,7 @@ namespace QuanLyQuanAn
         public frmDoiServer()
         {
             InitializeComponent();
-            this.CenterToParent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.CenterToScreen();
         }
 
         private void frmDoiServer_Load(object sender, EventArgs e)

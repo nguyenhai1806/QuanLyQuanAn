@@ -18,8 +18,7 @@ namespace QuanLyQuanAn.GUI
         public frmDoiMatKhau()
         {
             InitializeComponent();
-            this.CenterToParent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.CenterToScreen();
         }
 
         private void frmDoiMatKhau_Load(object sender, EventArgs e)

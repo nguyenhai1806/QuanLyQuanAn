@@ -15,8 +15,7 @@ namespace QuanLyQuanAn.GUI
         public frmAbout()
         {
             InitializeComponent();
-            this.CenterToParent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.CenterToScreen();
         }
     }
 }

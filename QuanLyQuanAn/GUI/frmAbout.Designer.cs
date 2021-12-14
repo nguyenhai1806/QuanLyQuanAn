@@ -41,7 +41,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 38);
+            this.label2.Location = new System.Drawing.Point(105, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(289, 26);
             this.label2.TabIndex = 6;
@@ -91,15 +91,13 @@ namespace QuanLyQuanAn.GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 331);
+            this.ClientSize = new System.Drawing.Size(514, 450);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
             this.Name = "frmAbout";
             this.Text = "Thông tin phần mềm";
             this.ResumeLayout(false);
