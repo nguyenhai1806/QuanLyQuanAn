@@ -217,7 +217,7 @@ namespace QuanLyQuanAn.GUI
             lblGioiTinh.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "GioiTinh", true, DataSourceUpdateMode.Never));
             txt_NV_DiaChi.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "DiaChi", true, DataSourceUpdateMode.Never));
             txt_NV_SDT.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "Sdt", true, DataSourceUpdateMode.Never));
-            mtxt_NV_NgaySinh.DataBindings.Add("Text", dgv_NhanVien.DataSource, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
+            lblNgaySinh.DataBindings.Add("Text", dgv_NhanVien.DataSource, "NgaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
             //rdb_NV_HienThi.DataBindings.Add(new Binding("Checked", dgv_MonAn.DataSource, "TrangThai", true, DataSourceUpdateMode.Never));
             lblTrangThai.DataBindings.Add(new Binding("Text", dgv_NhanVien.DataSource, "TrangThai", true, DataSourceUpdateMode.Never));
         }
@@ -654,9 +654,13 @@ namespace QuanLyQuanAn.GUI
 
 
 
+
+
         #endregion
 
-        
-        
+        private void lblNgaySinh_TextChanged(object sender, EventArgs e)
+        {
+            mtxt_NV_NgaySinh.Text = lblNgaySinh.Text;
+        }
     }
 }

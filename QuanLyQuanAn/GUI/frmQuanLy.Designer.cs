@@ -95,6 +95,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel26 = new System.Windows.Forms.TableLayoutPanel();
             this.lblGioiTinh = new System.Windows.Forms.Label();
             this.lblTrangThai = new System.Windows.Forms.Label();
+            this.lblNgaySinh = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel19 = new System.Windows.Forms.TableLayoutPanel();
@@ -1009,6 +1010,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel26.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel26.Controls.Add(this.lblGioiTinh, 0, 0);
             this.tableLayoutPanel26.Controls.Add(this.lblTrangThai, 1, 0);
+            this.tableLayoutPanel26.Controls.Add(this.lblNgaySinh, 0, 1);
             this.tableLayoutPanel26.Location = new System.Drawing.Point(859, 3);
             this.tableLayoutPanel26.Name = "tableLayoutPanel26";
             this.tableLayoutPanel26.RowCount = 2;
@@ -1037,6 +1039,16 @@ namespace QuanLyQuanAn.GUI
             this.lblTrangThai.Size = new System.Drawing.Size(0, 22);
             this.lblTrangThai.TabIndex = 30;
             this.lblTrangThai.TextChanged += new System.EventHandler(this.lblTrangThai_TextChanged);
+            // 
+            // lblNgaySinh
+            // 
+            this.lblNgaySinh.AutoSize = true;
+            this.lblNgaySinh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblNgaySinh.Location = new System.Drawing.Point(3, 43);
+            this.lblNgaySinh.Name = "lblNgaySinh";
+            this.lblNgaySinh.Size = new System.Drawing.Size(0, 22);
+            this.lblNgaySinh.TabIndex = 31;
+            this.lblNgaySinh.TextChanged += new System.EventHandler(this.lblNgaySinh_TextChanged);
             // 
             // tabPage4
             // 
@@ -1870,5 +1882,6 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.Button btn_NNV_NhapExcel;
         private System.Windows.Forms.Button btn_NNV_Sua;
         private System.Windows.Forms.Button btn_NNV_Them;
+        private System.Windows.Forms.Label lblNgaySinh;
     }
 }

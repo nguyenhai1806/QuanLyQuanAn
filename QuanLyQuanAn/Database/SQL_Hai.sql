@@ -18,9 +18,9 @@ AS
 GO
 
 ALTER PROC P_UpdateNV
-	@MaNV INT,@GioiTinh NCHAR(5), @NgaySinh DATE, @DiaChi NVARCHAR(500),@SDT CHAR(15), @MaNhomNV INT 
+	@MaNV INT,@GioiTinh NCHAR(5), @NgaySinh DATE, @DiaChi NVARCHAR(500),@SDT CHAR(15)
 AS
-	UPDATE dbo.NhanVien SET GioiTinh = GioiTinh, DiaChi = @DiaChi, SDT= @SDT, NgaySinh = @NgaySinh, MaNhomNV = @MaNhomNV WHERE MaNV = @MaNV
+	UPDATE dbo.NhanVien SET GioiTinh = GioiTinh, DiaChi = @DiaChi, SDT= @SDT, NgaySinh = @NgaySinh WHERE MaNV = @MaNV
 GO
 
 ALTER PROC P_ThemNhanVien

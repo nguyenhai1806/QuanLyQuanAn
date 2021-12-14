@@ -54,7 +54,7 @@ namespace QuanLyQuanAn.GUI
         {
             txtMaKhach.DataBindings.Add("text", dgvKhachHang.DataSource, "MaKH", true, DataSourceUpdateMode.Never);
             txtTenKhach.DataBindings.Add("text", dgvKhachHang.DataSource, "tenKH", true, DataSourceUpdateMode.Never);
-            mtxt_NgaySinh.DataBindings.Add("Text", dgvKhachHang.DataSource, "ngaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
+            lblNgaySinh.DataBindings.Add("Text", dgvKhachHang.DataSource, "ngaySinh", true, DataSourceUpdateMode.OnPropertyChanged, null, "dd/MM/yyyy");
             lblGioiTinh.DataBindings.Add("Text", dgvKhachHang.DataSource, "gioiTinh", true, DataSourceUpdateMode.Never);
             txt_DiaChi.DataBindings.Add("Text", dgvKhachHang.DataSource, "diaChi", true, DataSourceUpdateMode.Never);
             txtDienThoai.DataBindings.Add("Text", dgvKhachHang.DataSource, "sdt", true, DataSourceUpdateMode.Never);
@@ -224,6 +224,11 @@ namespace QuanLyQuanAn.GUI
         {
             txt_Search.SelectAll();
             txt_Search.Focus();
+        }
+
+        private void lblNgaySinh_TextChanged(object sender, EventArgs e)
+        {
+            mtxt_NgaySinh.Text = lblNgaySinh.Text;
         }
     }
 }
