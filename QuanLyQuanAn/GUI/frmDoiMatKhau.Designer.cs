@@ -62,7 +62,7 @@ namespace QuanLyQuanAn.GUI
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label3.Location = new System.Drawing.Point(19, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(112, 26);
@@ -83,7 +83,7 @@ namespace QuanLyQuanAn.GUI
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label2.Location = new System.Drawing.Point(19, 199);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(157, 26);
@@ -104,7 +104,7 @@ namespace QuanLyQuanAn.GUI
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(19, 251);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 26);
@@ -125,7 +125,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // btn_DangNhap
             // 
-            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DangNhap.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.btn_DangNhap.Location = new System.Drawing.Point(240, 300);
             this.btn_DangNhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_DangNhap.Name = "btn_DangNhap";
@@ -159,7 +159,7 @@ namespace QuanLyQuanAn.GUI
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
             this.label6.Location = new System.Drawing.Point(19, 103);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(115, 26);

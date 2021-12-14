@@ -21,6 +21,7 @@ namespace QuanLyQuanAn.Lib
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowTemplate.Height = 30;
             dataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView.MultiSelect = false;
             dataGridView.DefaultCellStyle.Font = new Font("Times New Roman", 12);
             dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
             dataGridView.AllowUserToResizeRows = false;

@@ -54,10 +54,10 @@ namespace QuanLyQuanAn.GUI
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tableLayoutPanel1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Location = new System.Drawing.Point(4, 31);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1054, 643);
+            this.tabPage2.Size = new System.Drawing.Size(1054, 637);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Hoá đơn";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 639);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1044, 633);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel3
@@ -93,7 +93,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(411, 633);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(411, 627);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // dataGridView2
@@ -103,11 +103,11 @@ namespace QuanLyQuanAn.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 66);
+            this.dataGridView2.Location = new System.Drawing.Point(3, 65);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 51;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(405, 564);
+            this.dataGridView2.Size = new System.Drawing.Size(405, 559);
             this.dataGridView2.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -124,7 +124,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(411, 633);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(411, 627);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // dataGridView1
@@ -134,11 +134,11 @@ namespace QuanLyQuanAn.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 66);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 65);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 564);
+            this.dataGridView1.Size = new System.Drawing.Size(405, 559);
             this.dataGridView1.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -155,7 +155,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 57);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 56);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // btn_NNV_Search
@@ -163,7 +163,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btn_NNV_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
             this.btn_NNV_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_NNV_Search.Image")));
-            this.btn_NNV_Search.Location = new System.Drawing.Point(359, 9);
+            this.btn_NNV_Search.Location = new System.Drawing.Point(359, 8);
             this.btn_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_NNV_Search.Name = "btn_NNV_Search";
             this.btn_NNV_Search.Size = new System.Drawing.Size(43, 39);
@@ -182,10 +182,10 @@ namespace QuanLyQuanAn.GUI
             // 
             // tabPage1
             // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Location = new System.Drawing.Point(4, 31);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1054, 643);
+            this.tabPage1.Size = new System.Drawing.Size(1054, 637);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -197,6 +197,7 @@ namespace QuanLyQuanAn.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(13, 13);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;

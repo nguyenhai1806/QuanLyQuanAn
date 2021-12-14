@@ -80,6 +80,7 @@ namespace QuanLyQuanAn.GUI
 
         private void btn_Reset_KH_Click(object sender, EventArgs e)
         {
+            txtMaKhach.Text = null;
             txtTenKhach.Text = null;
             mtxt_NgaySinh.Text = null;
             rdb_Nam.Checked = true;

@@ -88,12 +88,13 @@ namespace QuanLyQuanAn.GUI
             bool trangThai = rdb_NNV_HienThi.Checked;
             if (tenNhom.Length != 0)
             {
-                if (NhomNVDAO.Instance.LayNNVTheoTenNhom(tenNhom) != null)
+                if (NhomNVDAO.Instance.LayNNVTheoTenNhom(tenNhom) == null)
                 {
                     if (NhomNVDAO.Instance.ThemNhomNV(tenNhom,trangThai))
                     {
                         MessageBox.Show("Thêm thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadNhomNhanVien();
+                        LoadNVVLenCombobox(cbb_NV_NhomNV);
                     }
                     else
                         MessageBox.Show("Thêm không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -119,6 +120,7 @@ namespace QuanLyQuanAn.GUI
                     {
                         MessageBox.Show("Sửa thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadNhomNhanVien();
+                        LoadNVVLenCombobox(cbb_NV_NhomNV);
                     }
                     else
                         MessageBox.Show("Sửa không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -362,6 +364,7 @@ namespace QuanLyQuanAn.GUI
                     {
                         MessageBox.Show("Thêm Loại Món thành công!", "Thêm Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadLoaiMon();
+                        LoadLoaiMonLenCombobox(cbb_MonAn_LoaiMon);
                     }
                     else
                     {
@@ -403,7 +406,7 @@ namespace QuanLyQuanAn.GUI
                     {
                         MessageBox.Show("Sửa Loại Món thành công!", "Sửa Loại Món", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadLoaiMon();
-
+                        LoadLoaiMonLenCombobox(cbb_MonAn_LoaiMon);
                     }
                     else
                     {

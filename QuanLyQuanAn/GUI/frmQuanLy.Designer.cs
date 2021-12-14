@@ -383,6 +383,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_Reset.Size = new System.Drawing.Size(51, 39);
             this.btn_NNV_Reset.TabIndex = 8;
             this.btn_NNV_Reset.UseVisualStyleBackColor = true;
+            this.btn_NNV_Reset.Click += new System.EventHandler(this.btn_NNV_Reset_Click);
             // 
             // txt_NNV_Ten
             // 
@@ -454,6 +455,7 @@ namespace QuanLyQuanAn.GUI
             this.rdb_NNV_HienThi.TabStop = true;
             this.rdb_NNV_HienThi.Text = "Hiển thị";
             this.rdb_NNV_HienThi.UseVisualStyleBackColor = true;
+            this.rdb_NNV_HienThi.CheckedChanged += new System.EventHandler(this.rdb_NNV_HienThi_CheckedChanged);
             // 
             // txt_NNV_Ma
             // 
@@ -971,7 +973,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_NV_NhomNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_NV_NhomNV.FormattingEnabled = true;
-            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 449);
+            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 446);
             this.cbb_NV_NhomNV.Name = "cbb_NV_NhomNV";
             this.cbb_NV_NhomNV.Size = new System.Drawing.Size(325, 30);
             this.cbb_NV_NhomNV.TabIndex = 11;
@@ -1477,7 +1479,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_MonAn_LoaiMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_MonAn_LoaiMon.FormattingEnabled = true;
-            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 169);
+            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 170);
             this.cbb_MonAn_LoaiMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_MonAn_LoaiMon.Name = "cbb_MonAn_LoaiMon";
             this.cbb_MonAn_LoaiMon.Size = new System.Drawing.Size(327, 30);
