@@ -67,17 +67,29 @@
     <Compile Include="GUI\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\frmBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmBackup.designer.cs">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\frmDoanhThu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\frmDoanhThu.designer.cs">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmKhachHang.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="GUI\frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\frmAdmin.cs">
+    <Compile Include="GUI\frmQuanLy.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\frmAdmin.Designer.cs">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
+    <Compile Include="GUI\frmQuanLy.Designer.cs">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\frmDoiMatKhau.cs">
       <SubType>Form</SubType>
@@ -118,11 +130,17 @@
     <EmbeddedResource Include="GUI\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmBackup.resx">
+      <DependentUpon>frmBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\frmDoanhThu.resx">
+      <DependentUpon>frmDoanhThu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\frmAdmin.resx">
-      <DependentUpon>frmAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\frmQuanLy.resx">
+      <DependentUpon>frmQuanLy.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmDoiMatKhau.resx">
       <DependentUpon>frmDoiMatKhau.cs</DependentUpon>

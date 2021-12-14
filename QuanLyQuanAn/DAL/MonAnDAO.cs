@@ -40,6 +40,24 @@ namespace QuanLyQuanAn.DAL
             return list;
         }
 
+        //Hàm lấy danh sách Món Ăn theo Mã Loại Món
+        public List<MonAn> LayDSMonAnTheoMa(int id)
+        {
+            List<MonAn> ds = new List<MonAn>();
+
+            string query = "select * from MonAn where MaLoai = " + id + "and TrangThai = 1";
+
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                MonAn monAn = new MonAn(item);
+                ds.Add(monAn);
+            }
+
+            return ds;
+        }
+
         //Hàm thêm món ăn
         public bool ThemMonAn(string tenMon, string giaBan, int maLoai, bool trangThai)
         {
@@ -47,6 +65,18 @@ namespace QuanLyQuanAn.DAL
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;
+        }
+
+        //Hàm KT trùng tên Món Ăn
+        public MonAn LayMonAnTheoTen(string tenMon)
+        {
+            DataTable table = DataProvider.Instance.ExcuteQuery("SELECT * FROM MonAn WHERE TenMon = N'" + tenMon + "'");
+            foreach (DataRow row in table.Rows)
+            {
+                MonAn ktTenMon = new MonAn(row);
+                return ktTenMon;
+            }
+            return null;
         }
 
         //Hàm sửa món ăn

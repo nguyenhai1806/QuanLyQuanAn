@@ -10,13 +10,18 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanAn.GUI
 {
-    public partial class frmAbout : Form
+    public partial class frmBackup : Form
     {
-        public frmAbout()
+        public frmBackup()
         {
             InitializeComponent();
-            this.CenterToParent();
+            CenterToParent();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

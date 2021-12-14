@@ -45,11 +45,11 @@ namespace QuanLyQuanAn.DAL
 
         //Tim khách hàng theo số điện thoại
 
-        public List<KhachHang> TimSDT(string sdt)
+        public List<KhachHang> TimSDT(string value)
         {
             List<KhachHang> danhSach = new List<KhachHang>();
 
-            string query = "SELECT * FROM KhachHang where SDT = '" + sdt + "' ";
+            string query = String.Format("SELECT * FROM KhachHang where SDT like N'%{0}%' or TenKH Like N'%{1}%' ", value, value);
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)

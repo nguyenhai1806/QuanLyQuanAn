@@ -10,13 +10,14 @@ using System.Windows.Forms;
 
 namespace QuanLyQuanAn.GUI
 {
-    public partial class frmAbout : Form
+    public partial class frmDoanhThu : Form
     {
-        public frmAbout()
+        public frmDoanhThu()
         {
             InitializeComponent();
-            this.CenterToParent();
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            CenterToScreen();
+            this.WindowState = FormWindowState.Maximized;
+
         }
     }
 }
