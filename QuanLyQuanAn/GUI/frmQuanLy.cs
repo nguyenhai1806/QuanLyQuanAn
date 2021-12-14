@@ -134,6 +134,48 @@ namespace QuanLyQuanAn.GUI
         #endregion
 
         #region Nhân Viên
+        private void txt_NV_Ma_TextChanged(object sender, EventArgs e)
+        {
+            if (dgv_NhanVien.SelectedCells.Count > 0)
+            {
+                int id = -1;
+                try
+                {
+                    id = (int)dgv_NhanVien.SelectedCells[0].OwningRow.Cells["MaNhomNV"].Value;
+                    //NhomNhanVien nhomNhanVien = NhomNVDAO.Instance.LayNNVTheoID(id);
+                    //cbb_NV_NhomNV.SelectedItem = nhomNhanVien;
+                }
+                catch { }
+
+
+                int index = -1;
+                int i = 0;
+                foreach (NhomNhanVien item in cbb_NV_NhomNV.Items)
+                {
+                    if (item.MaNhom == id)
+                    {
+                        index = i;
+                        break;
+                    }
+                    i++;
+                }
+                cbb_NV_NhomNV.SelectedIndex = index;
+            }
+        }
+
+        private void btn_Reset_NV_Click(object sender, EventArgs e)
+        {
+            txt_NV_Ma.Text = null;
+            txt_NV_Ten.Text = null;
+            txt_NV_SDT.Text = null;
+            txt_NV_Username.Text = null;
+            txt_NV_Username.ReadOnly = false;
+            mtxt_NV_NgaySinh.Text = null;
+            txt_NV_DiaChi.Text = null;
+            rdb_NV_Nam.Checked = true;
+            rdb_NV_HienThi.Checked = true;
+            cbb_NV_NhomNV.SelectedIndex = -1;
+        }
         private void LoadNVVLenCombobox(ComboBox cbb)
         {
             cbb.DataSource = NhomNVDAO.Instance.LayDSNhomNV();
@@ -296,7 +338,25 @@ namespace QuanLyQuanAn.GUI
             else
                 this.errorProvider1.Clear();
         }
+        private void dgv_NhanVien_Click_1(object sender, EventArgs e)
+        {
+            txt_NV_Username.ReadOnly = true;
+        }
 
+        private void rdb_NV_Nam_CheckedChanged(object sender, EventArgs e)
+        {
+            rdb_NV_Nu.Checked = !rdb_NV_Nam.Checked;
+        }
+
+        private void lblGioiTinh_TextChanged_1(object sender, EventArgs e)
+        {
+            rdb_NV_Nam.Checked = lblGioiTinh.Text.Equals(rdb_NV_Nam.Text);
+        }
+
+        private void lblTrangThai_TextChanged(object sender, EventArgs e)
+        {
+            rdb_NV_HienThi.Checked = lblTrangThai.Text.Equals("True");
+        }
         #endregion
 
         #region Loại món
@@ -595,91 +655,7 @@ namespace QuanLyQuanAn.GUI
 
         #endregion
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel8_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void frmQuanLy_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void txt_NV_Ma_TextChanged(object sender, EventArgs e)
-        {
-            if (dgv_NhanVien.SelectedCells.Count > 0)
-            {
-                int id = -1;
-                try
-                {
-                    id = (int)dgv_NhanVien.SelectedCells[0].OwningRow.Cells["MaNhomNV"].Value;
-                    //NhomNhanVien nhomNhanVien = NhomNVDAO.Instance.LayNNVTheoID(id);
-                    //cbb_NV_NhomNV.SelectedItem = nhomNhanVien;
-                }
-                catch { }
-
-
-                int index = -1;
-                int i = 0;
-                foreach (NhomNhanVien item in cbb_NV_NhomNV.Items)
-                {
-                    if (item.MaNhom == id)
-                    {
-                        index = i;
-                        break;
-                    }
-                    i++;
-                }
-                cbb_NV_NhomNV.SelectedIndex = index;
-            }
-        }
-
-        private void btn_Reset_NV_Click(object sender, EventArgs e)
-        {
-            txt_NV_Ma.Text = null;
-            txt_NV_Ten.Text = null;
-            txt_NV_SDT.Text = null;
-            txt_NV_Username.Text = null;
-            txt_NV_Username.ReadOnly = false;
-            mtxt_NV_NgaySinh.Text = null;
-            txt_NV_DiaChi.Text = null;
-            rdb_NV_Nam.Checked = true;
-            rdb_NV_HienThi.Checked = true;
-            cbb_NV_NhomNV.SelectedIndex = -1;
-        }
-        private void dgv_NhanVien_Click_1(object sender, EventArgs e)
-        {
-            txt_NV_Username.ReadOnly = true;
-        }
-
-        private void rdb_NV_Nam_CheckedChanged(object sender, EventArgs e)
-        {
-            rdb_NV_Nu.Checked = !rdb_NV_Nam.Checked;
-        }
-
-        private void lblGioiTinh_TextChanged_1(object sender, EventArgs e)
-        {
-            rdb_NV_Nam.Checked = lblGioiTinh.Text.Equals(rdb_NV_Nam.Text);
-        }
-
-        private void lblTrangThai_TextChanged(object sender, EventArgs e)
-        {
-            rdb_NV_HienThi.Checked = lblTrangThai.Text.Equals("True");
-        }
+        
+        
     }
 }

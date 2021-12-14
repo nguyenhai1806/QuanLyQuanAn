@@ -526,7 +526,6 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.88889F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(1427, 835);
             this.tableLayoutPanel6.TabIndex = 16;
-            this.tableLayoutPanel6.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel6_Paint);
             // 
             // tableLayoutPanel7
             // 
@@ -719,7 +718,6 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(559, 491);
             this.tableLayoutPanel8.TabIndex = 23;
-            this.tableLayoutPanel8.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel8_Paint);
             // 
             // label10
             // 
@@ -798,7 +796,6 @@ namespace QuanLyQuanAn.GUI
             this.label2.Size = new System.Drawing.Size(161, 26);
             this.label2.TabIndex = 0;
             this.label2.Text = "Ngày sinh";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txt_NV_Ten
             // 
@@ -1704,7 +1701,6 @@ namespace QuanLyQuanAn.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmQuanLy";
             this.Text = "admin";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuanLy_FormClosing);
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_NhomNV)).EndInit();

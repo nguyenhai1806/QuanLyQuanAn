@@ -84,6 +84,27 @@ namespace QuanLyQuanAn.GUI
         {
             DangXuat();
         }
+        private void mónĂnNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuanLy f = new frmQuanLy();
+            this.Hide();
+            f.ShowDialog();
+            LoadLoaiMonTM();
+            cbb_LoaiMon.SelectedIndex = -1;
+            this.Show();
+        }
+
+        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDoanhThu f = new frmDoanhThu();
+            f.ShowDialog();
+        }
+
+        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBackup f = new frmBackup();
+            f.ShowDialog();
+        }
         #endregion
 
         #region Load loại món, Món ăn
@@ -150,26 +171,5 @@ namespace QuanLyQuanAn.GUI
 
         #endregion
 
-        private void mónĂnNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmQuanLy f = new frmQuanLy();
-            this.Hide();
-            f.ShowDialog();
-            LoadLoaiMonTM();
-            cbb_LoaiMon.SelectedIndex = -1;
-            this.Show();
-        }
-
-        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmDoanhThu f = new frmDoanhThu();
-            f.ShowDialog();
-        }
-
-        private void backupToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBackup f = new frmBackup();
-            f.ShowDialog();
-        }
     }
 }
