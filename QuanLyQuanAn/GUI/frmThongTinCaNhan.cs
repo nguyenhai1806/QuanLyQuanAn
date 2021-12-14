@@ -20,6 +20,7 @@ namespace QuanLyQuanAn.GUI
         {
             InitializeComponent();
             this.CenterToScreen();
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Load();
         }
         private void Load()

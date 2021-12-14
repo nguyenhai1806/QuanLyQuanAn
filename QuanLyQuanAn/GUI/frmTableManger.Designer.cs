@@ -50,9 +50,9 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_ChuyenBan = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTenKhach = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtUsername = new System.Windows.Forms.TextBox();
+            this.txtSoDienThoai = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbb_ThanhToan = new System.Windows.Forms.Button();
             this.cbb_Ban = new System.Windows.Forms.ComboBox();
@@ -145,7 +145,7 @@ namespace QuanLyQuanAn.GUI
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1499, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1499, 30);
             this.menuStrip1.TabIndex = 12;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -156,7 +156,7 @@ namespace QuanLyQuanAn.GUI
             this.doanhThuToolStripMenuItem,
             this.backupToolStripMenuItem});
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
-            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 24);
+            this.adminToolStripMenuItem.Size = new System.Drawing.Size(67, 26);
             this.adminToolStripMenuItem.Text = "Admin";
             this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
@@ -188,7 +188,7 @@ namespace QuanLyQuanAn.GUI
             this.đổiMậtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(140, 24);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(140, 26);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Người đăng nhập";
             // 
             // thôngTinCáNhânToolStripMenuItem1
@@ -215,14 +215,14 @@ namespace QuanLyQuanAn.GUI
             // kháchHàngToolStripMenuItem
             // 
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
-            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(100, 26);
             this.kháchHàngToolStripMenuItem.Text = "Khách hàng";
             this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -271,9 +271,9 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
             this.tableLayoutPanel5.Controls.Add(this.btn_ChuyenBan, 0, 2);
-            this.tableLayoutPanel5.Controls.Add(this.textBox1, 1, 1);
+            this.tableLayoutPanel5.Controls.Add(this.txtTenKhach, 1, 1);
             this.tableLayoutPanel5.Controls.Add(this.label1, 0, 1);
-            this.tableLayoutPanel5.Controls.Add(this.txtUsername, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtSoDienThoai, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.label2, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.cbb_ThanhToan, 1, 2);
             this.tableLayoutPanel5.Controls.Add(this.cbb_Ban, 0, 3);
@@ -301,15 +301,16 @@ namespace QuanLyQuanAn.GUI
             this.btn_ChuyenBan.Text = "Chuyển bàn";
             this.btn_ChuyenBan.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtTenKhach
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(175, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 34);
-            this.textBox1.TabIndex = 7;
+            this.txtTenKhach.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtTenKhach.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenKhach.Location = new System.Drawing.Point(175, 70);
+            this.txtTenKhach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtTenKhach.Name = "txtTenKhach";
+            this.txtTenKhach.ReadOnly = true;
+            this.txtTenKhach.Size = new System.Drawing.Size(253, 34);
+            this.txtTenKhach.TabIndex = 7;
             // 
             // label1
             // 
@@ -322,15 +323,15 @@ namespace QuanLyQuanAn.GUI
             this.label1.TabIndex = 6;
             this.label1.Text = "Tên khách";
             // 
-            // txtUsername
+            // txtSoDienThoai
             // 
-            this.txtUsername.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtUsername.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(175, 12);
-            this.txtUsername.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(253, 34);
-            this.txtUsername.TabIndex = 6;
+            this.txtSoDienThoai.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtSoDienThoai.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoDienThoai.Location = new System.Drawing.Point(175, 12);
+            this.txtSoDienThoai.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSoDienThoai.Name = "txtSoDienThoai";
+            this.txtSoDienThoai.Size = new System.Drawing.Size(253, 34);
+            this.txtSoDienThoai.TabIndex = 6;
             // 
             // label2
             // 
@@ -477,9 +478,9 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Button btn_ChuyenBan;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTenKhach;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUsername;
+        private System.Windows.Forms.TextBox txtSoDienThoai;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button cbb_ThanhToan;
         private System.Windows.Forms.ComboBox cbb_Ban;

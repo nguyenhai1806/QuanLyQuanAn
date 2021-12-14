@@ -260,6 +260,7 @@ namespace QuanLyQuanAn.GUI
             // 
             // frmThongTinCaNhan
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 566);
@@ -285,6 +286,7 @@ namespace QuanLyQuanAn.GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmThongTinCaNhan";
+            this.ShowInTaskbar = false;
             this.Text = "frmThongTinCaNhan";
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

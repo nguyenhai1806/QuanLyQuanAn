@@ -210,6 +210,7 @@ namespace QuanLyQuanAn.GUI
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1076, 686);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDoanhThu";
             this.Text = "Quản lý doanh thu";
             this.tabPage2.ResumeLayout(false);

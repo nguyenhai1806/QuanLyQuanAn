@@ -25,6 +25,7 @@ namespace QuanLyQuanAn.GUI
             InitializeComponent();
             this.CenterToScreen();
             this.WindowState = FormWindowState.Maximized;
+            
             Load();
             Makeup.DataGridView(dgv_LoaiMon);
             Makeup.DataGridView(dgv_MonAn);
