@@ -77,6 +77,7 @@
     <Compile Include="DTO\BienToanCuc.cs" />
     <Compile Include="DTO\KhachHang.cs" />
     <Compile Include="DTO\LoaiMon.cs" />
+    <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\MonAn.cs" />
     <Compile Include="DTO\NhanVien.cs" />
     <Compile Include="DTO\NhomNhanVien.cs" />
