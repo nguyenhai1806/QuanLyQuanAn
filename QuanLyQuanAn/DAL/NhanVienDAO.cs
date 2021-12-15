@@ -93,5 +93,20 @@ namespace QuanLyQuanAn.DAL
             result = DataProvider.Instance.ExcuteNonQuery(query, new object[] { maNV, gioiTinh, ngaySinh, DiaChi, sdt }) > 0;
             return result;
         }
+
+
+        public List<NhanVien> TimNhanVien(string value)
+        {
+            List<NhanVien> danhSach = new List<NhanVien>();
+
+            string query = String.Format("SELECT * FROM NhanVien where SDT like N'%{0}%' or HoTen Like N'%{1}%' ", value, value);
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                danhSach.Add(new NhanVien(item));
+            }
+            return danhSach;
+        }
     }
 }

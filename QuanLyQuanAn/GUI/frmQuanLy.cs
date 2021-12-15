@@ -662,5 +662,65 @@ namespace QuanLyQuanAn.GUI
         {
             mtxt_NV_NgaySinh.Text = lblNgaySinh.Text;
         }
+
+        private void btn_NNV_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nnv = txt_NNV_Search.Text;
+                List<NhomNhanVien> ds = NhomNVDAO.Instance.TimNhomNV(nnv);
+                dgv_NhomNV.DataSource = ds;
+                LoadNhomNhanVien();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi định dạng nhập! Vui lòng kiểm tra lại", "Tìm tên nhóm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_NV_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string nv = txt_NV_Search.Text;
+                List<NhanVien> ds = NhanVienDAO.Instance.TimNhanVien(nv);
+                dgv_NhanVien.DataSource = ds;
+                LoadNhanVien();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi định dạng nhập! Vui lòng kiểm tra lại", "Tìm nhân viên", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_LoaiMon_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string loaimon = txt_LoaiMon_Search.Text;
+                List<LoaiMon> ds = LoaiMonDAO.Instance.TimLoaiMonAn(loaimon);
+                dgv_LoaiMon.DataSource = ds;
+                LoadLoaiMon();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi định dạng nhập! Vui lòng kiểm tra lại", "Tìm tên loại món ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_MonAn_Search_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string monan = txt_MonAn_Search.Text;
+                List<MonAn> ds = MonAnDAO.Instance.TimMonAn(monan);
+                dgv_MonAn.DataSource = ds;
+                LoadMonAn();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Lỗi định dạng nhập! Vui lòng kiểm tra lại", "Tìm loại của món ăn", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

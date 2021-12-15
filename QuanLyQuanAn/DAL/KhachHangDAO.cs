@@ -45,7 +45,7 @@ namespace QuanLyQuanAn.DAL
 
         //Tim khách hàng theo số điện thoại
 
-        public List<KhachHang> TimSDT(string value)
+        public List<KhachHang> TimKH(string value)
         {
             List<KhachHang> danhSach = new List<KhachHang>();
 

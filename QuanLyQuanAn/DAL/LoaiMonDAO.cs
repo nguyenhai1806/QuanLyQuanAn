@@ -103,5 +103,20 @@ namespace QuanLyQuanAn.DAL
 
             return result > 0;
         }
+
+
+        public List<LoaiMon> TimLoaiMonAn(string value)
+        {
+            List<LoaiMon> danhSach = new List<LoaiMon>();
+
+            string query = String.Format("SELECT * FROM LoaiMonAn where TenLoai Like N'%{0}%' ", value);
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                danhSach.Add(new LoaiMon(item));
+            }
+            return danhSach;
+        }
     }
 }

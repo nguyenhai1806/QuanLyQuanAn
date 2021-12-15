@@ -21,3 +21,21 @@ update Ban
 set TrangThai = 0
 
 
+CREATE VIEW pHoaDon AS
+  select MaHD, kh.TenKH, nv.HoTen, b.TenBan, NgayLap, TongTien
+ from HoaDon hd  
+ join KhachHang kh on hd.MaKH = kh.MaKH  
+ join NhanVien nv on nv.MaNV = hd.MaNV  
+ join Ban b on b.MaBan = hd.MaBan
+ 
+
+ CREATE VIEW pCTHoaDon AS
+  select MaHD, TenMon, SoLuong, ThanhTien
+  from CTHoaDon ct 
+  join MonAn ma on ct.MaMon = ma.MaMon 
+
+
+--nếu có thấy lỗi của view thì cứ chạy bình thường
+
+
+

@@ -33,20 +33,20 @@ namespace QuanLyQuanAn.GUI
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvCTHoaDon = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_NNV_Search = new System.Windows.Forms.Button();
-            this.txt_NNV_Search = new System.Windows.Forms.TextBox();
+            this.btn_HD_Search = new System.Windows.Forms.Button();
+            this.txt_HD_Search = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHoaDon)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
@@ -87,7 +87,7 @@ namespace QuanLyQuanAn.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Controls.Add(this.dataGridView2, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.dgvCTHoaDon, 0, 1);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(420, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -96,19 +96,19 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.Size = new System.Drawing.Size(411, 627);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
-            // dataGridView2
+            // dgvCTHoaDon
             // 
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvCTHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(3, 65);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(405, 559);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvCTHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCTHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCTHoaDon.Location = new System.Drawing.Point(3, 65);
+            this.dgvCTHoaDon.Name = "dgvCTHoaDon";
+            this.dgvCTHoaDon.RowHeadersWidth = 51;
+            this.dgvCTHoaDon.RowTemplate.Height = 24;
+            this.dgvCTHoaDon.Size = new System.Drawing.Size(405, 559);
+            this.dgvCTHoaDon.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -117,7 +117,7 @@ namespace QuanLyQuanAn.GUI
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel2.ColumnCount = 1;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.dataGridView1, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.dgvHoaDon, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -127,19 +127,20 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2.Size = new System.Drawing.Size(411, 627);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvHoaDon
             // 
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvHoaDon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 559);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoaDon.Location = new System.Drawing.Point(3, 65);
+            this.dgvHoaDon.Name = "dgvHoaDon";
+            this.dgvHoaDon.RowHeadersWidth = 51;
+            this.dgvHoaDon.RowTemplate.Height = 24;
+            this.dgvHoaDon.Size = new System.Drawing.Size(405, 559);
+            this.dgvHoaDon.TabIndex = 0;
+            this.dgvHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoaDon_CellClick);
             // 
             // tableLayoutPanel4
             // 
@@ -149,8 +150,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel4.Controls.Add(this.btn_NNV_Search, 0, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_NNV_Search, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_HD_Search, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txt_HD_Search, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
@@ -158,27 +159,28 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 56);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // btn_NNV_Search
+            // btn_HD_Search
             // 
-            this.btn_NNV_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_NNV_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_NNV_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_NNV_Search.Image")));
-            this.btn_NNV_Search.Location = new System.Drawing.Point(359, 8);
-            this.btn_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_NNV_Search.Name = "btn_NNV_Search";
-            this.btn_NNV_Search.Size = new System.Drawing.Size(43, 39);
-            this.btn_NNV_Search.TabIndex = 2;
-            this.btn_NNV_Search.UseVisualStyleBackColor = true;
+            this.btn_HD_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_HD_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_HD_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_HD_Search.Image")));
+            this.btn_HD_Search.Location = new System.Drawing.Point(359, 8);
+            this.btn_HD_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_HD_Search.Name = "btn_HD_Search";
+            this.btn_HD_Search.Size = new System.Drawing.Size(43, 39);
+            this.btn_HD_Search.TabIndex = 2;
+            this.btn_HD_Search.UseVisualStyleBackColor = true;
+            this.btn_HD_Search.Click += new System.EventHandler(this.btn_HD_Search_Click);
             // 
-            // txt_NNV_Search
+            // txt_HD_Search
             // 
-            this.txt_NNV_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt_NNV_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NNV_Search.Location = new System.Drawing.Point(3, 13);
-            this.txt_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txt_NNV_Search.Name = "txt_NNV_Search";
-            this.txt_NNV_Search.Size = new System.Drawing.Size(350, 30);
-            this.txt_NNV_Search.TabIndex = 1;
+            this.txt_HD_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_HD_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_HD_Search.Location = new System.Drawing.Point(3, 13);
+            this.txt_HD_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_HD_Search.Name = "txt_HD_Search";
+            this.txt_HD_Search.Size = new System.Drawing.Size(350, 30);
+            this.txt_HD_Search.TabIndex = 1;
             // 
             // tabPage1
             // 
@@ -216,9 +218,9 @@ namespace QuanLyQuanAn.GUI
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCTHoaDon)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoaDon)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
             this.tabControl1.ResumeLayout(false);
@@ -233,11 +235,11 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvCTHoaDon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button btn_NNV_Search;
-        private System.Windows.Forms.TextBox txt_NNV_Search;
+        private System.Windows.Forms.Button btn_HD_Search;
+        private System.Windows.Forms.TextBox txt_HD_Search;
     }
 }

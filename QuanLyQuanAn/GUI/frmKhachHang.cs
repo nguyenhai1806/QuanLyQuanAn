@@ -23,13 +23,13 @@ namespace QuanLyQuanAn.GUI
             this.CenterToScreen();
             Makeup.DataGridView(dgvKhachHang);
             dgvKhachHang.DataSource = dsKhachHang;
-            hienthiDanhSachKhachHang();
+            LoadKhachHang();
             taorangbuoc();
 
             dgvKhachHang.Columns["NgaySinh"].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
-        void hienthiDanhSachKhachHang()
+        void LoadKhachHang()
         {
             dsKhachHang.DataSource = KhachHangDAO.Instance.LayDsKhachHang();
             dgvKhachHang.Columns[0].HeaderText = "Mã Khách Hàng";
@@ -95,10 +95,10 @@ namespace QuanLyQuanAn.GUI
         {
             try
             {
-                string sdt = txt_Search.Text;
-                List<KhachHang> ds = KhachHangDAO.Instance.TimSDT(sdt);
+                string kh = txt_Search.Text;
+                List<KhachHang> ds = KhachHangDAO.Instance.TimKH(kh);
                 dgvKhachHang.DataSource = ds;
-                hienthiDanhSachKhachHang();
+                LoadKhachHang();
             }
             catch (Exception)
             {
@@ -106,14 +106,7 @@ namespace QuanLyQuanAn.GUI
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txt_Search.ResetText();
-            dgvKhachHang.DataSource = dsKhachHang;
-            hienthiDanhSachKhachHang();
-        }
-
-        public void ThemKhachHang()
+        private void btn_Them_Click(object sender, EventArgs e)
         {
             try
             {
@@ -137,7 +130,7 @@ namespace QuanLyQuanAn.GUI
                     if (KhachHangDAO.Instance.themKH(tenKH, ngaySinh, gioiTinh, diaChi, sdt, trangThai))
                     {
                         MessageBox.Show("Thêm thành công!", "Thêm Khách Hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        hienthiDanhSachKhachHang();
+                        LoadKhachHang();
                     }
                     else
                         MessageBox.Show("Thêm không thành công!", "Thêm Khách Hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -145,13 +138,8 @@ namespace QuanLyQuanAn.GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.Message,"", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btn_Them_Click(object sender, EventArgs e)
-        {
-            ThemKhachHang();
         }
 
         private void btn_Sua_Click(object sender, EventArgs e)
@@ -176,7 +164,7 @@ namespace QuanLyQuanAn.GUI
                     if (KhachHangDAO.Instance.suaKHBangSDT(tenKH, ngaySinh, gioiTinh, diaChi, sdt, trangThai))
                     {
                         MessageBox.Show("Sửa thành công!", "Sửa Khách Hàng", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        hienthiDanhSachKhachHang();
+                        LoadKhachHang();
                     }
                     else
                         MessageBox.Show("Sửa không thành công!", "Sửa Khách Hàng", MessageBoxButtons.OK, MessageBoxIcon.Error);

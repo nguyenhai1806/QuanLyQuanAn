@@ -87,5 +87,20 @@ namespace QuanLyQuanAn.DAL
             
             return result > 0;
         }
+
+
+        public List<MonAn> TimMonAn(string value)
+        {
+            List<MonAn> danhSach = new List<MonAn>();
+
+            string query = String.Format("SELECT * FROM MonAn where TenMon like N'%{0}%' or MaLoai Like N'%{1}%' ", value, value);
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                danhSach.Add(new MonAn(item));
+            }
+            return danhSach;
+        }
     }
 }
