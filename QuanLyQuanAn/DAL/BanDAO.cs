@@ -12,17 +12,23 @@ namespace QuanLyQuanAn.DAL
     class BanDAO
     {
         #region instance
+
         private static BanDAO instance;
 
         public static BanDAO Instance
         {
-            get { if (instance == null) instance = new BanDAO(); return instance; }
+            get
+            {
+                if (instance == null) instance = new BanDAO();
+                return instance;
+            }
             private set { instance = value; }
         }
 
         private BanDAO()
         {
         }
+
         #endregion
 
         public static int TableWidth = 130;
@@ -39,6 +45,7 @@ namespace QuanLyQuanAn.DAL
             {
                 danhSach.Add(new Ban(item));
             }
+
             return danhSach;
         }
     }

@@ -40,3 +40,38 @@ as
 go
 
 exec update_MonAn 15, N'Món gì đó nhưng được sửa lại', 10, 7, 1
+
+CREATE TABLE Menu
+(
+	MaBan INT FOREIGN KEY REFERENCES dbo.Ban(MaBan),
+	MaMon INT FOREIGN KEY REFERENCES dbo.MonAn(MaMon),
+	TenMon NVARCHAR(50),
+	SoLuong INT CHECK ( SoLuong > 0),
+	GiaBan decimal(18, 0),
+	ThanhTien decimal(18, 0),
+
+	PRIMARY KEY(MaBan,MaMon)
+)
+GO
+
+CREATE PROC P_ThemMonMenu
+	@MaBan INT, @MaMon INT, @SoLuong INT
+AS
+	IF(EXISTS(SELECT * FROM dbo.Menu WHERE MaMon = @MaMon AND MaBan = @MaBan))
+	BEGIN
+		IF(@SoLuong = 0)
+			DELETE dbo.Menu WHERE MaMon = @MaMon AND MaBan = @MaBan
+		ELSE
+		BEGIN
+		    UPDATE dbo.Menu SET SoLuong = SoLuong + @SoLuong WHERE MaMon = @MaMon AND MaBan = @MaBan
+			UPDATE dbo.Menu SET ThanhTien = (SELECT SoLuong * GiaBan FROM dbo.Menu)
+		END		
+	END
+	ELSE
+    BEGIN
+		DECLARE @TenMon NVARCHAR(50)
+		DECLARE @GiaBan decimal(18, 0)
+		SELECT @TenMon = TenMon,@GiaBan = GiaBan FROM dbo.MonAn WHERE MaMon = @MaMon
+        INSERT INTO dbo.Menu (MaBan, MaMon, TenMon, SoLuong, GiaBan, ThanhTien)VALUES(@MaBan, @MaMon, @TenMon, @SoLuong, @GiaBan, @SoLuong * @GiaBan)
+    END
+GO

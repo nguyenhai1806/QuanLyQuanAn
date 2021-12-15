@@ -21,21 +21,36 @@ update Ban
 set TrangThai = 0
 
 
-CREATE VIEW pHoaDon AS
-  select MaHD, kh.TenKH, nv.HoTen, b.TenBan, NgayLap, TongTien
- from HoaDon hd  
- join KhachHang kh on hd.MaKH = kh.MaKH  
- join NhanVien nv on nv.MaNV = hd.MaNV  
- join Ban b on b.MaBan = hd.MaBan
- 
+EXEC P_LayHoaDons
+GO
 
- CREATE VIEW pCTHoaDon AS
-  select MaHD, TenMon, SoLuong, ThanhTien
-  from CTHoaDon ct 
-  join MonAn ma on ct.MaMon = ma.MaMon 
+ALTER PROC P_LayCTHDTheoMaHD
+	@MaHD INT
+AS
+	SELECT MA.MaMon,MA.TenMon,CTHD.SoLuong,MA.GiaBan,CTHD.ThanhTien FROM dbo.CTHoaDon CTHD
+	JOIN dbo.HoaDon HD ON HD.MaHD = CTHD.MaHD
+	JOIN dbo.MonAn MA ON MA.MaMon = CTHD.MaMon
+	WHERE HD.MaHD = @MaHD
+GO
 
+EXEC dbo.P_LayCTHDTheoMaHD @MaHD = 2
 
---nếu có thấy lỗi của view thì cứ chạy bình thường
+ALTER PROC P_LayHoaDons
+AS
+	SELECT HD.MaHD, KH.TenKH, B.TenBan, NV.HoTen, HD.NgayLap,HD.TongTien FROM dbo.HoaDon HD
+	JOIN dbo.Ban B ON B.MaBan = HD.MaBan
+	JOIN dbo.KhachHang KH ON KH.MaKH = HD.MaKH
+	JOIN dbo.NhanVien NV ON NV.MaNV = HD.MaNV
+	ORDER BY HD.MaHD DESC
+GO
 
-
-
+ALTER PROC P_TimHoaDon
+	@MaHD INT, @TenKH NVARCHAR(50), @TenNV NVARCHAR(50)
+AS
+	SELECT HD.MaHD, KH.TenKH, B.TenBan, NV.HoTen, HD.NgayLap,HD.TongTien FROM dbo.HoaDon HD
+	JOIN dbo.Ban B ON B.MaBan = HD.MaBan
+	JOIN dbo.KhachHang KH ON KH.MaKH = HD.MaKH
+	JOIN dbo.NhanVien NV ON NV.MaNV = HD.MaNV
+	WHERE HD.MaHD = @MaHD OR  NV.HoTen LIKE @TenNV OR KH.TenKH LIKE @TenKH
+	ORDER BY HD.MaHD DESC
+GO

@@ -20,10 +20,10 @@ namespace QuanLyQuanAn.DTO
 
         public MonAn(DataRow row)
         {
-            this.MaMon = (int)row["MaMon"];
+            this.MaMon = (int) row["MaMon"];
             this.TenMon = row["TenMon"].ToString();
             this.GiaBan = row["GiaBan"].ToString();
-            this.MaLoai = (int)row["MaLoai"];
+            this.MaLoai = (int) row["MaLoai"];
             this.TrangThai = row["TrangThai"].ToString();
         }
 
@@ -33,10 +33,34 @@ namespace QuanLyQuanAn.DTO
         private int maLoai;
         private string trangThai;
 
-        public int MaMon { get => maMon; set => maMon = value; }
-        public string TenMon { get => tenMon; set => tenMon = value; }
-        public string GiaBan { get => giaBan; set => giaBan = value; }
-        public int MaLoai { get => maLoai; set => maLoai = value; }
-        public string TrangThai { get => trangThai; set => trangThai = value; }
+        public int MaMon
+        {
+            get => maMon;
+            set => maMon = value;
+        }
+
+        public string TenMon
+        {
+            get => tenMon;
+            set => tenMon = value;
+        }
+
+        public string GiaBan
+        {
+            get => giaBan;
+            set => giaBan = value;
+        }
+
+        public int MaLoai
+        {
+            get => maLoai;
+            set => maLoai = value;
+        }
+
+        public string TrangThai
+        {
+            get => trangThai;
+            set => trangThai = value;
+        }
     }
 }

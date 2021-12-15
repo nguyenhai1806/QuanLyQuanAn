@@ -23,6 +23,7 @@ namespace QuanLyQuanAn.GUI
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             Load();
         }
+
         private void Load()
         {
             NhanVien nhanVien = BienToanCuc.NguoiDangNhap;
@@ -36,11 +37,12 @@ namespace QuanLyQuanAn.GUI
             rdb_Nam.Checked = nhanVien.GioiTinh == "Nam" ? true : false;
             rdb_Nu.Checked = !rdb_Nam.Checked;
         }
+
         private void txt_SDT_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
+            Control ctr = (Control) sender;
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
-        (e.KeyChar != '.'))
+                (e.KeyChar != '.'))
             {
                 e.Handled = true;
                 this.errorProvider1.SetError(ctr, "Ô này chỉ được phép nhập số !");
@@ -55,7 +57,7 @@ namespace QuanLyQuanAn.GUI
 
         private void txt_NgaySinh_Leave(object sender, EventArgs e)
         {
-            Control ctr = (Control)sender;
+            Control ctr = (Control) sender;
 
             if (!Date.laNgayHopLe(txt_NgaySinh.Text))
             {
@@ -78,13 +80,15 @@ namespace QuanLyQuanAn.GUI
                     string sdt = txt_SDT.Text.Trim();
                     if (NhanVienDAO.Instance.UpdateInfo(maNV, gioiTinh, ngaySinh, diaChi, sdt))
                     {
-                        MessageBox.Show("Thay đổi thông tin thành công\nBạn cần đăng xuất để cập nhập lại thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Thay đổi thông tin thành công\nBạn cần đăng xuất để cập nhập lại thông tin",
+                            "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
-                        MessageBox.Show("Thay đổi thông tin không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Thay đổi thông tin không thành công", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

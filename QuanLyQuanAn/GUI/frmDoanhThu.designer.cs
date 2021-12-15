@@ -37,7 +37,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dgvHoaDon = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_HD_Search = new System.Windows.Forms.Button();
+            this.btn_NNV_Search = new System.Windows.Forms.Button();
             this.txt_HD_Search = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -150,7 +150,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel4.Controls.Add(this.btn_HD_Search, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.btn_NNV_Search, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txt_HD_Search, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -159,18 +159,18 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.Size = new System.Drawing.Size(405, 56);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
-            // btn_HD_Search
+            // btn_NNV_Search
             // 
-            this.btn_HD_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.btn_HD_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
-            this.btn_HD_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_HD_Search.Image")));
-            this.btn_HD_Search.Location = new System.Drawing.Point(359, 8);
-            this.btn_HD_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_HD_Search.Name = "btn_HD_Search";
-            this.btn_HD_Search.Size = new System.Drawing.Size(43, 39);
-            this.btn_HD_Search.TabIndex = 2;
-            this.btn_HD_Search.UseVisualStyleBackColor = true;
-            this.btn_HD_Search.Click += new System.EventHandler(this.btn_HD_Search_Click);
+            this.btn_NNV_Search.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_NNV_Search.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold);
+            this.btn_NNV_Search.Image = ((System.Drawing.Image)(resources.GetObject("btn_NNV_Search.Image")));
+            this.btn_NNV_Search.Location = new System.Drawing.Point(359, 8);
+            this.btn_NNV_Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_NNV_Search.Name = "btn_NNV_Search";
+            this.btn_NNV_Search.Size = new System.Drawing.Size(43, 39);
+            this.btn_NNV_Search.TabIndex = 2;
+            this.btn_NNV_Search.UseVisualStyleBackColor = true;
+            this.btn_NNV_Search.Click += new System.EventHandler(this.btn_HD_Search_Click);
             // 
             // txt_HD_Search
             // 
@@ -215,6 +215,7 @@ namespace QuanLyQuanAn.GUI
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmDoanhThu";
             this.Text = "Quản lý doanh thu";
+            this.Load += new System.EventHandler(this.frmDoanhThu_Load);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -239,7 +240,7 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridView dgvHoaDon;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button btn_HD_Search;
+        private System.Windows.Forms.Button btn_NNV_Search;
         private System.Windows.Forms.TextBox txt_HD_Search;
     }
 }

@@ -35,24 +35,26 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_BackupDiff = new System.Windows.Forms.Button();
+            this.btn_BackupFul = new System.Windows.Forms.Button();
+            this.btn_BackupLog = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.txt_FileFull = new System.Windows.Forms.TextBox();
+            this.txt_GetDiff = new System.Windows.Forms.TextBox();
+            this.txt_GetLog = new System.Windows.Forms.TextBox();
+            this.btn_GetFull = new System.Windows.Forms.Button();
+            this.btn_GetDiff = new System.Windows.Forms.Button();
+            this.btn_GetLog = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btn_Restorse = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label5 = new System.Windows.Forms.Label();
+            this.ofdg = new System.Windows.Forms.OpenFileDialog();
+            this.fbd = new System.Windows.Forms.FolderBrowserDialog();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -96,9 +98,9 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.Controls.Add(this.tableLayoutPanel5, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.button2, 1, 1);
-            this.tableLayoutPanel4.Controls.Add(this.button1, 0, 1);
-            this.tableLayoutPanel4.Controls.Add(this.button3, 2, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btn_BackupDiff, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btn_BackupFul, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btn_BackupLog, 2, 1);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(0, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 2;
@@ -133,38 +135,41 @@ namespace QuanLyQuanAn.GUI
             this.label1.TabIndex = 20;
             this.label1.Text = "BACKUP";
             // 
-            // button2
+            // btn_BackupDiff
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(328, 120);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 54);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Backup Diff";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_BackupDiff.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_BackupDiff.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BackupDiff.Location = new System.Drawing.Point(328, 120);
+            this.btn_BackupDiff.Name = "btn_BackupDiff";
+            this.btn_BackupDiff.Size = new System.Drawing.Size(172, 54);
+            this.btn_BackupDiff.TabIndex = 2;
+            this.btn_BackupDiff.Text = "Backup Diff";
+            this.btn_BackupDiff.UseVisualStyleBackColor = true;
+            this.btn_BackupDiff.Click += new System.EventHandler(this.btn_BackupDiff_Click);
             // 
-            // button1
+            // btn_BackupFul
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(52, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 54);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Backup Full";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_BackupFul.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_BackupFul.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BackupFul.Location = new System.Drawing.Point(52, 120);
+            this.btn_BackupFul.Name = "btn_BackupFul";
+            this.btn_BackupFul.Size = new System.Drawing.Size(172, 54);
+            this.btn_BackupFul.TabIndex = 1;
+            this.btn_BackupFul.Text = "Backup Full";
+            this.btn_BackupFul.UseVisualStyleBackColor = true;
+            this.btn_BackupFul.Click += new System.EventHandler(this.btn_BackupFul_Click);
             // 
-            // button3
+            // btn_BackupLog
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(604, 120);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 54);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Backup Log";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_BackupLog.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_BackupLog.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_BackupLog.Location = new System.Drawing.Point(604, 120);
+            this.btn_BackupLog.Name = "btn_BackupLog";
+            this.btn_BackupLog.Size = new System.Drawing.Size(172, 54);
+            this.btn_BackupLog.TabIndex = 3;
+            this.btn_BackupLog.Text = "Backup Log";
+            this.btn_BackupLog.UseVisualStyleBackColor = true;
+            this.btn_BackupLog.Click += new System.EventHandler(this.btn_BackupLog_Click);
             // 
             // tabPage2
             // 
@@ -206,14 +211,14 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.80952F));
             this.tableLayoutPanel3.Controls.Add(this.label4, 0, 2);
             this.tableLayoutPanel3.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox5, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.textBox1, 1, 1);
-            this.tableLayoutPanel3.Controls.Add(this.textBox2, 1, 2);
-            this.tableLayoutPanel3.Controls.Add(this.button6, 2, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button5, 2, 1);
-            this.tableLayoutPanel3.Controls.Add(this.button4, 2, 2);
+            this.tableLayoutPanel3.Controls.Add(this.txt_FileFull, 1, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txt_GetDiff, 1, 1);
+            this.tableLayoutPanel3.Controls.Add(this.txt_GetLog, 1, 2);
+            this.tableLayoutPanel3.Controls.Add(this.btn_GetFull, 2, 0);
+            this.tableLayoutPanel3.Controls.Add(this.btn_GetDiff, 2, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btn_GetLog, 2, 2);
             this.tableLayoutPanel3.Controls.Add(this.label7, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.button7, 1, 3);
+            this.tableLayoutPanel3.Controls.Add(this.btn_Restorse, 1, 3);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 81);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 4;
@@ -246,68 +251,74 @@ namespace QuanLyQuanAn.GUI
             this.label6.TabIndex = 2;
             this.label6.Text = "File diff";
             // 
-            // textBox5
+            // txt_FileFull
             // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(157, 13);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(456, 30);
-            this.textBox5.TabIndex = 1;
+            this.txt_FileFull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_FileFull.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_FileFull.Location = new System.Drawing.Point(157, 13);
+            this.txt_FileFull.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_FileFull.Name = "txt_FileFull";
+            this.txt_FileFull.ReadOnly = true;
+            this.txt_FileFull.Size = new System.Drawing.Size(456, 30);
+            this.txt_FileFull.TabIndex = 1;
             // 
-            // textBox1
+            // txt_GetDiff
             // 
-            this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(157, 70);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(456, 30);
-            this.textBox1.TabIndex = 3;
+            this.txt_GetDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_GetDiff.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GetDiff.Location = new System.Drawing.Point(157, 70);
+            this.txt_GetDiff.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_GetDiff.Name = "txt_GetDiff";
+            this.txt_GetDiff.ReadOnly = true;
+            this.txt_GetDiff.Size = new System.Drawing.Size(456, 30);
+            this.txt_GetDiff.TabIndex = 3;
             // 
-            // textBox2
+            // txt_GetLog
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(157, 127);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(456, 30);
-            this.textBox2.TabIndex = 5;
+            this.txt_GetLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txt_GetLog.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_GetLog.Location = new System.Drawing.Point(157, 127);
+            this.txt_GetLog.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_GetLog.Name = "txt_GetLog";
+            this.txt_GetLog.ReadOnly = true;
+            this.txt_GetLog.Size = new System.Drawing.Size(456, 30);
+            this.txt_GetLog.TabIndex = 5;
             // 
-            // button6
+            // btn_GetFull
             // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button6.Location = new System.Drawing.Point(619, 7);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(188, 42);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Get File";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btn_GetFull.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetFull.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_GetFull.Location = new System.Drawing.Point(619, 7);
+            this.btn_GetFull.Name = "btn_GetFull";
+            this.btn_GetFull.Size = new System.Drawing.Size(188, 42);
+            this.btn_GetFull.TabIndex = 2;
+            this.btn_GetFull.Text = "Get File";
+            this.btn_GetFull.UseVisualStyleBackColor = true;
+            this.btn_GetFull.Click += new System.EventHandler(this.btn_GetFull_Click);
             // 
-            // button5
+            // btn_GetDiff
             // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button5.Location = new System.Drawing.Point(619, 64);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(188, 42);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Get File";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_GetDiff.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetDiff.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_GetDiff.Location = new System.Drawing.Point(619, 64);
+            this.btn_GetDiff.Name = "btn_GetDiff";
+            this.btn_GetDiff.Size = new System.Drawing.Size(188, 42);
+            this.btn_GetDiff.TabIndex = 4;
+            this.btn_GetDiff.Text = "Get File";
+            this.btn_GetDiff.UseVisualStyleBackColor = true;
+            this.btn_GetDiff.Click += new System.EventHandler(this.btn_GetDiff_Click);
             // 
-            // button4
+            // btn_GetLog
             // 
-            this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button4.Location = new System.Drawing.Point(619, 121);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(188, 43);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Get File";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_GetLog.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_GetLog.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_GetLog.Location = new System.Drawing.Point(619, 121);
+            this.btn_GetLog.Name = "btn_GetLog";
+            this.btn_GetLog.Size = new System.Drawing.Size(188, 43);
+            this.btn_GetLog.TabIndex = 6;
+            this.btn_GetLog.Text = "Get File";
+            this.btn_GetLog.UseVisualStyleBackColor = true;
+            this.btn_GetLog.Click += new System.EventHandler(this.btn_GetLog_Click);
             // 
             // label7
             // 
@@ -320,16 +331,17 @@ namespace QuanLyQuanAn.GUI
             this.label7.TabIndex = 1;
             this.label7.Text = "File full";
             // 
-            // button7
+            // btn_Restorse
             // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
-            this.button7.Location = new System.Drawing.Point(157, 178);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(456, 43);
-            this.button7.TabIndex = 7;
-            this.button7.Text = "RESOTRSE";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btn_Restorse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_Restorse.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.btn_Restorse.Location = new System.Drawing.Point(157, 178);
+            this.btn_Restorse.Name = "btn_Restorse";
+            this.btn_Restorse.Size = new System.Drawing.Size(456, 43);
+            this.btn_Restorse.TabIndex = 7;
+            this.btn_Restorse.Text = "RESOTRSE";
+            this.btn_Restorse.UseVisualStyleBackColor = true;
+            this.btn_Restorse.Click += new System.EventHandler(this.btn_Restorse_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -356,6 +368,10 @@ namespace QuanLyQuanAn.GUI
             this.label5.Size = new System.Drawing.Size(138, 26);
             this.label5.TabIndex = 20;
             this.label5.Text = "RESTORSE";
+            // 
+            // ofdg
+            // 
+            this.ofdg.FileName = "ofdg";
             // 
             // frmBackup
             // 
@@ -394,18 +410,20 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.TextBox txt_FileFull;
+        private System.Windows.Forms.TextBox txt_GetDiff;
+        private System.Windows.Forms.TextBox txt_GetLog;
+        private System.Windows.Forms.Button btn_GetFull;
+        private System.Windows.Forms.Button btn_GetDiff;
+        private System.Windows.Forms.Button btn_GetLog;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btn_BackupDiff;
+        private System.Windows.Forms.Button btn_BackupFul;
+        private System.Windows.Forms.Button btn_BackupLog;
+        private System.Windows.Forms.Button btn_Restorse;
+        private System.Windows.Forms.OpenFileDialog ofdg;
+        private System.Windows.Forms.FolderBrowserDialog fbd;
     }
 }

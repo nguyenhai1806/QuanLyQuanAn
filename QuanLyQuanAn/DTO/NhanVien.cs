@@ -20,18 +20,68 @@ namespace QuanLyQuanAn.DTO
         private bool trangThai;
         private DateTime ngaySinh;
 
-        public int MaNV { get => maNV; set => maNV = value; }
-        public string TenDangNhap { get => tenDangNhap.Trim(); set => tenDangNhap = value.Trim(); }
-        public string MatKhau { get => matKhau; set => matKhau = value.Trim(); }
-        public string HoTen { get => hoTen.Trim(); set => hoTen = value.Trim(); }
-        public string GioiTinh { get => gioiTinh.Trim(); set => gioiTinh = value.Trim(); }
-        public string DiaChi { get => diaChi.Trim(); set => diaChi = value.Trim(); }
-        public string Sdt { get => sdt.Trim(); set => sdt = value.Trim(); }
-        public bool TrangThai { get => trangThai; set => trangThai = value; }
-        public DateTime NgaySinh { get => ngaySinh; set => ngaySinh = value; }
-        public int MaNhomNV { get => maNhomNV; set => maNhomNV = value; }
+        public int MaNV
+        {
+            get => maNV;
+            set => maNV = value;
+        }
 
-        public NhanVien(int maNV, string tenDangNhap, string matKhau, string hoTen, string diaChi, string sdt, bool trangThai, DateTime ngaySinh, int maNhomNV)
+        public string TenDangNhap
+        {
+            get => tenDangNhap.Trim();
+            set => tenDangNhap = value.Trim();
+        }
+
+        public string MatKhau
+        {
+            get => matKhau;
+            set => matKhau = value.Trim();
+        }
+
+        public string HoTen
+        {
+            get => hoTen.Trim();
+            set => hoTen = value.Trim();
+        }
+
+        public string GioiTinh
+        {
+            get => gioiTinh.Trim();
+            set => gioiTinh = value.Trim();
+        }
+
+        public string DiaChi
+        {
+            get => diaChi.Trim();
+            set => diaChi = value.Trim();
+        }
+
+        public string Sdt
+        {
+            get => sdt.Trim();
+            set => sdt = value.Trim();
+        }
+
+        public bool TrangThai
+        {
+            get => trangThai;
+            set => trangThai = value;
+        }
+
+        public DateTime NgaySinh
+        {
+            get => ngaySinh;
+            set => ngaySinh = value;
+        }
+
+        public int MaNhomNV
+        {
+            get => maNhomNV;
+            set => maNhomNV = value;
+        }
+
+        public NhanVien(int maNV, string tenDangNhap, string matKhau, string hoTen, string diaChi, string sdt,
+            bool trangThai, DateTime ngaySinh, int maNhomNV)
         {
             this.MaNV = maNV;
             this.TenDangNhap = tenDangNhap;

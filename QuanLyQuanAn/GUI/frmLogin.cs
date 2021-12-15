@@ -20,7 +20,8 @@ namespace QuanLyQuanAn.GUI
             InitializeComponent();
             this.CenterToScreen();
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            DataProvider.Instance.ExcuteNonQuery("UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'");
+            DataProvider.Instance.ExcuteNonQuery(
+                "UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'");
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -47,13 +48,16 @@ namespace QuanLyQuanAn.GUI
                             this.Show();
                         }
                         else
-                            MessageBox.Show("Bạn không được phép đăng nhập", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Bạn không được phép đăng nhập", "", MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
                     }
                     else
-                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Sai tên tài khoản hoặc mật khẩu", "", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Tên tài khoản và mật khẩu không được trông", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tên tài khoản và mật khẩu không được trông", "", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
@@ -70,12 +74,15 @@ namespace QuanLyQuanAn.GUI
             {
                 this.Show();
             }
-            catch (Exception) { }
+            catch (Exception)
+            {
+            }
         }
 
         private void frmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("Bạn thật sự muốn thoát chương trình ?", "Thông báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
+            if (MessageBox.Show("Bạn thật sự muốn thoát chương trình ?", "Thông báo", MessageBoxButtons.OKCancel) !=
+                System.Windows.Forms.DialogResult.OK)
                 e.Cancel = true;
         }
 
@@ -99,8 +106,8 @@ namespace QuanLyQuanAn.GUI
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
-            e.Handled = (e.KeyChar == (char)Keys.Space);
+            Control ctr = (Control) sender;
+            e.Handled = (e.KeyChar == (char) Keys.Space);
         }
     }
 }

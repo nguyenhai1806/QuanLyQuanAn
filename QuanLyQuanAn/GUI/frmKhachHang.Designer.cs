@@ -63,10 +63,10 @@ namespace QuanLyQuanAn.GUI
             this.txt_Search = new System.Windows.Forms.TextBox();
             this.btn_Search = new System.Windows.Forms.Button();
             this.dgvKhachHang = new System.Windows.Forms.DataGridView();
-            this.lblGioiTinh = new System.Windows.Forms.Label();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.lblNgaySinh = new System.Windows.Forms.Label();
+            this.lblGioiTinh = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
@@ -76,8 +76,8 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel7.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tableLayoutPanel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -433,6 +433,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_XuatExcel.TabIndex = 10;
             this.btn_XuatExcel.Text = "Xuất Excel";
             this.btn_XuatExcel.UseVisualStyleBackColor = true;
+            this.btn_XuatExcel.Click += new System.EventHandler(this.btn_XuatExcel_Click);
             // 
             // btn_NhapExcel
             // 
@@ -528,23 +529,6 @@ namespace QuanLyQuanAn.GUI
             this.dgvKhachHang.TabIndex = 1;
             this.dgvKhachHang.Click += new System.EventHandler(this.dgvKhachHang_Click);
             // 
-            // lblGioiTinh
-            // 
-            this.lblGioiTinh.AutoSize = true;
-            this.lblGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGioiTinh.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblGioiTinh.Location = new System.Drawing.Point(1061, 711);
-            this.lblGioiTinh.Name = "lblGioiTinh";
-            this.lblGioiTinh.Size = new System.Drawing.Size(37, 17);
-            this.lblGioiTinh.TabIndex = 18;
-            this.lblGioiTinh.Text = "Nam";
-            this.lblGioiTinh.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.lblGioiTinh.TextChanged += new System.EventHandler(this.lblGioiTinh_TextChanged);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 2;
@@ -568,6 +552,23 @@ namespace QuanLyQuanAn.GUI
             this.lblNgaySinh.Size = new System.Drawing.Size(0, 25);
             this.lblNgaySinh.TabIndex = 0;
             this.lblNgaySinh.TextChanged += new System.EventHandler(this.lblNgaySinh_TextChanged);
+            // 
+            // lblGioiTinh
+            // 
+            this.lblGioiTinh.AutoSize = true;
+            this.lblGioiTinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGioiTinh.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblGioiTinh.Location = new System.Drawing.Point(1061, 711);
+            this.lblGioiTinh.Name = "lblGioiTinh";
+            this.lblGioiTinh.Size = new System.Drawing.Size(37, 17);
+            this.lblGioiTinh.TabIndex = 18;
+            this.lblGioiTinh.Text = "Nam";
+            this.lblGioiTinh.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblGioiTinh.TextChanged += new System.EventHandler(this.lblGioiTinh_TextChanged);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmKhachHang
             // 
@@ -593,9 +594,9 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhachHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tableLayoutPanel8.ResumeLayout(false);
             this.tableLayoutPanel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -27,9 +27,9 @@ namespace QuanLyQuanAn.GUI
         }
 
         #region Nối form
+
         private void thôngTinCáNhanToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void adminToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,14 +56,17 @@ namespace QuanLyQuanAn.GUI
         {
             DangXuat();
         }
+
         private void DangXuat()
         {
-            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
+            if (MessageBox.Show("Bạn thật sự muốn đăng xuất ?", "Thông báo", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == System.Windows.Forms.DialogResult.Yes)
             {
                 BienToanCuc.NguoiDangNhap = null;
                 this.Dispose();
             }
         }
+
         private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmKhachHang f = new frmKhachHang();
@@ -84,6 +87,7 @@ namespace QuanLyQuanAn.GUI
         {
             DangXuat();
         }
+
         private void mónĂnNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmQuanLy f = new frmQuanLy();
@@ -105,9 +109,11 @@ namespace QuanLyQuanAn.GUI
             frmBackup f = new frmBackup();
             f.ShowDialog();
         }
+
         #endregion
 
         #region Load loại món, Món ăn
+
         void LoadLoaiMonTM()
         {
             List<LoaiMon> loaiMons = LoaiMonDAO.Instance.LayDSLoaiMonTM();
@@ -137,6 +143,7 @@ namespace QuanLyQuanAn.GUI
             id = selected.MaLoai;
             LoaiMonAnTheoMaLoaiMon(id);
         }
+
         #endregion
 
         #region Load bàn
@@ -147,7 +154,7 @@ namespace QuanLyQuanAn.GUI
 
             foreach (Ban item in tableList)
             {
-                Button btn = new Button() { Width = BanDAO.TableWidth, Height = BanDAO.TableHeight };
+                Button btn = new Button() {Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
 
                 switch (item.TrangThai)
@@ -160,16 +167,15 @@ namespace QuanLyQuanAn.GUI
                         btn.BackColor = Color.FromArgb(252, 243, 210);
                         break;
                 }
+
                 flpTable.Controls.Add(btn);
             }
         }
-
 
         #endregion
 
         #region Thêm món, chuyển bàn, thanh toán
 
         #endregion
-
     }
 }

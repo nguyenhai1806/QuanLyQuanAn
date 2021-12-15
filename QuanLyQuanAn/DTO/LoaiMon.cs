@@ -15,12 +15,12 @@ namespace QuanLyQuanAn.DTO
             this.TenLoai = tenloai;
             this.TrangThai = trangthai;
         }
-        
-        public LoaiMon (DataRow row)
+
+        public LoaiMon(DataRow row)
         {
-            this.MaLoai = (int)row["MaLoai"];
+            this.MaLoai = (int) row["MaLoai"];
             this.TenLoai = row["TenLoai"].ToString();
-            this.TrangThai = (bool)row["TrangThai"];
+            this.TrangThai = (bool) row["TrangThai"];
         }
 
         private bool trangThai;
@@ -29,8 +29,22 @@ namespace QuanLyQuanAn.DTO
 
         private int maLoai;
 
-        public int MaLoai { get => maLoai; set => maLoai = value; }
-        public string TenLoai { get => tenLoai; set => tenLoai = value; }
-        public bool TrangThai { get => trangThai; set => trangThai = value; }
+        public int MaLoai
+        {
+            get => maLoai;
+            set => maLoai = value;
+        }
+
+        public string TenLoai
+        {
+            get => tenLoai;
+            set => tenLoai = value;
+        }
+
+        public bool TrangThai
+        {
+            get => trangThai;
+            set => trangThai = value;
+        }
     }
 }

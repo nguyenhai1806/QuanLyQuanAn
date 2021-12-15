@@ -26,34 +26,17 @@ namespace QuanLyQuanAn.DAL
         #endregion
 
 
-        //Lấy danh sách chi tiết hóa đơn từ CSDL
-
-        public List<pCTHoaDon> LayDsCTHoaDon()
-        {
-            List<pCTHoaDon> danhSach = new List<pCTHoaDon>();
-
-            string query = "SELECT * from pCTHoaDon";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-
-            foreach (DataRow item in data.Rows)
-            {
-                danhSach.Add(new pCTHoaDon(item));
-            }
-            return danhSach;
-        }
-
-
         //Lấy danh sách ct hóa đơn theo mã hd
 
-        public List<pCTHoaDon> LayTheoMaHD(int maHD)
+        public List<CTHoaDon> LayTheoMaHD(int maHD)
         {
-            List<pCTHoaDon> ds = new List<pCTHoaDon>();
+            List<CTHoaDon> ds = new List<CTHoaDon>();
 
-            string query = "SELECT * FROM pCTHoaDon WHERE MaHD ='" + maHD + "' ";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            string query = "EXEC dbo.P_LayCTHDTheoMaHD @MaHD ";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query, new Object[] { maHD});
 
             foreach (DataRow item in data.Rows)
-                ds.Add(new pCTHoaDon(item));
+                ds.Add(new CTHoaDon(item));
             return ds;
         }
     }

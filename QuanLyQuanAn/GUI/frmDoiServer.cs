@@ -15,6 +15,7 @@ namespace QuanLyQuanAn
     public partial class frmDoiServer : Form
     {
         string connectionstr = null;
+
         public frmDoiServer()
         {
             InitializeComponent();
@@ -24,7 +25,6 @@ namespace QuanLyQuanAn
 
         private void frmDoiServer_Load(object sender, EventArgs e)
         {
-
         }
 
         private void chkQuyenWindows_CheckedChanged(object sender, EventArgs e)
@@ -61,8 +61,8 @@ namespace QuanLyQuanAn
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
-            e.Handled = (e.KeyChar == (char)Keys.Space);
+            Control ctr = (Control) sender;
+            e.Handled = (e.KeyChar == (char) Keys.Space);
         }
 
         private void btnTestConnect_Click(object sender, EventArgs e)
@@ -75,7 +75,8 @@ namespace QuanLyQuanAn
             {
                 if (tenServer.Length != 0 && database.Length != 0)
                 {
-                    connectionstr = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True", tenServer, database);
+                    connectionstr = String.Format("Data Source={0};Initial Catalog={1};Integrated Security=True",
+                        tenServer, database);
                 }
                 else
                 {
@@ -85,9 +86,11 @@ namespace QuanLyQuanAn
             }
             else
             {
-                if (tenServer.Length != 0 && userName.Length != 0 && password.Trim().Length != 0 && database.Length != 0)
+                if (tenServer.Length != 0 && userName.Length != 0 && password.Trim().Length != 0 &&
+                    database.Length != 0)
                 {
-                    connectionstr = String.Format("Data Source={0};Initial Catalog={1};User ID={2};Password={3}",tenServer,database,userName,password);
+                    connectionstr = String.Format("Data Source={0};Initial Catalog={1};User ID={2};Password={3}",
+                        tenServer, database, userName, password);
                 }
                 else
                 {
@@ -111,14 +114,14 @@ namespace QuanLyQuanAn
         private void btnLuu_Click(object sender, EventArgs e)
         {
             string key = "PYcFGNKuMEQzxpyC";
-            
+
             string address = @"..//..//DAL\\connectionString.ini";
-            DocGhiFile.GhiFile(address, new string[] { MaHoa.RSAEncrypt(connectionstr, key)});
-            if(MessageBox.Show("Thay đổi server thành công, khởi động lại chương trình để áp dụng", " ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+            DocGhiFile.GhiFile(address, new string[] {MaHoa.RSAEncrypt(connectionstr, key)});
+            if (MessageBox.Show("Thay đổi server thành công, khởi động lại chương trình để áp dụng", " ",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
             {
                 Application.Exit();
             }
-
         }
     }
 }

@@ -10,6 +10,10 @@ namespace QuanLyQuanAn.DTO
     {
         private static NhanVien nguoiDangNhap = null;
 
-        public static NhanVien NguoiDangNhap { get => nguoiDangNhap; set => nguoiDangNhap = value; }
+        public static NhanVien NguoiDangNhap
+        {
+            get => nguoiDangNhap;
+            set => nguoiDangNhap = value;
+        }
     }
 }

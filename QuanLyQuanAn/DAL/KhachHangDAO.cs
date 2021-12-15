@@ -12,17 +12,23 @@ namespace QuanLyQuanAn.DAL
     class KhachHangDAO
     {
         #region instance
+
         private static KhachHangDAO instance;
 
         public static KhachHangDAO Instance
         {
-            get { if (instance == null) instance = new KhachHangDAO(); return instance; }
+            get
+            {
+                if (instance == null) instance = new KhachHangDAO();
+                return instance;
+            }
             private set { instance = value; }
         }
 
         private KhachHangDAO()
         {
         }
+
         #endregion
 
 
@@ -39,23 +45,26 @@ namespace QuanLyQuanAn.DAL
             {
                 danhSach.Add(new KhachHang(item));
             }
+
             return danhSach;
         }
 
 
         //Tim khách hàng theo số điện thoại
 
-        public List<KhachHang> TimKH(string value)
+        public List<KhachHang> TimSDT(string value)
         {
             List<KhachHang> danhSach = new List<KhachHang>();
 
-            string query = String.Format("SELECT * FROM KhachHang where SDT like N'%{0}%' or TenKH Like N'%{1}%' ", value, value);
+            string query = String.Format("SELECT * FROM KhachHang where SDT like N'%{0}%' or TenKH Like N'%{1}%' ",
+                value, value);
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
                 danhSach.Add(new KhachHang(item));
             }
+
             return danhSach;
         }
 
@@ -65,7 +74,8 @@ namespace QuanLyQuanAn.DAL
         public bool themKH(string tenKH, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, bool trangThai)
         {
             string sql = "EXEC dbo.P_ThemKhachHang @TenKH , @NgaySinh , @GioiTinh , @DiaChi , @SDT , @TrangThai ";
-            int result = DataProvider.Instance.ExcuteNonQuery(sql,new Object[] {tenKH,ngaySinh,gioiTinh,diaChi,sdt,trangThai});
+            int result = DataProvider.Instance.ExcuteNonQuery(sql,
+                new Object[] {tenKH, ngaySinh, gioiTinh, diaChi, sdt, trangThai});
             return result > 0;
         }
 
@@ -78,17 +88,21 @@ namespace QuanLyQuanAn.DAL
             foreach (DataRow row in table.Rows)
             {
                 KhachHang kt = new KhachHang(row);
-                return kt.SDT.Trim(); ;
+                return kt.SDT.Trim();
+                ;
             }
+
             return "";
         }
 
         //Sửa khách hàng
 
-        public bool suaKHBangSDT(string tenKH, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, bool trangThai)
+        public bool suaKHBangSDT(string tenKH, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt,
+            bool trangThai)
         {
             string query = "EXEC dbo.P_SuaKhachHang @TenKH , @NgaySinh , @GioiTinh , @DiaChi , @TrangThai , @SDT ";
-            int result = DataProvider.Instance.ExcuteNonQuery(query, new Object[] { tenKH,ngaySinh,gioiTinh,diaChi,trangThai,sdt});
+            int result = DataProvider.Instance.ExcuteNonQuery(query,
+                new Object[] {tenKH, ngaySinh, gioiTinh, diaChi, trangThai, sdt});
             return result > 0;
         }
     }

@@ -16,7 +16,8 @@ namespace QuanLyQuanAn.Lib
             dataGridView.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridView.ColumnHeadersDefaultCellStyle.ForeColor = Color.FromArgb(238, 75, 43);
             dataGridView.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(241, 209, 155);
-            dataGridView.ColumnHeadersDefaultCellStyle.Font = new Font("Times New Roman     ", 13F, FontStyle.Bold, GraphicsUnit.Pixel);
+            dataGridView.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Times New Roman     ", 13F, FontStyle.Bold, GraphicsUnit.Pixel);
             dataGridView.BackgroundColor = Color.White;
             dataGridView.RowHeadersVisible = false;
             dataGridView.RowTemplate.Height = 30;

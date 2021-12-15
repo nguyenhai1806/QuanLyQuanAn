@@ -12,16 +12,23 @@ namespace QuanLyQuanAn.DAL
     class LoaiMonDAO
     {
         #region instance
+
         private static LoaiMonDAO instance;
+
         public static LoaiMonDAO Instance
         {
-            get { if (instance == null) instance = new LoaiMonDAO(); return LoaiMonDAO.instance; }
+            get
+            {
+                if (instance == null) instance = new LoaiMonDAO();
+                return LoaiMonDAO.instance;
+            }
             private set { LoaiMonDAO.instance = value; }
         }
 
         private LoaiMonDAO()
         {
         }
+
         #endregion
 
         //Hàm lấy danh sách loại món
@@ -73,7 +80,6 @@ namespace QuanLyQuanAn.DAL
         }
 
 
-
         //Hàm thêm Loại Món
         public bool ThemLoaiMon(string tenLoai, bool trangThai)
         {
@@ -86,25 +92,25 @@ namespace QuanLyQuanAn.DAL
         //Hàm KT trùng tên Loại Món
         public LoaiMon LayLoaiMonTheoTen(string tenLoai)
         {
-            DataTable table = DataProvider.Instance.ExcuteQuery("SELECT * FROM LoaiMonAn WHERE TenLoai = N'" + tenLoai + "'");
+            DataTable table =
+                DataProvider.Instance.ExcuteQuery("SELECT * FROM LoaiMonAn WHERE TenLoai = N'" + tenLoai + "'");
             foreach (DataRow row in table.Rows)
             {
                 LoaiMon ktTen = new LoaiMon(row);
                 return ktTen;
             }
+
             return null;
         }
 
         //Hàm sửa Loại Món
         public bool SuaLoaiMon(int maLoai, string tenLoai, bool trangThai)
         {
-            string query = string.Format("exec update_LoaiMon {0}, N'{1}', {2}",maLoai, tenLoai, trangThai);
+            string query = string.Format("exec update_LoaiMon {0}, N'{1}', {2}", maLoai, tenLoai, trangThai);
             int result = DataProvider.Instance.ExcuteNonQuery(query);
 
             return result > 0;
         }
-
-
         public List<LoaiMon> TimLoaiMonAn(string value)
         {
             List<LoaiMon> danhSach = new List<LoaiMon>();

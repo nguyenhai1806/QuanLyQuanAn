@@ -19,7 +19,8 @@ namespace QuanLyQuanAn.DTO
         public bool TrangThai { get; set; }
 
 
-        public KhachHang(string maKH, string tenKH, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt, bool trangThai)
+        public KhachHang(string maKH, string tenKH, DateTime ngaySinh, string gioiTinh, string diaChi, string sdt,
+            bool trangThai)
         {
             this.MaKH = maKH;
             this.TenKH = tenKH.Trim();
@@ -38,7 +39,7 @@ namespace QuanLyQuanAn.DTO
             this.GioiTinh = row["gioiTinh"].ToString();
             this.DiaChi = row["diaChi"].ToString();
             this.SDT = row["sdt"].ToString();
-            this.TrangThai = (bool)row["trangThai"];
+            this.TrangThai = (bool) row["trangThai"];
         }
     }
 }

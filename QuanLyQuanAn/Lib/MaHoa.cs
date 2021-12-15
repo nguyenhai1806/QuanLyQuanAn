@@ -23,13 +23,15 @@ namespace QuanLyQuanAn.Lib
             byteBuff = Encoding.UTF8.GetBytes(source);
 
             string encoded =
-                Convert.ToBase64String(desCryptoProvider.CreateEncryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
+                Convert.ToBase64String(desCryptoProvider.CreateEncryptor()
+                    .TransformFinalBlock(byteBuff, 0, byteBuff.Length));
             return encoded;
         }
+
         public static string MD5Encrypt(string source)
         {
             source = source + "D$$9jbM$yf+gjv22";
-            
+
             using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
             {
                 byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(source);
@@ -41,9 +43,11 @@ namespace QuanLyQuanAn.Lib
                 {
                     sb.Append(hashBytes[i].ToString("X2"));
                 }
+
                 return sb.ToString();
             }
         }
+
         public static string RSADecrypt(string encodedText, string key)
         {
             TripleDESCryptoServiceProvider desCryptoProvider = new TripleDESCryptoServiceProvider();
@@ -57,7 +61,8 @@ namespace QuanLyQuanAn.Lib
             desCryptoProvider.Mode = CipherMode.ECB; //CBC, CFB
             byteBuff = Convert.FromBase64String(encodedText);
 
-            string plaintext = Encoding.UTF8.GetString(desCryptoProvider.CreateDecryptor().TransformFinalBlock(byteBuff, 0, byteBuff.Length));
+            string plaintext = Encoding.UTF8.GetString(desCryptoProvider.CreateDecryptor()
+                .TransformFinalBlock(byteBuff, 0, byteBuff.Length));
             return plaintext;
         }
     }

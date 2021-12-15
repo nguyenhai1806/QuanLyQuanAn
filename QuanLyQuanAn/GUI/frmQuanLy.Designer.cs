@@ -314,6 +314,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NNV_XuatExcel.TabIndex = 5;
             this.btn_NNV_XuatExcel.Text = "Xuất Excel";
             this.btn_NNV_XuatExcel.UseVisualStyleBackColor = true;
+            this.btn_NNV_XuatExcel.Click += new System.EventHandler(this.btn_NNV_XuatExcel_Click);
             // 
             // btn_NNV_NhapExcel
             // 
@@ -612,6 +613,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_NV_XuatExcel.TabIndex = 16;
             this.btn_NV_XuatExcel.Text = "Xuất Excel";
             this.btn_NV_XuatExcel.UseVisualStyleBackColor = true;
+            this.btn_NV_XuatExcel.Click += new System.EventHandler(this.btn_NV_XuatExcel_Click);
             // 
             // btn_NV_NhapExcel
             // 
@@ -1262,6 +1264,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_LM_XuatExcel.TabIndex = 9;
             this.btn_LM_XuatExcel.Text = "Xuất Excel";
             this.btn_LM_XuatExcel.UseVisualStyleBackColor = true;
+            this.btn_LM_XuatExcel.Click += new System.EventHandler(this.btn_LM_XuatExcel_Click);
             // 
             // btn_LM_NhapExcel
             // 
@@ -1614,6 +1617,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_MonAn_XuatExcel.TabIndex = 11;
             this.btn_MonAn_XuatExcel.Text = "Xuất Excel";
             this.btn_MonAn_XuatExcel.UseVisualStyleBackColor = true;
+            this.btn_MonAn_XuatExcel.Click += new System.EventHandler(this.btn_MonAn_XuatExcel_Click);
             // 
             // btn_MonAn_NhapExcel
             // 

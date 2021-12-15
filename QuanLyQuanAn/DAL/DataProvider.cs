@@ -10,14 +10,21 @@ namespace QuanLyQuanAn.DAO
     public class DataProvider
     {
         #region instance
+
         private static DataProvider instance;
 
         public static DataProvider Instance
         {
-            get { if (instance == null) instance = new DataProvider(); return instance; }
+            get
+            {
+                if (instance == null) instance = new DataProvider();
+                return instance;
+            }
             private set { instance = value; }
         }
+
         #endregion
+
         private static string connectionStr = "";
         private DataProvider()
         {
@@ -32,6 +39,27 @@ namespace QuanLyQuanAn.DAO
             catch (Exception)
             {
                 throw;
+            }
+        }
+        public static void RunQueryOnMaster(String query, object[] parameters = null)
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source=localhost;Initial Catalog=master;Integrated Security=True"))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(query, connection);
+
+                if (parameters != null)
+                {
+                    String[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (String item in listPara)
+                        if (item.Contains('@'))
+                        {
+                            command.Parameters.AddWithValue(item, parameters[i]);
+                            i++;
+                        }
+                }
+                command.ExecuteNonQuery();
             }
         }
 
@@ -75,6 +103,7 @@ namespace QuanLyQuanAn.DAO
                 adapter.Fill(data);
                 connection.Close();
             }
+
             return data;
         }
 
@@ -97,8 +126,10 @@ namespace QuanLyQuanAn.DAO
                             i++;
                         }
                 }
+
                 data = command.ExecuteNonQuery();
             }
+
             return data;
         }
 
@@ -124,6 +155,7 @@ namespace QuanLyQuanAn.DAO
 
                 data = command.ExecuteScalar();
             }
+
             return data;
         }
 
@@ -137,6 +169,7 @@ namespace QuanLyQuanAn.DAO
                 SqlDataAdapter da = new SqlDataAdapter(command);
                 da.Fill(data);
             }
+
             return data;
         }
     }

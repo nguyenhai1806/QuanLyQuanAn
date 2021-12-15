@@ -9,7 +9,6 @@ namespace QuanLyQuanAn.Lib
 {
     class DocGhiFile
     {
-
         public static string[] DocFile(string address)
         {
             string[] result = new string[2];
@@ -20,11 +19,18 @@ namespace QuanLyQuanAn.Lib
                 int i = 0;
                 // doc va hien thi cac dong trong file cho toi
                 // khi tien toi cuoi file. 
-                while ((result[i] = sr.ReadLine()) != null) { i++; } ;
+                while ((result[i] = sr.ReadLine()) != null)
+                {
+                    i++;
+                }
+
+                ;
             }
+
             return result;
         }
-        public static void GhiFile(string address,string[] value)
+
+        public static void GhiFile(string address, string[] value)
         {
             using (StreamWriter sw = new StreamWriter(address))
             {

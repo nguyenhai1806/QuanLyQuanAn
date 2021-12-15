@@ -28,17 +28,17 @@ namespace QuanLyQuanAn.DAL
 
         //Lấy danh sách hóa đơn từ CSDL
 
-        public List<pHoaDon> LayDsHoaDon()
+        public List<HoaDon> LayDsHoaDon()
         {
-            List<pHoaDon> danhSach = new List<pHoaDon>();
+            List<HoaDon> danhSach = new List<HoaDon>();
 
-            string query = "select * from pHoaDon order by MaHD desc"; 
+            string query = "EXEC P_LayHoaDons"; 
 
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)
             {
-                danhSach.Add(new pHoaDon(item));
+                danhSach.Add(new HoaDon(item));
             }
             return danhSach;
         }
@@ -46,16 +46,17 @@ namespace QuanLyQuanAn.DAL
 
         //Tim hóa đơn theo tên bàn
 
-        public List<pHoaDon> TimHoaDon(string value)
+        public List<HoaDon> TimHoaDon(string value)
         {
-            List<pHoaDon> danhSach = new List<pHoaDon>();
-
-            string query = String.Format("SELECT * FROM pHoaDon where TenBan Like N'%{0}%' ", value);
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            List<HoaDon> danhSach = new List<HoaDon>();
+            int maHD = -1;
+            int.TryParse(value, out maHD);
+            string query = "EXEC dbo.P_TimHoaDon @MaHD , @TenKH , @TenNV";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query, new Object[] { maHD, "%" + value + "%", "%" + value + "%" });
 
             foreach (DataRow item in data.Rows)
             {
-                danhSach.Add(new pHoaDon(item));
+                danhSach.Add(new HoaDon(item));
             }
             return danhSach;
         }

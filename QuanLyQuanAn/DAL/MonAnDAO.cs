@@ -12,16 +12,23 @@ namespace QuanLyQuanAn.DAL
     class MonAnDAO
     {
         #region instance
+
         private static MonAnDAO instance;
+
         public static MonAnDAO Instance
         {
-            get { if (instance == null) instance = new MonAnDAO(); return MonAnDAO.instance; }
+            get
+            {
+                if (instance == null) instance = new MonAnDAO();
+                return MonAnDAO.instance;
+            }
             private set { MonAnDAO.instance = value; }
         }
 
         private MonAnDAO()
         {
         }
+
         #endregion
 
         //Hàm lấy danh sách món ăn
@@ -76,19 +83,19 @@ namespace QuanLyQuanAn.DAL
                 MonAn ktTenMon = new MonAn(row);
                 return ktTenMon;
             }
+
             return null;
         }
 
         //Hàm sửa món ăn
         public bool SuaMonAn(int maMon, string tenMon, string giaBan, int maLoai, bool trangThai)
         {
-            string query = string.Format("exec update_MonAn {0}, N'{1}', {2}, {3}, {4}", maMon, tenMon, giaBan, maLoai, trangThai);
+            string query = string.Format("exec update_MonAn {0}, N'{1}', {2}, {3}, {4}", maMon, tenMon, giaBan, maLoai,
+                trangThai);
             int result = DataProvider.Instance.ExcuteNonQuery(query);
-            
+
             return result > 0;
         }
-
-
         public List<MonAn> TimMonAn(string value)
         {
             List<MonAn> danhSach = new List<MonAn>();

@@ -51,25 +51,25 @@ namespace QuanLyQuanAn.GUI
 
         private void txt_Pass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
-            e.Handled = (e.KeyChar == (char)Keys.Space);
+            Control ctr = (Control) sender;
+            e.Handled = (e.KeyChar == (char) Keys.Space);
         }
 
         private void txt_NewPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
-            e.Handled = (e.KeyChar == (char)Keys.Space);
+            Control ctr = (Control) sender;
+            e.Handled = (e.KeyChar == (char) Keys.Space);
         }
 
         private void txt_RepeatPass_KeyPress(object sender, KeyPressEventArgs e)
         {
-            Control ctr = (Control)sender;
-            e.Handled = (e.KeyChar == (char)Keys.Space);
+            Control ctr = (Control) sender;
+            e.Handled = (e.KeyChar == (char) Keys.Space);
         }
 
         private void txt_RepeatPass_Leave(object sender, EventArgs e)
         {
-            Control ctr = (Control)sender;
+            Control ctr = (Control) sender;
             if (!txt_NewPass.Text.Equals(txt_RepeatPass.Text))
                 errorProvider1.SetError(ctr, "Mật khẩu mới không khớp");
         }
@@ -85,7 +85,7 @@ namespace QuanLyQuanAn.GUI
                 if (userName.Length != 0 && newPass.Length != 0 && pass.Length != 0)
                 {
                     pass = MaHoa.MD5Encrypt(pass);
-                    Control ctr = (Control)sender;
+                    Control ctr = (Control) sender;
                     NhanVien nhanVien = NhanVienDAO.Instance.LayNhanVienDangNhap(userName, pass);
                     if (nhanVien != null)
                     {
@@ -94,21 +94,26 @@ namespace QuanLyQuanAn.GUI
                             newPass = MaHoa.MD5Encrypt(newPass);
                             if (NhanVienDAO.Instance.UpdatePassword(userName, newPass))
                             {
-                                MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MessageBox.Show("Đổi mật khẩu thành công", "Thông báo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
                             }
                             else
-                                MessageBox.Show("Đổi mật khẩu không thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Đổi mật khẩu không thành công", "Thông báo", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Error);
                         }
                         else
-                            MessageBox.Show("Hai mật khẩu mới không khớp", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Hai mật khẩu mới không khớp", "Thông báo", MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
                     }
                     else
-                        MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Tài khoản hoặc mật khẩu không đúng", "Thông báo", MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                 }
                 else
-                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin", "Thông báo", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

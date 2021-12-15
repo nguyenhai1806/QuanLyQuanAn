@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyQuanAn.DTO
 {
-    public class pHoaDon
+    public class HoaDon
     {
         public int MaHD { get; set; }
         public string TenKH { get; set; }
@@ -17,7 +17,7 @@ namespace QuanLyQuanAn.DTO
         public DateTime NgayLap { get; set; }
         public string TongTien { get; set; }
 
-        public pHoaDon(int maHD, string tenKH, string hoTen, string tenBan, DateTime ngayLap, string tongTien)
+        public HoaDon(int maHD, string tenKH, string hoTen, string tenBan, DateTime ngayLap, string tongTien)
         {
             this.MaHD = maHD;
             this.TenKH = tenKH;
@@ -27,7 +27,7 @@ namespace QuanLyQuanAn.DTO
             this.TongTien = tongTien;
         }
 
-        public pHoaDon(DataRow row)
+        public HoaDon(DataRow row)
         {
             this.MaHD = int.Parse(row["maHD"].ToString());
             this.TenKH = row["tenKH"].ToString();
