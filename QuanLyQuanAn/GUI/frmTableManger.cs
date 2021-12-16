@@ -10,13 +10,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Menu = QuanLyQuanAn.DTO.Menu;
 
 namespace QuanLyQuanAn.GUI
 {
     public partial class frmTableManger : Form
     {
         BindingSource dsBan = new BindingSource();
-
+        private Button btnSelected = null;
         public frmTableManger()
         {
             InitializeComponent();
@@ -148,7 +149,17 @@ namespace QuanLyQuanAn.GUI
         #endregion
 
         #region Load bàn
-
+        /// <summary>
+        /// Nếu bàn rỗng sẽ return về false. bàn có người return true
+        /// </summary>
+        /// <param name="maBan"></param>
+        bool checkBan(int maBan)
+        {
+            List<Menu> listMenu = MenuDAO.Instance.LayDSMenuTheoMaBan(maBan);
+            if (listMenu.Count > 0)
+                return true;
+            return false;
+        }
         void hienthiDanhSachBan()
         {
             List<Ban> tableList = BanDAO.Instance.LayDSBan();
@@ -156,40 +167,42 @@ namespace QuanLyQuanAn.GUI
             foreach (Ban item in tableList)
             {
                 Button btn = new Button() {Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
-                btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
+                btn.Text = item.TenBan;
                 btn.Click += Btn_Click;
                 btn.Tag = item;
 
-                switch (item.TrangThai)
+                switch (checkBan(item.MaBan))
                 {
-                    case false:
+                    case true:
                         btn.BackColor = Color.FromArgb(223, 215, 192);
                         break;
 
-                    default:
+                    case false:
                         btn.BackColor = Color.FromArgb(252, 243, 210);
                         break;
                 }
-
                 flpTable.Controls.Add(btn);
             }
         }
 
         private void Btn_Click(object sender, EventArgs e)
         {
-            int tableID = ((sender as Button).Tag as Ban).MaBan;
-            if (tableID != -1)
+            btnSelected = (sender as Button);
+            Ban banSelected = btnSelected.Tag as Ban;
+            if (banSelected == null)
+                return;
+            if (banSelected.MaBan != -1)
             {
-                lblMaBan.Text = tableID.ToString();
+                lblMaBan.Text = banSelected.MaBan.ToString();
             }
             else
             {
                 lblMaBan.Text = null;
             }
-            hienThiMenuLenListView(tableID);
+            hienThiMenuLenListView(banSelected.MaBan);
         }
 
-        void hienThiMenuLenListView(int id)
+         int hienThiMenuLenListView(int id)
         {
             lsvMenu.Items.Clear();
             List<QuanLyQuanAn.DTO.Menu> listMenu = MenuDAO.Instance.LayDSMenuTheoMaBan(id);
@@ -201,13 +214,14 @@ namespace QuanLyQuanAn.GUI
                 lsvItem.SubItems.Add(item.TenMon.ToString());
                 lsvItem.SubItems.Add(item.SoLuong.ToString());
                 lsvItem.SubItems.Add(item.GiaBan.ToString());
-                lsvItem.SubItems.Add(item.ThanhTien.ToString());
+                lsvItem.SubItems.Add(string.Format("{0:#.000}", Convert.ToDecimal(item.ThanhTien) / 1000));
                 tongTien += item.ThanhTien;
 
                 lsvMenu.Items.Add(lsvItem);
             }
             CultureInfo culture = new CultureInfo("vi-VN");
             lblTongTien.Text = tongTien.ToString("c", culture);
+            return listMenu.Count;
         }
 
         #endregion
@@ -215,30 +229,80 @@ namespace QuanLyQuanAn.GUI
         #region Thêm món, chuyển bàn, thanh toán
         private void btn_ThemMon_Click(object sender, EventArgs e)
         {
-            int maBan = -1;
-            int maMon = -1;
-            int soLuong;
-            if (cbb_MonAn.SelectedItem != null)
+            try
             {
-                maMon = (cbb_MonAn.SelectedItem as MonAn).MaMon;
-            }
-
-            int.TryParse(lblMaBan.Text, out maBan);
-            if (maBan != -1)
-            {
-                if (MenuDAO.Instance.ThemMon())
+                int maMon = 0;
+                int soLuong = int.Parse(cbb_SoLuong.Text);
+                if (cbb_MonAn.SelectedItem != null)
                 {
-                    
+                    maMon = (cbb_MonAn.SelectedItem as MonAn).MaMon;
+                }
+
+                if (btnSelected != null && maMon != 0)
+                {
+                    Ban banSelected = btnSelected.Tag as Ban;
+                    if (MenuDAO.Instance.ThemMon(banSelected.MaBan, maMon, soLuong))
+                    {
+                        if (hienThiMenuLenListView(banSelected.MaBan) == 0)
+                        {
+                            banSelected = btnSelected.Tag as Ban;
+                            banSelected.TrangThai = true;
+                            btnSelected.BackColor = Color.FromArgb(252, 243, 210);
+                        }
+                        else
+                        {
+                            banSelected = btnSelected.Tag as Ban;
+                            banSelected.TrangThai = false;
+                            btnSelected.BackColor = Color.FromArgb(223, 215, 192);
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    
+                    MessageBox.Show("Bạn chưa chọn bàn", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
+
         #endregion
 
+        private void lsvMenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int maMon = int.Parse(lsvMenu.SelectedItems[0].Text);
+                ListViewItem.ListViewSubItemCollection subItemCollection = lsvMenu.SelectedItems[0].SubItems;
+                int soLuong =int.Parse( subItemCollection[2].Text);
+                cbb_SoLuong.Value = soLuong;
 
+                foreach (LoaiMon loaiMon in cbb_LoaiMon.Items)
+                {
+                    LoaiMonAnTheoMaLoaiMon(loaiMon.MaLoai);
+                    foreach (MonAn monAn in cbb_MonAn.Items)
+                    {
+                        if (monAn.MaMon == maMon)
+                        {
+                            cbb_LoaiMon.SelectedItem = loaiMon;
+                            cbb_MonAn.SelectedItem = monAn;
+                            return;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

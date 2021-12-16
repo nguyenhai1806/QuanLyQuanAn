@@ -54,7 +54,9 @@ CREATE TABLE Menu
 )
 GO
 
-CREATE PROC P_ThemMonMenu
+
+
+ALTER PROC P_ThemMonMenu
 	@MaBan INT, @MaMon INT, @SoLuong INT
 AS
 	IF(EXISTS(SELECT * FROM dbo.Menu WHERE MaMon = @MaMon AND MaBan = @MaBan))
@@ -63,8 +65,8 @@ AS
 			DELETE dbo.Menu WHERE MaMon = @MaMon AND MaBan = @MaBan
 		ELSE
 		BEGIN
-		    UPDATE dbo.Menu SET SoLuong = SoLuong + @SoLuong WHERE MaMon = @MaMon AND MaBan = @MaBan
-			UPDATE dbo.Menu SET ThanhTien = (SELECT SoLuong * GiaBan FROM dbo.Menu)
+		    UPDATE dbo.Menu SET SoLuong = @SoLuong WHERE MaMon = @MaMon AND MaBan = @MaBan
+			UPDATE dbo.Menu SET ThanhTien = (SELECT SoLuong * GiaBan FROM dbo.Menu WHERE MaBan = @MaBan AND MaMon = @MaMon) WHERE MaBan = @MaBan AND MaMon = @MaMon
 		END		
 	END
 	ELSE
@@ -75,3 +77,14 @@ AS
         INSERT INTO dbo.Menu (MaBan, MaMon, TenMon, SoLuong, GiaBan, ThanhTien)VALUES(@MaBan, @MaMon, @TenMon, @SoLuong, @GiaBan, @SoLuong * @GiaBan)
     END
 GO
+
+EXEC dbo.P_ThemMonMenu @MaBan = 1, @MaMon = 2, @SoLuong = 5
+EXEC dbo.P_ThemMonMenu @MaBan = 1, @MaMon = 3, @SoLuong = 5
+EXEC dbo.P_ThemMonMenu @MaBan = 1, @MaMon = 4, @SoLuong = 1
+
+EXEC dbo.P_ThemMonMenu @MaBan = 2, @MaMon = 5, @SoLuong = 5
+EXEC dbo.P_ThemMonMenu @MaBan = 2, @MaMon = 3, @SoLuong = 5
+EXEC dbo.P_ThemMonMenu @MaBan = 3, @MaMon = 5, @SoLuong = 1
+
+EXEC dbo.P_ThemMonMenu @MaBan = 1, @MaMon = 2, @SoLuong = 2
+SELECT * FROM dbo.Menu
