@@ -56,7 +56,8 @@ GO
 
 ALTER DATABASE QLTiecQuanAn SET RECOVERY FULL
 GO
-
+USE QLTiecQuanAn
+GO
 CREATE PROC P_DiffBackup @link varchar(max)
 AS
 	DECLARE @database NVARCHAR(100)
@@ -132,5 +133,4 @@ AS
 		RETURN
 	END
 GO
-
 

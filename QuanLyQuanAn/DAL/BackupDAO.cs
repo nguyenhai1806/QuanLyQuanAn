@@ -36,8 +36,9 @@ namespace QuanLyQuanAn.DAL
                 DataProvider.Instance.ExcuteQuery("EXEC dbo.P_FullBackup @link ", new Object[] {address});
                 return true;
             }
-            catch
+            catch(Exception ex)
             {
+                
                 return false;
             }
         }

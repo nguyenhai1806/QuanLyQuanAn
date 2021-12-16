@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +157,8 @@ namespace QuanLyQuanAn.GUI
             {
                 Button btn = new Button() {Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
                 btn.Text = item.TenBan + Environment.NewLine + item.TrangThai;
+                btn.Click += Btn_Click;
+                btn.Tag = item;
 
                 switch (item.TrangThai)
                 {
@@ -172,10 +175,42 @@ namespace QuanLyQuanAn.GUI
             }
         }
 
+        private void Btn_Click(object sender, EventArgs e)
+        {
+            int tableID = ((sender as Button).Tag as Ban).MaBan;
+            hienThiMenuLenListView(tableID);
+        }
+
+        void hienThiMenuLenListView(int id)
+        {
+            lsvMenu.Items.Clear();
+            List<QuanLyQuanAn.DTO.Menu> listMenu = MenuDAO.Instance.LayDSMenuTheoMaBan(id);
+            float tongTien = 0;
+
+            foreach (QuanLyQuanAn.DTO.Menu item in listMenu)
+            {
+                ListViewItem lsvItem = new ListViewItem(item.MaMon.ToString());
+                lsvItem.SubItems.Add(item.TenMon.ToString());
+                lsvItem.SubItems.Add(item.SoLuong.ToString());
+                lsvItem.SubItems.Add(item.GiaBan.ToString());
+                lsvItem.SubItems.Add(item.ThanhTien.ToString());
+                tongTien += item.ThanhTien;
+
+                lsvMenu.Items.Add(lsvItem);
+            }
+            CultureInfo culture = new CultureInfo("vi-VN");
+            lblTongTien.Text = tongTien.ToString("c", culture);
+        }
+
         #endregion
 
         #region Thêm món, chuyển bàn, thanh toán
+        private void btn_ThemMon_Click(object sender, EventArgs e)
+        {
 
+        }
         #endregion
+
+
     }
 }

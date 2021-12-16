@@ -78,6 +78,7 @@
     <Compile Include="DAL\HoaDonDAO.cs" />
     <Compile Include="DAL\KhachHangDAO.cs" />
     <Compile Include="DAL\LoaiMonDAO.cs" />
+    <Compile Include="DAL\MenuDAO.cs" />
     <Compile Include="DAL\MonAnDAO.cs" />
     <Compile Include="DAL\NhanVienDAO.cs" />
     <Compile Include="DAL\NhomNVDAO.cs" />
