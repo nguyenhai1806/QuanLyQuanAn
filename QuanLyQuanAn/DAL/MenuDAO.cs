@@ -29,7 +29,7 @@ namespace QuanLyQuanAn.DAL
         {
             List<Menu> listMenu = new List<Menu>();
 
-            string query = "SELECT f.MaMon, f.TenMon, bf.SoLuong, f.GiaBan, f.GiaBan*bf.SoLuong AS thanhTien FROM CTHoaDon AS bf, HoaDon AS b, MonAn AS f WHERE bf.MaHD = b.MaHD AND bf.MaMon = f.MaMon AND b.MaBan = " + id;
+            string query = "SELECT * FROM dbo.Menu WHERE MaBan = " + id;
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
 
             foreach (DataRow item in data.Rows)
@@ -39,6 +39,12 @@ namespace QuanLyQuanAn.DAL
             }
 
             return listMenu;
+        }
+
+        public bool ThemMon(int maBan, int maMon, int soLuong)
+        {
+            string sql = "EXEC dbo.P_ThemMonMenu @MaBan , @MaMon , @SoLuong ";
+            return DataProvider.Instance.ExcuteNonQuery(sql, new object[] {maBan, maMon, soLuong}) > 0;
         }
     }
 }

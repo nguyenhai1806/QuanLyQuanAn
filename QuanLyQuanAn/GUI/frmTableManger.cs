@@ -178,6 +178,14 @@ namespace QuanLyQuanAn.GUI
         private void Btn_Click(object sender, EventArgs e)
         {
             int tableID = ((sender as Button).Tag as Ban).MaBan;
+            if (tableID != -1)
+            {
+                lblMaBan.Text = tableID.ToString();
+            }
+            else
+            {
+                lblMaBan.Text = null;
+            }
             hienThiMenuLenListView(tableID);
         }
 
@@ -207,7 +215,27 @@ namespace QuanLyQuanAn.GUI
         #region Thêm món, chuyển bàn, thanh toán
         private void btn_ThemMon_Click(object sender, EventArgs e)
         {
+            int maBan = -1;
+            int maMon = -1;
+            int soLuong;
+            if (cbb_MonAn.SelectedItem != null)
+            {
+                maMon = (cbb_MonAn.SelectedItem as MonAn).MaMon;
+            }
 
+            int.TryParse(lblMaBan.Text, out maBan);
+            if (maBan != -1)
+            {
+                if (MenuDAO.Instance.ThemMon())
+                {
+                    
+                }
+                else
+                {
+                    
+                }
+                
+            }
         }
         #endregion
 
