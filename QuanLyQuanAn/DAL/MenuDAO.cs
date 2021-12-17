@@ -46,5 +46,23 @@ namespace QuanLyQuanAn.DAL
             string sql = "EXEC dbo.P_ThemMonMenu @MaBan , @MaMon , @SoLuong ";
             return DataProvider.Instance.ExcuteNonQuery(sql, new object[] {maBan, maMon, soLuong}) > 0;
         }
+        public bool ChuyenBan(int maBanCu, int maBanMoi)
+        {
+            string sql = "EXEC dbo.P_ChuyenBan @MaBanCu , @MaBanMoi ";
+            return DataProvider.Instance.ExcuteNonQuery(sql, new Object[] { maBanCu, maBanMoi }) > 0;
+        }
+        public bool ThanhToan(int maBan, int maKH, int maNV)
+        {
+            try
+            {
+                int maHD = HoaDonDAO.Instance.TaoHoaDon(maBan, maKH, maNV);
+                CTHoaDonDAO.Instance.ThemCTHD(maHD);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

@@ -96,8 +96,8 @@ namespace QuanLyQuanAn.GUI
         {
             try
             {
-                string sdt = txt_Search.Text;
-                List<KhachHang> ds = KhachHangDAO.Instance.TimSDT(sdt);
+                string value = txt_Search.Text;
+                List<KhachHang> ds = KhachHangDAO.Instance.TimKhachHang(value);
                 dgvKhachHang.DataSource = ds;
                 hienthiDanhSachKhachHang();
             }

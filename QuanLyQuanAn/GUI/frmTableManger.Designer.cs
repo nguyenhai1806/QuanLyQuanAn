@@ -302,6 +302,9 @@ namespace QuanLyQuanAn.GUI
             // 
             // tableLayoutPanel7
             // 
+            this.tableLayoutPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel7.ColumnCount = 1;
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel7.Controls.Add(this.cbb_Ban, 0, 0);
@@ -348,6 +351,7 @@ namespace QuanLyQuanAn.GUI
             this.btn_ChuyenBan.TabIndex = 8;
             this.btn_ChuyenBan.Text = "Chuyển bàn";
             this.btn_ChuyenBan.UseVisualStyleBackColor = true;
+            this.btn_ChuyenBan.Click += new System.EventHandler(this.btn_ChuyenBan_Click);
             // 
             // txtTenKhach
             // 
@@ -380,6 +384,7 @@ namespace QuanLyQuanAn.GUI
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(253, 34);
             this.txtSoDienThoai.TabIndex = 6;
+            this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // label2
             // 
@@ -405,18 +410,19 @@ namespace QuanLyQuanAn.GUI
             this.cbb_ThanhToan.TabIndex = 10;
             this.cbb_ThanhToan.Text = "THANH TOÁN";
             this.cbb_ThanhToan.UseVisualStyleBackColor = true;
+            this.cbb_ThanhToan.Click += new System.EventHandler(this.cbb_ThanhToan_Click);
             // 
             // lblTongTien
             // 
             this.lblTongTien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTongTien.AutoSize = true;
-            this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold);
+            this.lblTongTien.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTongTien.ForeColor = System.Drawing.Color.Tomato;
-            this.lblTongTien.Location = new System.Drawing.Point(404, 177);
+            this.lblTongTien.Location = new System.Drawing.Point(399, 177);
             this.lblTongTien.Name = "lblTongTien";
             this.lblTongTien.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblTongTien.Size = new System.Drawing.Size(24, 60);
+            this.lblTongTien.Size = new System.Drawing.Size(29, 60);
             this.lblTongTien.TabIndex = 11;
             this.lblTongTien.Text = "0";
             this.lblTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -521,7 +527,7 @@ namespace QuanLyQuanAn.GUI
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmTableManger";
-            this.Text = "Phần mềm quản lý quán cafe An Nhiên";
+            this.Text = "Phần mềm quản lý quán ăn An Nhiên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTableManger_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.cbb_SoLuong)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -52,7 +52,7 @@ namespace QuanLyQuanAn.DAL
 
         //Tim khách hàng theo số điện thoại
 
-        public List<KhachHang> TimSDT(string value)
+        public List<KhachHang> TimKhachHang(string value)
         {
             List<KhachHang> danhSach = new List<KhachHang>();
 
@@ -67,7 +67,18 @@ namespace QuanLyQuanAn.DAL
 
             return danhSach;
         }
-
+        public KhachHang TimKhachHangBangSDT(string sdt)
+        {
+            sdt = sdt.Trim();
+            string query = String.Format("SELECT * FROM KhachHang where SDT = {0}", new Object[] { sdt });
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            KhachHang khachHang = null;
+            foreach (DataRow item in data.Rows)
+            {
+                khachHang = new KhachHang(item);
+            }
+            return khachHang;
+        }
 
         //Thêm khách hàng
 

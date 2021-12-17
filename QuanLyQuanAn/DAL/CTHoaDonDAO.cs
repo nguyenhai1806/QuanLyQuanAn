@@ -39,5 +39,10 @@ namespace QuanLyQuanAn.DAL
                 ds.Add(new CTHoaDon(item));
             return ds;
         }
+        public void ThemCTHD(int maHD)
+        {
+            string query = "EXEC dbo.P_ThemCTHD @MaHD ";
+            DataProvider.Instance.ExcuteNonQuery(query, new Object[] { maHD });
+        }
     }
 }

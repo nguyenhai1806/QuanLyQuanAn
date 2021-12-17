@@ -214,7 +214,7 @@ namespace QuanLyQuanAn.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmDoiMatKhau";
-            this.Text = "frmDoiMatKhau";
+            this.Text = "Đổi mật khẩu";
             this.Load += new System.EventHandler(this.frmDoiMatKhau_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);

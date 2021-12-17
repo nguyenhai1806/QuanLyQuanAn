@@ -1,4 +1,4 @@
-USE master
+USE QLTiecQuanAn
 GO
 
 UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'
@@ -132,5 +132,14 @@ AS
 		EXEC (@sqlCommand)
 		RETURN
 	END
+GO
+
+CREATE PROC P_ChuyenBan
+	@MaBanCu INT, @MaBanMoi INT
+AS
+	UPDATE Menu SET MaBan = @MaBanMoi WHERE MaBan = @MaBanCu
+GO
+
+EXEC dbo.P_ChuyenBan @MaBanCu = 0, @MaBanMoi = 0
 GO
 

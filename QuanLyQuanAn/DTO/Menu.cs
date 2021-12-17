@@ -26,6 +26,7 @@ namespace QuanLyQuanAn.DTO
             this.GiaBan = (float)Convert.ToDouble(row["giaBan"].ToString());
             this.ThanhTien = (float)Convert.ToDouble(row["thanhTien"].ToString());
         }
+        
         private int maMon;
         private string tenMon;
         private int soLuong;

@@ -26,6 +26,7 @@ namespace QuanLyQuanAn.GUI
             thôngTinCáNhânToolStripMenuItem.Text = BienToanCuc.NguoiDangNhap.TenDangNhap;
             hienthiDanhSachBan();
             LoadLoaiMonTM();
+            LoadBanLenCombobox();
         }
 
         #region Nối form
@@ -163,29 +164,31 @@ namespace QuanLyQuanAn.GUI
         void hienthiDanhSachBan()
         {
             List<Ban> tableList = BanDAO.Instance.LayDSBan();
-
+            flpTable.Controls.Clear();
             foreach (Ban item in tableList)
             {
                 Button btn = new Button() {Width = BanDAO.TableWidth, Height = BanDAO.TableHeight};
-                btn.Text = item.TenBan;
-                btn.Click += Btn_Click;
+                btn.MouseUp += Btn_Click;
                 btn.Tag = item;
 
                 switch (checkBan(item.MaBan))
                 {
                     case true:
+                        btn.Text = item.TenBan + Environment.NewLine + "Có người";
                         btn.BackColor = Color.FromArgb(223, 215, 192);
                         break;
 
                     case false:
+                        btn.Text = item.TenBan + Environment.NewLine + "Trống";
                         btn.BackColor = Color.FromArgb(252, 243, 210);
                         break;
                 }
                 flpTable.Controls.Add(btn);
             }
+            LoadBanLenCombobox();
         }
 
-        private void Btn_Click(object sender, EventArgs e)
+        private void Btn_Click(object sender, MouseEventArgs e)
         {
             btnSelected = (sender as Button);
             Ban banSelected = btnSelected.Tag as Ban;
@@ -202,25 +205,25 @@ namespace QuanLyQuanAn.GUI
             hienThiMenuLenListView(banSelected.MaBan);
         }
 
+
          int hienThiMenuLenListView(int id)
         {
             lsvMenu.Items.Clear();
             List<QuanLyQuanAn.DTO.Menu> listMenu = MenuDAO.Instance.LayDSMenuTheoMaBan(id);
             float tongTien = 0;
-
+            CultureInfo culture = new CultureInfo("vi");
             foreach (QuanLyQuanAn.DTO.Menu item in listMenu)
             {
                 ListViewItem lsvItem = new ListViewItem(item.MaMon.ToString());
                 lsvItem.SubItems.Add(item.TenMon.ToString());
                 lsvItem.SubItems.Add(item.SoLuong.ToString());
                 lsvItem.SubItems.Add(item.GiaBan.ToString());
-                lsvItem.SubItems.Add(string.Format("{0:#.000}", Convert.ToDecimal(item.ThanhTien) / 1000));
+                lsvItem.SubItems.Add(item.ThanhTien.ToString("C0", culture));
                 tongTien += item.ThanhTien;
 
                 lsvMenu.Items.Add(lsvItem);
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
-            lblTongTien.Text = tongTien.ToString("c", culture);
+            lblTongTien.Text = tongTien.ToString("C0", culture);
             return listMenu.Count;
         }
 
@@ -247,15 +250,16 @@ namespace QuanLyQuanAn.GUI
                         {
                             banSelected = btnSelected.Tag as Ban;
                             banSelected.TrangThai = true;
-                            btnSelected.BackColor = Color.FromArgb(252, 243, 210);
+                            btnSelected.Text = banSelected.TenBan + Environment.NewLine + "Rỗng";
+                            btnSelected.BackColor =  Color.FromArgb(252, 243, 210);
                         }
                         else
                         {
                             banSelected = btnSelected.Tag as Ban;
                             banSelected.TrangThai = false;
+                            btnSelected.Text = banSelected.TenBan + Environment.NewLine + "Có người";
                             btnSelected.BackColor = Color.FromArgb(223, 215, 192);
                         }
-
                     }
                     else
                     {
@@ -273,28 +277,51 @@ namespace QuanLyQuanAn.GUI
             }
 
         }
-
+        private void LoadBanLenCombobox()
+        {
+            List<Ban> tableList = BanDAO.Instance.LayDSBan();
+            List<Ban> banRong = new List<Ban>();
+            foreach (Ban item in tableList)
+            {
+                if (checkBan(item.MaBan) == false)
+                {
+                    banRong.Add(item);
+                }
+            }
+            cbb_Ban.DataSource = banRong;
+            cbb_Ban.DisplayMember = "TenBan";
+        }
         #endregion
 
         private void lsvMenu_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                int maMon = int.Parse(lsvMenu.SelectedItems[0].Text);
-                ListViewItem.ListViewSubItemCollection subItemCollection = lsvMenu.SelectedItems[0].SubItems;
-                int soLuong =int.Parse( subItemCollection[2].Text);
-                cbb_SoLuong.Value = soLuong;
-
-                foreach (LoaiMon loaiMon in cbb_LoaiMon.Items)
+                
+                if (lsvMenu.SelectedIndices.Count <= 0)
                 {
-                    LoaiMonAnTheoMaLoaiMon(loaiMon.MaLoai);
-                    foreach (MonAn monAn in cbb_MonAn.Items)
+                    return;
+                }
+                int intselectedindex = lsvMenu.SelectedIndices[0];
+                if (intselectedindex >= 0)
+                {
+                    int maMon = 0;
+                    maMon = int.Parse(lsvMenu.Items[intselectedindex].Text);
+                    ListViewItem.ListViewSubItemCollection subItemCollection = lsvMenu.SelectedItems[0].SubItems;
+                    int soLuong = int.Parse(subItemCollection[2].Text);
+                    cbb_SoLuong.Value = soLuong;
+
+                    foreach (LoaiMon loaiMon in cbb_LoaiMon.Items)
                     {
-                        if (monAn.MaMon == maMon)
+                        LoaiMonAnTheoMaLoaiMon(loaiMon.MaLoai);
+                        foreach (MonAn monAn in cbb_MonAn.Items)
                         {
-                            cbb_LoaiMon.SelectedItem = loaiMon;
-                            cbb_MonAn.SelectedItem = monAn;
-                            return;
+                            if (monAn.MaMon == maMon)
+                            {
+                                cbb_LoaiMon.SelectedItem = loaiMon;
+                                cbb_MonAn.SelectedItem = monAn;
+                                return;
+                            }
                         }
                     }
                 }
@@ -302,6 +329,94 @@ namespace QuanLyQuanAn.GUI
             catch (Exception ex)
             {
                 //MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btn_ChuyenBan_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Ban banSelected = btnSelected.Tag as Ban;
+                int maBanCu = banSelected.MaBan;
+                int maBanMoi = (cbb_Ban.SelectedItem as Ban).MaBan;
+
+                if (MenuDAO.Instance.ChuyenBan(maBanCu, maBanMoi))
+                {
+                    MessageBox.Show("Chuyển từ bàn " + banSelected.TenBan + " sang bàn " + (cbb_Ban.SelectedItem as Ban).TenBan + " thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    hienthiDanhSachBan();
+                }
+                else
+                    MessageBox.Show("Chuyển từ bàn " + banSelected.TenBan + " sang bàn " + (cbb_Ban.SelectedItem as Ban).TenBan + " không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cbb_ThanhToan_Click(object sender, EventArgs e)
+        {
+            if (btnSelected != null)
+            {
+                Ban banSelected = btnSelected.Tag as Ban;
+                //Khách vô danh
+                if (txtTenKhach.Text.Length == 0)
+                {
+                    if (MenuDAO.Instance.ThanhToan(banSelected.MaBan,18,BienToanCuc.NguoiDangNhap.MaNV))
+                    {
+                        hienthiDanhSachBan();
+                        lsvMenu.Items.Clear();
+                        MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    string soDienThoai = txtSoDienThoai.Text;
+                    KhachHang khachHang = KhachHangDAO.Instance.TimKhachHangBangSDT(soDienThoai);
+                    if (khachHang != null )
+                    {
+                        if (khachHang.TrangThai != false)
+                        {
+                            if (MenuDAO.Instance.ThanhToan(banSelected.MaBan, int.Parse(khachHang.MaKH), BienToanCuc.NguoiDangNhap.MaNV))
+                            {
+                                hienthiDanhSachBan();
+                                lsvMenu.Items.Clear();
+                                txtTenKhach.Text = null;
+                                txtSoDienThoai.Text = null;
+                                MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                                MessageBox.Show("Thanh toán không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                            MessageBox.Show("Khách hàng này không được phép", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Số điện thoại chưa đăng ký", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+            else
+                MessageBox.Show("Bạn chưa chọn bàn", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void txtSoDienThoai_Leave(object sender, EventArgs e)
+        {
+            string soDienThoai = txtSoDienThoai.Text;
+            KhachHang khachHang = KhachHangDAO.Instance.TimKhachHangBangSDT(soDienThoai);
+            if (khachHang != null)
+            {
+                if (khachHang.TrangThai != false)
+                {
+                    txtTenKhach.Text = khachHang.TenKH;
+                }
+                else
+                    MessageBox.Show("Khách hàng này không được phép", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Số điện thoại chưa đăng ký", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

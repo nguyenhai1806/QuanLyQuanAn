@@ -207,7 +207,7 @@ namespace QuanLyQuanAn.GUI
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
-            this.Text = "Phần mềm quản lý cafe An Nhiên";
+            this.Text = "Phần mềm quản lý quán ăn An Nhiên";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmLogin_FormClosing);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

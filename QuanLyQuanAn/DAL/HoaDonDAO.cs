@@ -60,6 +60,12 @@ namespace QuanLyQuanAn.DAL
             }
             return danhSach;
         }
-
+        public int TaoHoaDon(int maBan, int maKH, int maNV)
+        {
+            string query = "EXEC dbo.P_TaoHoaDon @MaBan , @MaKH , @MaNV ";
+            DataProvider.Instance.ExcuteNonQuery(query, new Object[] { maBan, maKH, maNV });
+            string query2 = "SELECT TOP 1 MaHD FROM dbo.HoaDon ORDER BY MaHD";
+            return int.Parse(DataProvider.Instance.ExecuteScalar(query2).ToString());
+        }
     }
 }

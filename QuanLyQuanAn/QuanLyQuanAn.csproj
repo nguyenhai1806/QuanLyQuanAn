@@ -217,6 +217,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="an-nhiên.ico" />
+    <Content Include="Database\FullScrip.sql" />
     <Content Include="Database\QLTiecQuanAn.sql" />
     <Content Include="Database\SQL_Hai.sql" />
     <Content Include="Database\SQL_Thao.sql" />
