@@ -309,7 +309,7 @@ namespace QuanLyQuanAn.GUI
                     maMon = int.Parse(lsvMenu.Items[intselectedindex].Text);
                     ListViewItem.ListViewSubItemCollection subItemCollection = lsvMenu.SelectedItems[0].SubItems;
                     int soLuong = int.Parse(subItemCollection[2].Text);
-                    cbb_SoLuong.Value = soLuong;
+                    
 
                     foreach (LoaiMon loaiMon in cbb_LoaiMon.Items)
                     {
@@ -320,6 +320,7 @@ namespace QuanLyQuanAn.GUI
                             {
                                 cbb_LoaiMon.SelectedItem = loaiMon;
                                 cbb_MonAn.SelectedItem = monAn;
+                                cbb_SoLuong.Value = soLuong;
                                 return;
                             }
                         }

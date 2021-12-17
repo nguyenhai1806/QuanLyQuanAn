@@ -40,7 +40,7 @@ namespace QuanLyQuanAn.Report
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(186, 44);
+            this.label1.Location = new System.Drawing.Point(223, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 26);
             this.label1.TabIndex = 0;
@@ -49,7 +49,7 @@ namespace QuanLyQuanAn.Report
             // cboMaHD
             // 
             this.cboMaHD.FormattingEnabled = true;
-            this.cboMaHD.Location = new System.Drawing.Point(336, 44);
+            this.cboMaHD.Location = new System.Drawing.Point(372, 40);
             this.cboMaHD.Name = "cboMaHD";
             this.cboMaHD.Size = new System.Drawing.Size(181, 24);
             this.cboMaHD.TabIndex = 1;
@@ -58,7 +58,7 @@ namespace QuanLyQuanAn.Report
             // 
             this.btnShow.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnShow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnShow.Location = new System.Drawing.Point(717, 33);
+            this.btnShow.Location = new System.Drawing.Point(735, 33);
             this.btnShow.Name = "btnShow";
             this.btnShow.Size = new System.Drawing.Size(161, 38);
             this.btnShow.TabIndex = 2;
@@ -74,10 +74,13 @@ namespace QuanLyQuanAn.Report
             | System.Windows.Forms.AnchorStyles.Right)));
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.DisplayStatusBar = false;
+            this.crystalReportViewer1.DisplayToolbar = false;
             this.crystalReportViewer1.Location = new System.Drawing.Point(13, 96);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(1072, 529);
             this.crystalReportViewer1.TabIndex = 3;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // btnReturn
             // 
