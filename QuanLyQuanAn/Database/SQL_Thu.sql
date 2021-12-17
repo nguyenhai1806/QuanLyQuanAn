@@ -17,14 +17,7 @@ AS
 GO
 
 
-update Ban
-set TrangThai = 0
-
-
-EXEC P_LayHoaDons
-GO
-
-ALTER PROC P_LayCTHDTheoMaHD
+CREATE PROC P_LayCTHDTheoMaHD
 	@MaHD INT
 AS
 	SELECT MA.MaMon,MA.TenMon,CTHD.SoLuong,MA.GiaBan,CTHD.ThanhTien FROM dbo.CTHoaDon CTHD
@@ -33,9 +26,7 @@ AS
 	WHERE HD.MaHD = @MaHD
 GO
 
-EXEC dbo.P_LayCTHDTheoMaHD @MaHD = 2
-
-ALTER PROC P_LayHoaDons
+CREATE PROC P_LayHoaDons
 AS
 	SELECT HD.MaHD, KH.TenKH, B.TenBan, NV.HoTen, HD.NgayLap,HD.TongTien FROM dbo.HoaDon HD
 	JOIN dbo.Ban B ON B.MaBan = HD.MaBan
@@ -44,7 +35,7 @@ AS
 	ORDER BY HD.MaHD DESC
 GO
 
-ALTER PROC P_TimHoaDon
+CREATE PROC P_TimHoaDon
 	@MaHD INT, @TenKH NVARCHAR(50), @TenNV NVARCHAR(50)
 AS
 	SELECT HD.MaHD, KH.TenKH, B.TenBan, NV.HoTen, HD.NgayLap,HD.TongTien FROM dbo.HoaDon HD

@@ -8,7 +8,7 @@ go
 create table Ban
 (
 	MaBan INT IDENTITY not null primary key,
-	TenBan nvarchar(500) not null,
+	TenBan nvarchar(500) not NULL UNIQUE,
 	TrangThai BIT DEFAULT 1				-- 1 Hiển thị, 0 Không hiển thị
 )
 
@@ -56,7 +56,7 @@ create table NhanVien
 (
 	MaNV INT IDENTITY not null primary key,
 	MaNhomNV INT not null,
-	TenDangNhap nvarchar(100) not NULL,
+	TenDangNhap nvarchar(100) not NULL UNIQUE,
 	MatKhau nvarchar(100) not null,
 	HoTen nvarchar(100) not null,
 	GioiTinh nchar(5) NOT NULL CHECK(GioiTinh IN (N'Nam',N'Nữ')),
@@ -222,6 +222,9 @@ select * from MonAn;
 --insert into KhachHang(MaKH, TenKH, NgaySinh, GioiTinh, DiaChi, SDT, TrangThai)
 
 set dateformat dmy;
+INSERT INTO dbo.KhachHang (TenKH, NgaySinh, GioiTinh, DiaChi, SDT, TrangThai)
+VALUES
+     (N'Khách vô danh', GETDATE(), N'Nam', N'', '0', 1)
 insert into KhachHang
 values (N'Nguyễn Thành Minh', '25/05/1969', N'Nam', N'Đồng Tháp', '0961900525', 1)
 
@@ -266,7 +269,7 @@ values (N'Nguyễn Thị Phượng', '18/07/1973', N'Nữ', N'Đồng Tháp', '0
 insert into KhachHang
 values (N'Đặng Hoàng Tuấn', '05/06/1993', N'Nam', N'TPHCM', '0976965087', 1)
 --========================================================================================================
-
+SELECT * FROM dbo.KhachHang
 
 --insert into NhanVien(MaNV, MaNhomNV, TenDangNhap, MatKhau, HoTen, GioiTinh, NgaySinh, DiaChi, SDT, TrangThai)
 
@@ -295,8 +298,7 @@ values (2, 'TuanNguyen', '123', N'Nguyễn Hữu Tuấn', N'Nam', '21/09/2000', 
 insert into NhanVien
 values (2, 'TranDuong', '123', N'Dương Thị Huyền Trân', N'Nữ', '09/11/2000', N'TPHCM', '0350965339', 1)
 
-select * from NhanVien;
-
+UPDATE dbo.NhanVien SET MatKhau = '659cbbf1e02f19a7e2402df9d23be037'
 
 --===============================================================================================================
 
@@ -304,7 +306,7 @@ select * from NhanVien;
 --insert into HoaDon(MaHD, MaKH, MaNV, MaBan, NgayLap, TongTien)
 
 set dateformat dmy;
-insert into HoaDon
+insert into HoaDon(MaKH, MaNV, MaBan, NgayLap, TongTien)
 values (1, 1,4, '05/12/2021', 125000)
 
 insert into HoaDon
@@ -356,9 +358,6 @@ values (13, 8,2, '09/12/2021', 155000)
 
 insert into HoaDon
 values (14, 8,9, '09/12/2021', 105000)
-
-select * from HoaDon;
-
 
 --=====================================================================================
 
@@ -498,7 +497,6 @@ values (15, 1, 3, 90000)
 insert into CTHoaDon
 values (15, 10, 1, 15000)
 
-select * from CTHoaDon;
 
 
 

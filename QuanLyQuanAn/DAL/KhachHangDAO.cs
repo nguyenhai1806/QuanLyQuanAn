@@ -70,7 +70,7 @@ namespace QuanLyQuanAn.DAL
         public KhachHang TimKhachHangBangSDT(string sdt)
         {
             sdt = sdt.Trim();
-            string query = String.Format("SELECT * FROM KhachHang where SDT = {0}", new Object[] { sdt });
+            string query = String.Format("SELECT * FROM KhachHang where SDT = '{0}'", new Object[] { sdt });
             DataTable data = DataProvider.Instance.ExcuteQuery(query);
             KhachHang khachHang = null;
             foreach (DataRow item in data.Rows)

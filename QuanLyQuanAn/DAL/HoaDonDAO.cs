@@ -64,7 +64,7 @@ namespace QuanLyQuanAn.DAL
         {
             string query = "EXEC dbo.P_TaoHoaDon @MaBan , @MaKH , @MaNV ";
             DataProvider.Instance.ExcuteNonQuery(query, new Object[] { maBan, maKH, maNV });
-            string query2 = "SELECT TOP 1 MaHD FROM dbo.HoaDon ORDER BY MaHD";
+            string query2 = "SELECT TOP 1 MaHD FROM dbo.HoaDon ORDER BY MaHD DESC";
             return int.Parse(DataProvider.Instance.ExecuteScalar(query2).ToString());
         }
     }

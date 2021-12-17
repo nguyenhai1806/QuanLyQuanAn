@@ -16,6 +16,7 @@ namespace QuanLyQuanAn.GUI
 {
     public partial class frmTableManger : Form
     {
+        CultureInfo culture = new CultureInfo("vi");
         BindingSource dsBan = new BindingSource();
         private Button btnSelected = null;
         public frmTableManger()
@@ -211,7 +212,6 @@ namespace QuanLyQuanAn.GUI
             lsvMenu.Items.Clear();
             List<QuanLyQuanAn.DTO.Menu> listMenu = MenuDAO.Instance.LayDSMenuTheoMaBan(id);
             float tongTien = 0;
-            CultureInfo culture = new CultureInfo("vi");
             foreach (QuanLyQuanAn.DTO.Menu item in listMenu)
             {
                 ListViewItem lsvItem = new ListViewItem(item.MaMon.ToString());
@@ -359,43 +359,51 @@ namespace QuanLyQuanAn.GUI
             if (btnSelected != null)
             {
                 Ban banSelected = btnSelected.Tag as Ban;
-                //Khách vô danh
-                if (txtTenKhach.Text.Length == 0)
+                if (checkBan(banSelected.MaBan) == true)
                 {
-                    if (MenuDAO.Instance.ThanhToan(banSelected.MaBan,18,BienToanCuc.NguoiDangNhap.MaNV))
+                    
+                    //Khách vô danh
+                    if (txtTenKhach.Text.Length == 0)
                     {
-                        hienthiDanhSachBan();
-                        lsvMenu.Items.Clear();
-                        MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-                else
-                {
-                    string soDienThoai = txtSoDienThoai.Text;
-                    KhachHang khachHang = KhachHangDAO.Instance.TimKhachHangBangSDT(soDienThoai);
-                    if (khachHang != null )
-                    {
-                        if (khachHang.TrangThai != false)
+                        if (MenuDAO.Instance.ThanhToan(banSelected.MaBan,1, BienToanCuc.NguoiDangNhap.MaNV))
                         {
-                            if (MenuDAO.Instance.ThanhToan(banSelected.MaBan, int.Parse(khachHang.MaKH), BienToanCuc.NguoiDangNhap.MaNV))
-                            {
-                                hienthiDanhSachBan();
-                                lsvMenu.Items.Clear();
-                                txtTenKhach.Text = null;
-                                txtSoDienThoai.Text = null;
-                                MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            }
-                            else
-                                MessageBox.Show("Thanh toán không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            hienthiDanhSachBan();
+                            lsvMenu.Items.Clear();
+                            MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else
-                            MessageBox.Show("Khách hàng này không được phép", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        MessageBox.Show("Số điện thoại chưa đăng ký", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        string soDienThoai = txtSoDienThoai.Text;
+                        KhachHang khachHang = KhachHangDAO.Instance.TimKhachHangBangSDT(soDienThoai);
+                        if (khachHang != null)
+                        {
+                            if (khachHang.TrangThai != false)
+                            {
+                                if (MenuDAO.Instance.ThanhToan(banSelected.MaBan, int.Parse(khachHang.MaKH), BienToanCuc.NguoiDangNhap.MaNV))
+                                {
+                                    hienthiDanhSachBan();
+                                    lsvMenu.Items.Clear();
+                                    txtTenKhach.Text = null;
+                                    txtSoDienThoai.Text = null;
+                                    lblTongTien.Text = 0.ToString("C0", culture);
+                                    btnSelected = null;
+                                    MessageBox.Show("Thanh toán thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                }
+                                else
+                                    MessageBox.Show("Thanh toán không thành công", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                                MessageBox.Show("Khách hàng này không được phép", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Số điện thoại chưa đăng ký", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
+                else
+                    MessageBox.Show("Bàn đang trống", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
                 MessageBox.Show("Bạn chưa chọn bàn", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -403,6 +411,7 @@ namespace QuanLyQuanAn.GUI
 
         private void txtSoDienThoai_Leave(object sender, EventArgs e)
         {
+            txtTenKhach.Text = null;
             string soDienThoai = txtSoDienThoai.Text;
             KhachHang khachHang = KhachHangDAO.Instance.TimKhachHangBangSDT(soDienThoai);
             if (khachHang != null)
@@ -417,7 +426,21 @@ namespace QuanLyQuanAn.GUI
             else
             {
                 MessageBox.Show("Số điện thoại chưa đăng ký", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtSoDienThoai.Text = null;
             }
+        }
+
+        private void txtSoDienThoai_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cbb_MonAn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbb_SoLuong.Value = 0;
         }
     }
 }

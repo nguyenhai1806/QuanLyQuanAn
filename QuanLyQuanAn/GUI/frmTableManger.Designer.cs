@@ -116,6 +116,7 @@ namespace QuanLyQuanAn.GUI
             this.cbb_MonAn.Name = "cbb_MonAn";
             this.cbb_MonAn.Size = new System.Drawing.Size(289, 30);
             this.cbb_MonAn.TabIndex = 2;
+            this.cbb_MonAn.SelectedIndexChanged += new System.EventHandler(this.cbb_MonAn_SelectedIndexChanged);
             // 
             // cbb_LoaiMon
             // 
@@ -384,6 +385,7 @@ namespace QuanLyQuanAn.GUI
             this.txtSoDienThoai.Name = "txtSoDienThoai";
             this.txtSoDienThoai.Size = new System.Drawing.Size(253, 34);
             this.txtSoDienThoai.TabIndex = 6;
+            this.txtSoDienThoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoDienThoai_KeyPress);
             this.txtSoDienThoai.Leave += new System.EventHandler(this.txtSoDienThoai_Leave);
             // 
             // label2
