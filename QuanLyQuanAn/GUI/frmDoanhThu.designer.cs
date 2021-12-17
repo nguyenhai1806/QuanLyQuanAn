@@ -39,6 +39,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_NNV_Search = new System.Windows.Forms.Button();
             this.txt_HD_Search = new System.Windows.Forms.TextBox();
+            this.btnXuatHD = new System.Windows.Forms.Button();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
@@ -88,6 +89,7 @@ namespace QuanLyQuanAn.GUI
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel3.Controls.Add(this.dgvCTHoaDon, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.btnXuatHD, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(420, 3);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
@@ -182,6 +184,18 @@ namespace QuanLyQuanAn.GUI
             this.txt_HD_Search.Size = new System.Drawing.Size(350, 30);
             this.txt_HD_Search.TabIndex = 1;
             // 
+            // btnXuatHD
+            // 
+            this.btnXuatHD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXuatHD.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnXuatHD.Location = new System.Drawing.Point(3, 3);
+            this.btnXuatHD.Name = "btnXuatHD";
+            this.btnXuatHD.Size = new System.Drawing.Size(166, 46);
+            this.btnXuatHD.TabIndex = 2;
+            this.btnXuatHD.Text = "Xuất hóa đơn";
+            this.btnXuatHD.UseVisualStyleBackColor = true;
+            this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
+            // 
             // tabPage1
             // 
             this.tabPage1.Location = new System.Drawing.Point(4, 31);
@@ -242,5 +256,6 @@ namespace QuanLyQuanAn.GUI
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btn_NNV_Search;
         private System.Windows.Forms.TextBox txt_HD_Search;
+        private System.Windows.Forms.Button btnXuatHD;
     }
 }
