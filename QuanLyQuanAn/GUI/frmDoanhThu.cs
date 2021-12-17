@@ -1,7 +1,6 @@
 ﻿using QuanLyQuanAn.DAL;
 using QuanLyQuanAn.DTO;
 using QuanLyQuanAn.Lib;
-using QuanLyQuanAn.Report;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -92,11 +91,5 @@ namespace QuanLyQuanAn.GUI
             
         }
 
-        private void btnXuatHD_Click(object sender, EventArgs e)
-        {
-            DanhSachHD f = new DanhSachHD();
-            f.Show();
-            this.Dispose(false);
-        }
     }
 }

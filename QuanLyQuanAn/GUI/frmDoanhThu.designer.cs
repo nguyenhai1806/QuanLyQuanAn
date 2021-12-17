@@ -194,7 +194,6 @@ namespace QuanLyQuanAn.GUI
             this.btnXuatHD.TabIndex = 2;
             this.btnXuatHD.Text = "Xuất hóa đơn";
             this.btnXuatHD.UseVisualStyleBackColor = true;
-            this.btnXuatHD.Click += new System.EventHandler(this.btnXuatHD_Click);
             // 
             // tabPage1
             // 
