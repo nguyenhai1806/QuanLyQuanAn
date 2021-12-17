@@ -13,18 +13,16 @@ namespace QuanLyQuanAn.DTO
         string tenNhom;
         bool trangThai;
 
-        public string TenNhom
-        {
-            get => tenNhom.Trim();
-            set => tenNhom = value.Trim();
-        }
-
         public int MaNhom
         {
             get => maNhom;
             set => maNhom = value;
         }
-
+        public string TenNhom
+        {
+            get => tenNhom.Trim();
+            set => tenNhom = value.Trim();
+        }
         public bool TrangThai
         {
             get => trangThai;

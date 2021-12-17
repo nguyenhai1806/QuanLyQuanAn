@@ -10,10 +10,11 @@ namespace QuanLyQuanAn.DTO
 {
     public class CTHoaDon
     {
+        public int MaMon { get; set; }
         public string TenMon { get; set; }
         public int SoLuong { get; set; }
         public string ThanhTien { get; set; }
-        public int MaMon { get; set; }
+        
 
         public CTHoaDon(string maMon,string tenMon, int soLuong, string thanhTien)
         {

@@ -18,8 +18,8 @@ namespace QuanLyQuanAn
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmAdmin());
-            //Application.Run(new frmLogin());
-            Application.Run(new frmDoanhThu());
+            Application.Run(new frmLogin());
+            //Application.Run(new frmDoanhThu());
         }
     }
 }
