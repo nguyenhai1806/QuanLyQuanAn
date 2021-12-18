@@ -917,6 +917,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_NV_SDT.Name = "txt_NV_SDT";
             this.txt_NV_SDT.Size = new System.Drawing.Size(325, 30);
             this.txt_NV_SDT.TabIndex = 8;
+            this.txt_NV_SDT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_NV_SDT_KeyPress);
             // 
             // txt_NV_DiaChi
             // 
@@ -975,7 +976,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_NV_NhomNV.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_NV_NhomNV.FormattingEnabled = true;
-            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 449);
+            this.cbb_NV_NhomNV.Location = new System.Drawing.Point(170, 446);
             this.cbb_NV_NhomNV.Name = "cbb_NV_NhomNV";
             this.cbb_NV_NhomNV.Size = new System.Drawing.Size(325, 30);
             this.cbb_NV_NhomNV.TabIndex = 11;
@@ -1494,7 +1495,7 @@ namespace QuanLyQuanAn.GUI
             // 
             this.cbb_MonAn_LoaiMon.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.cbb_MonAn_LoaiMon.FormattingEnabled = true;
-            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 169);
+            this.cbb_MonAn_LoaiMon.Location = new System.Drawing.Point(169, 170);
             this.cbb_MonAn_LoaiMon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbb_MonAn_LoaiMon.Name = "cbb_MonAn_LoaiMon";
             this.cbb_MonAn_LoaiMon.Size = new System.Drawing.Size(327, 30);
@@ -1508,6 +1509,7 @@ namespace QuanLyQuanAn.GUI
             this.txt_MonAn_GiaBan.Name = "txt_MonAn_GiaBan";
             this.txt_MonAn_GiaBan.Size = new System.Drawing.Size(327, 30);
             this.txt_MonAn_GiaBan.TabIndex = 4;
+            this.txt_MonAn_GiaBan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MonAn_GiaBan_KeyPress);
             // 
             // lbl_MonAn_LoaiMon
             // 
